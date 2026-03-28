@@ -1,0 +1,280 @@
+[
+  {
+    "period": "2021. 03 ~ 재직중",
+    "duration": "재직중",
+    "company": "트리노드",
+    "department": "Live실 포코팡 서버팀",
+    "role": "게임개발자",
+    "projects": [
+      {
+        "title": "백엔드 아키텍처 직접 설계",
+        "description": [
+          "서버 인프라 설계 (AWS EC2, ALB, Route53, ACM, Traefik)",
+          "DB 스키마 설계",
+          "RESTful API 구조 설계"
+        ],
+        "techStack": []
+      },
+      {
+        "title": "Rule The Coin 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
+        "description": [],
+        "techStack": ["PHP7", "MariaDB", "Redis", "Nginx", "Thrift"]
+      },
+      {
+        "title": "버블다이어리 서버 개발",
+        "description": [],
+        "techStack": ["NodeJS", "Redis", "MariaDB", "Protobuf"]
+      },
+      {
+        "title": "포코팡 서버 유지보수 및 신규 콘텐츠 개발",
+        "description": [],
+        "techStack": ["Golang", "Python", "Svelte", "MySQL"]
+      },
+      {
+        "title": "키자니아 부산 직업체험 프로그램 서버 개발",
+        "description": [],
+        "techStack": ["NestJS", "Socket.io", "RestfulAPI", "TypeORM", "MySQL", "Redis"]
+      },
+      {
+        "title": "[프로젝트 우당탄] Unity 클라이언트 개발자와 협업, 2주 1개 게임 출시 사이클 운영",
+        "description": [],
+        "techStack": ["NestJS", "MySQL", "Redis"]
+      },
+      {
+        "title": "[프로젝트 G] Claude Code로 서버리스 100% 바이브 코딩으로 서비스 오픈",
+        "description": [],
+        "techStack": ["Supabase", "Vue"]
+      },
+      {
+        "title": "[그룹웨어 직원 업무리뷰] Claude Code AI Agent + MD 지침서 활용, 100% 바이브 코딩 개발",
+        "description": [],
+        "techStack": ["MySQL", "NestJS", "Vue", "Redis"]
+      },
+      {
+        "title": "[그룹웨어 전체 개발 R&D] NoCode 플랫폼 구축",
+        "description": [
+          "출퇴근 기록, ERP 등 커스터마이징 가능한 사내 툴 개발",
+          "Harness Skill 직접 제작 적용",
+          "PR별 자동 URL 생성 환경 구성 (NextJS, Supabase Self-host, Coolify)",
+          "K8s + Docker 배포 예정"
+        ],
+        "techStack": []
+      }
+    ]
+  },
+  {
+    "period": "2017. 01 ~ 2020. 11",
+    "duration": "3년 11개월",
+    "company": "네오위즈",
+    "department": "기타소녀팀 팀원",
+    "role": "게임개발자",
+    "projects": [
+      {
+        "title": "백엔드 아키텍처 직접 설계",
+        "description": [
+          "서버 인프라 설계 (Database Sharding, Redis Replication, Load Balancing)",
+          "DB 스키마 설계",
+          "RESTful API 구조 설계"
+        ],
+        "techStack": []
+      },
+      {
+        "title": "기타소녀 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
+        "description": [],
+        "techStack": ["PHP7", "MySQL8", "Redis", "Nginx", "Thrift"]
+      },
+      {
+        "title": "탭소닉 월드챔피언 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
+        "description": [],
+        "techStack": ["PHP7", "MariaDB10", "Redis", "Nginx", "Thrift"]
+      },
+      {
+        "title": "탭소닉 탭 유지보수 및 신규 콘텐츠 개발",
+        "description": [],
+        "techStack": ["PHP5", "MySQL5.6", "Redis", "Nginx"]
+      },
+      {
+        "title": "테크니카Q 유지보수 및 신규 콘텐츠 개발",
+        "description": [],
+        "techStack": ["PHP5", "MySQL5.6", "Redis", "Nginx"]
+      }
+    ]
+  },
+  {
+    "period": "2016. 11 ~ 2017. 01",
+    "duration": "3개월",
+    "company": "네오위즈온스튜디오",
+    "department": "645팀 팀원",
+    "role": "게임개발자",
+    "projects": [
+      {
+        "title": "탭소닉 월드챔피언 서버, 관리자, DB 설계, 신규 컨텐츠",
+        "description": ["개발비중 100%"],
+        "techStack": ["PHP", "MySQL", "Redis", "MariaDB", "Thrift", "Smarty", "Nginx"]
+      }
+    ]
+  },
+  {
+    "period": "2014. 12 ~ 2015. 12",
+    "duration": "1년 1개월",
+    "company": "게임빌",
+    "department": "Q9 Studio 팀원",
+    "role": "서버관리, 시스템운영, MySQL",
+    "projects": [
+      {
+        "title": "밀리언아서 글로벌 서버 구축 및 6개국 언어 서비스 오픈",
+        "description": [],
+        "techStack": ["NodeJS", "AWS", "Google Cloud"]
+      },
+      {
+        "title": "Hive 회원 연동 및 채팅 서버 구축",
+        "description": [],
+        "techStack": []
+      }
+    ]
+  },
+  {
+    "period": "2013. 07 ~ 2014. 11",
+    "duration": "1년 5개월",
+    "company": "액토즈소프트",
+    "department": "개발3실 팀원",
+    "role": "서버관리, 서버구축, Apache, MySQL",
+    "projects": [
+      {
+        "title": "밀리언아서 한국/중국/싱가포르 멀티리전 서비스 운영",
+        "description": [],
+        "techStack": ["KT Cloud", "AWS", "물리서버"]
+      },
+      {
+        "title": "APM 최적화 및 SVN 기반 배포 환경 단일화",
+        "description": ["배포 서버, 개발 서버, 리뷰 서버 단일화"],
+        "techStack": []
+      },
+      {
+        "title": "중국 현지 서버 구축 및 산다 Push Notification 연동",
+        "description": [],
+        "techStack": []
+      },
+      {
+        "title": "싱가포르 결제 모듈 연동 및 서비스 오픈",
+        "description": [],
+        "techStack": []
+      }
+    ]
+  },
+  {
+    "period": "2011. 11 ~ 2013. 06",
+    "duration": "1년 8개월",
+    "company": "게임빌",
+    "department": "시스템개발팀 팀원",
+    "role": "웹개발자",
+    "projects": [
+      {
+        "title": "Gamevil Live 관리자 개발",
+        "description": [],
+        "techStack": ["PHP", "MySQL", "Memcache", "Apache"]
+      },
+      {
+        "title": "DDoS 대응 및 Back-End / Web 서버 분리 작업",
+        "description": [],
+        "techStack": []
+      },
+      {
+        "title": "Push Notification 플랫폼 개발 (마켓, 버전별 세분화 발송)",
+        "description": [],
+        "techStack": []
+      },
+      {
+        "title": "게임빌 라이브 iOS / Android 앱 개발",
+        "description": [],
+        "techStack": []
+      },
+      {
+        "title": "게임 공통 관리자 자동 생성 시스템 개발",
+        "description": [],
+        "techStack": []
+      },
+      {
+        "title": "Flurry 연동 DAU API 관리자 페이지 개발",
+        "description": [],
+        "techStack": []
+      }
+    ]
+  },
+  {
+    "period": "2010. 09 ~ 2011. 09",
+    "duration": "1년 1개월",
+    "company": "RFKOREA",
+    "department": "웹팀 팀장",
+    "role": "웹개발자",
+    "projects": [
+      {
+        "title": "소셜 커머스 및 이벤트 플랫폼 웹 서비스 개발 및 유지보수",
+        "description": [],
+        "techStack": ["PHP", "MySQL", "Apache"]
+      },
+      {
+        "title": "지도 API 연동 업체 위치 자동 표시 기능 개발",
+        "description": [],
+        "techStack": []
+      }
+    ]
+  },
+  {
+    "period": "2008. 09 ~ 2009. 07",
+    "duration": "11개월",
+    "company": "그리곤엔터테인먼트",
+    "department": "퍼블리싱 사업부",
+    "role": "웹개발자, 웹 DB 설계 및 웹 개발, 관리툴개발",
+    "projects": [
+      {
+        "title": "칸헬 게임 서비스 CBT / 오픈베타 사이트 전체 개발 및 유지보수 / 장비 인첸크 backend 개발",
+        "description": [],
+        "techStack": ["PHP", "JavaScript", "MySQL"]
+      },
+      {
+        "title": "퓨전폴 티저 사이트 개발",
+        "description": [],
+        "techStack": []
+      }
+    ]
+  },
+  {
+    "period": "2008. 03 ~ 2008. 07",
+    "duration": "5개월",
+    "company": "실미디어",
+    "department": "인터넷사업부",
+    "role": "웹개발자, 신규서비스 개발 및 유지보수, 제휴 개발",
+    "projects": [
+      {
+        "title": "엑스톡 클럽 리뉴얼 개발",
+        "description": [],
+        "techStack": ["PHP", "MySQL", "Apache"]
+      },
+      {
+        "title": "퀵공유 서비스 개발",
+        "description": [],
+        "techStack": []
+      }
+    ]
+  },
+  {
+    "period": "2005. 05 ~ 2007. 08",
+    "duration": "2년 4개월",
+    "company": "웃긴대학재단",
+    "department": "개발팀",
+    "role": "웹개발자, 서버 관리, 제휴 업무 개발, 커뮤니티 개발",
+    "projects": [
+      {
+        "title": "웃긴대학 서브 서비스 다수 개발",
+        "description": ["학과, 병원, 메신저, 대자보 등"],
+        "techStack": ["PHP", "MySQL", "Apache"]
+      },
+      {
+        "title": "대규모 트래픽 유입 시 캐시 최적화 및 iptables 기반 DDoS 대응으로 무중단 서비스 유지",
+        "description": [],
+        "techStack": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+window.ResumeAPI = window.ResumeAPI || {};
+window.ResumeAPI.summary = {
+  "education": {
+    "school": "마산대학",
+    "degree": "대학(2,3년)",
+    "status": "졸업"
+  },
+  "career": {
+    "company": "트리노드",
+    "status": "재직 중",
+    "totalExperience": "총 18년 1개월"
+  },
+  "internship": "-",
+  "certification": "-"
+};

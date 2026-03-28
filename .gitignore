@@ -1,0 +1,6 @@
+# Tool-generated directories
+.omc/
+.playwright-mcp/
+
+# Screenshots
+api-docs-page.png
