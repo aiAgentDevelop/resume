@@ -12,7 +12,6 @@
   var GLITCH_DURATION   = 900;   // 본 글리치 지속 시간 (ms)
   var FLASH_FADE_IN     = 90;    // 흰 플래시 fade-in
   var FLASH_HOLD        = 140;   // 플래시 유지 후 페이지 이동
-  var SESSION_KEY       = 'resume.autoTransitioned';
 
   var autoTimer      = null;
   var countdownTimer = null;
@@ -22,16 +21,17 @@
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
-  function shouldAutoTransition() {
-    if (prefersReducedMotion()) return false;
+  // portfolio.html에서 "정식 이력서"로 돌아왔을 때는 ?stay=1로 진입 → 자동 전환 비활성
+  function hasStayParam() {
     try {
-      if (sessionStorage.getItem(SESSION_KEY) === 'true') return false;
-    } catch (e) {}
-    return true;
+      return new URL(window.location.href).searchParams.get('stay') === '1';
+    } catch (e) { return false; }
   }
 
-  function markAutoTransitioned() {
-    try { sessionStorage.setItem(SESSION_KEY, 'true'); } catch (e) {}
+  function shouldAutoTransition() {
+    if (prefersReducedMotion()) return false;
+    if (hasStayParam()) return false;
+    return true;
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -78,7 +78,6 @@
     if (transitionStarted) return;
     transitionStarted = true;
     cancelAutoTransition();
-    markAutoTransitioned();
 
     var noise     = document.getElementById('vhs-noise');
     var scanlines = document.getElementById('scanlines');
