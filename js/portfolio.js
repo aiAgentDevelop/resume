@@ -62,7 +62,7 @@
     var items = careerExpanded ? career : career.slice(0, DEFAULT_CAREER_COUNT);
     var html = items.map(function (item, idx) {
       var isCurrent = (idx === 0 && /재직/.test(item.duration || ''));
-      var projects = (item.projects || []).slice(0, 3); // 최대 3개
+      var projects = (item.projects || []);
 
       var projectsHtml = projects.map(function (p) {
         var cls = 'timeline-project' + (p.highlight ? ' is-highlight' : '');
@@ -70,10 +70,10 @@
       }).join('');
 
       var techSet = {};
-      (item.projects || []).forEach(function (p) {
+      projects.forEach(function (p) {
         (p.techStack || []).forEach(function (t) { techSet[t] = true; });
       });
-      var techs = Object.keys(techSet).slice(0, 8);
+      var techs = Object.keys(techSet).slice(0, 12);
       var techHtml = techs.length
         ? '<div class="timeline-techs">' +
             techs.map(function (t) { return '<span class="chip">' + escapeHtml(t) + '</span>'; }).join('') +
