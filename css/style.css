@@ -5,63 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Portfolio Link Bar (인쇄 시 숨김) */
-.portfolio-link-bar {
-  max-width: 900px;
-  margin: 20px auto 0;
-  padding: 0;
-  text-align: right;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 12px;
-}
-
-.portfolio-auto-hint {
-  font-size: 12px;
-  color: #6b7280;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-.portfolio-auto-hint:empty {
-  display: none;
-}
-
-.portfolio-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: #0a0b14;
-  color: #e8e9ee;
-  text-decoration: none;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border: 1px solid #2a2c3e;
-  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
-}
-
-.portfolio-link:hover {
-  background: linear-gradient(135deg, #10b981 0%, #84cc16 100%);
-  color: #0a0b14;
-  border-color: transparent;
-  transform: translateY(-1px);
-}
-
-.portfolio-link-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: #84cc16;
-  box-shadow: 0 0 6px rgba(132, 204, 22, 0.6);
-}
-
-.portfolio-link:hover .portfolio-link-dot {
-  background: #0a0b14;
-  box-shadow: none;
-}
-
 /* ================================================================
    CRT/VHS Glitch Transition (index.html → portfolio.html)
 ================================================================ */
@@ -834,7 +777,6 @@ body {
     font-size: 12px;
   }
 
-  .portfolio-link-bar,
   #vhs-noise,
   #scanlines,
   #glitch-flash {

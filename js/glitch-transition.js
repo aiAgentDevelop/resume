@@ -147,14 +147,14 @@
   // ─────────────────────────────────────────────────────────────
   function init() {
     var link = document.querySelector('.portfolio-link');
-    if (!link) return;
-
-    link.addEventListener('click', function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
-      if (prefersReducedMotion()) return;
-      e.preventDefault();
-      runTransition();
-    });
+    if (link) {
+      link.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        if (prefersReducedMotion()) return;
+        e.preventDefault();
+        runTransition();
+      });
+    }
 
     if (shouldAutoTransition()) {
       scheduleAutoTransition();
