@@ -1,20 +1,42 @@
 /* ================================================================
    CRT/VHS Glitch Transition
-   - 포트폴리오 링크 클릭 시 치지직 효과 후 portfolio.html로 이동
-   - prefers-reduced-motion 환경에서는 효과 없이 즉시 이동
+   - index.html 진입 3초 후 자동으로 portfolio.html로 글리치 전환
+   - 포트폴리오 링크 클릭 시 즉시 트리거 (카운트다운 취소)
+   - 인쇄 / prefers-reduced-motion / 같은 세션 재방문 시 자동 전환 비활성
 ================================================================ */
 (function () {
   'use strict';
 
   var TRANSITION_TARGET = 'portfolio.html?skip=1';
+  var AUTO_DELAY_MS     = 3000;  // 자동 전환까지 대기
   var GLITCH_DURATION   = 900;   // 본 글리치 지속 시간 (ms)
   var FLASH_FADE_IN     = 90;    // 흰 플래시 fade-in
   var FLASH_HOLD        = 140;   // 플래시 유지 후 페이지 이동
+  var SESSION_KEY       = 'resume.autoTransitioned';
+
+  var autoTimer      = null;
+  var countdownTimer = null;
+  var transitionStarted = false;
 
   function prefersReducedMotion() {
     return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
+  function shouldAutoTransition() {
+    if (prefersReducedMotion()) return false;
+    try {
+      if (sessionStorage.getItem(SESSION_KEY) === 'true') return false;
+    } catch (e) {}
+    return true;
+  }
+
+  function markAutoTransitioned() {
+    try { sessionStorage.setItem(SESSION_KEY, 'true'); } catch (e) {}
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // Noise
+  // ─────────────────────────────────────────────────────────────
   var noiseRaf = null;
 
   function startNoise(canvas) {
@@ -49,7 +71,15 @@
     noiseRaf = null;
   }
 
+  // ─────────────────────────────────────────────────────────────
+  // Transition
+  // ─────────────────────────────────────────────────────────────
   function runTransition() {
+    if (transitionStarted) return;
+    transitionStarted = true;
+    cancelAutoTransition();
+    markAutoTransitioned();
+
     var noise     = document.getElementById('vhs-noise');
     var scanlines = document.getElementById('scanlines');
     var flash     = document.getElementById('glitch-flash');
@@ -59,42 +89,77 @@
       return;
     }
 
-    // 1) 글리치 시작: shake + slice + noise + scanlines
     document.body.classList.add('glitching');
     noise.style.opacity     = '0.55';
     scanlines.style.opacity = '0.9';
     startNoise(noise);
 
-    // 2) 중반에 노이즈 더 강하게
     setTimeout(function () {
       noise.style.opacity = '0.85';
     }, GLITCH_DURATION * 0.5);
 
-    // 3) 글리치 종료 직후 흰 플래시
     setTimeout(function () {
       flash.style.transition = 'opacity ' + FLASH_FADE_IN + 'ms ease-in';
       flash.style.opacity = '1';
     }, GLITCH_DURATION);
 
-    // 4) 플래시 정점에서 페이지 이동
     setTimeout(function () {
       stopNoise();
       window.location.href = TRANSITION_TARGET;
     }, GLITCH_DURATION + FLASH_FADE_IN + FLASH_HOLD);
   }
 
+  // ─────────────────────────────────────────────────────────────
+  // Auto countdown
+  // ─────────────────────────────────────────────────────────────
+  function scheduleAutoTransition() {
+    var hint = document.getElementById('portfolio-auto-hint');
+    var remaining = Math.ceil(AUTO_DELAY_MS / 1000);
+
+    function render() {
+      if (!hint) return;
+      hint.textContent = remaining > 0
+        ? remaining + '초 후 포트폴리오로 자동 전환'
+        : '전환 중…';
+    }
+    render();
+
+    countdownTimer = setInterval(function () {
+      remaining -= 1;
+      if (remaining <= 0) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+      }
+      render();
+    }, 1000);
+
+    autoTimer = setTimeout(runTransition, AUTO_DELAY_MS);
+  }
+
+  function cancelAutoTransition() {
+    if (autoTimer) { clearTimeout(autoTimer); autoTimer = null; }
+    if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
+    var hint = document.getElementById('portfolio-auto-hint');
+    if (hint) hint.textContent = '';
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // Init
+  // ─────────────────────────────────────────────────────────────
   function init() {
     var link = document.querySelector('.portfolio-link');
     if (!link) return;
 
     link.addEventListener('click', function (e) {
-      // 새 탭/창 열기 modifier는 그대로 통과
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
       if (prefersReducedMotion()) return;
-
       e.preventDefault();
       runTransition();
     });
+
+    if (shouldAutoTransition()) {
+      scheduleAutoTransition();
+    }
   }
 
   if (document.readyState === 'loading') {
