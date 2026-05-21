@@ -10,12 +10,17 @@
 
 <!-- 포트폴리오 진입 링크 (인쇄 시 숨김) -->
 <div class="portfolio-link-bar">
-  <a href="portfolio.html" class="portfolio-link" aria-label="다크 테마 포트폴리오 페이지로 이동">
+  <a href="portfolio.html?skip=1" class="portfolio-link" aria-label="다크 테마 포트폴리오 페이지로 전환">
     <span class="portfolio-link-dot" aria-hidden="true"></span>
-    <span>포트폴리오 · 미니게임 보기</span>
+    <span>포트폴리오로 전환 ⚡</span>
     <span aria-hidden="true">→</span>
   </a>
 </div>
+
+<!-- 글리치 전환 오버레이 (인쇄 시 숨김) -->
+<canvas id="vhs-noise" aria-hidden="true"></canvas>
+<div id="scanlines" aria-hidden="true"></div>
+<div id="glitch-flash" aria-hidden="true"></div>
 
 <div class="resume-container">
   <!-- Header -->
@@ -66,6 +71,7 @@
 
 <!-- App -->
 <script src="js/app.js"></script>
+<script src="js/glitch-transition.js"></script>
 
 </body>
 </html>

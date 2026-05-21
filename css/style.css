@@ -48,6 +48,109 @@
   box-shadow: none;
 }
 
+/* ================================================================
+   CRT/VHS Glitch Transition (index.html → portfolio.html)
+================================================================ */
+#vhs-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 80ms linear;
+  mix-blend-mode: screen;
+}
+
+#scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 9001;
+  pointer-events: none;
+  opacity: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  transition: opacity 80ms linear;
+}
+
+#glitch-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 9002;
+  pointer-events: none;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 80ms ease-in;
+}
+
+@keyframes glitch-shake {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-3px, 2px); }
+  40%  { transform: translate(3px, -2px); }
+  60%  { transform: translate(-2px, -2px); }
+  80%  { transform: translate(2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes glitch-slice-1 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+  20%      { clip-path: inset(10% 0 70% 0); transform: translate(-6px, 0); }
+  40%      { clip-path: inset(40% 0 30% 0); transform: translate(8px, 0); }
+  60%      { clip-path: inset(70% 0 5% 0);  transform: translate(-4px, 0); }
+  80%      { clip-path: inset(25% 0 55% 0); transform: translate(5px, 0); }
+}
+
+@keyframes glitch-slice-2 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); filter: hue-rotate(0deg); }
+  25%      { clip-path: inset(60% 0 10% 0); transform: translate(7px, 1px); filter: hue-rotate(90deg); }
+  50%      { clip-path: inset(15% 0 60% 0); transform: translate(-6px, -1px); filter: hue-rotate(180deg); }
+  75%      { clip-path: inset(45% 0 30% 0); transform: translate(4px, 0); filter: hue-rotate(270deg); }
+}
+
+body.glitching {
+  animation: glitch-shake 0.08s steps(2, end) infinite;
+  overflow: hidden;
+}
+
+body.glitching .resume-container {
+  position: relative;
+  filter: contrast(1.1) saturate(1.15);
+}
+
+body.glitching .resume-container::before,
+body.glitching .resume-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+body.glitching .resume-container::before {
+  background: linear-gradient(transparent, rgba(255, 0, 80, 0.18));
+  animation: glitch-slice-1 0.12s infinite;
+}
+
+body.glitching .resume-container::after {
+  background: linear-gradient(transparent, rgba(0, 200, 255, 0.18));
+  animation: glitch-slice-2 0.16s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.glitching {
+    animation: none;
+  }
+  body.glitching .resume-container::before,
+  body.glitching .resume-container::after {
+    animation: none;
+  }
+}
+
 body {
   font-family: 'Malgun Gothic', '맑은 고딕', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 14px;
@@ -657,7 +760,10 @@ body {
     font-size: 12px;
   }
 
-  .portfolio-link-bar {
+  .portfolio-link-bar,
+  #vhs-noise,
+  #scanlines,
+  #glitch-flash {
     display: none !important;
   }
 
