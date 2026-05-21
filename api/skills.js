@@ -1,6 +1,28 @@
 window.ResumeAPI = window.ResumeAPI || {};
 window.ResumeAPI.skills = [
-  "Ajax", "Apache", "MySQL", "Node.js", "PHP", "XML",
-  "Python", "Linux", "GoLang", "Nest.js", "TypeORM", "AI Agent",
-  "Claude Code", "AI Orchestration", "Harness Skill"
+  "NestJS",
+  "Node.js",
+  "TypeScript",
+  "Prisma",
+  "TypeORM",
+  "Socket.io",
+  "Redis",
+  "Redis Cluster",
+  "MySQL",
+  "MariaDB",
+  "Golang",
+  "Python",
+  "PHP",
+  "AWS",
+  "Supabase",
+  "Coolify",
+  "Docker",
+  "Kubernetes",
+  "CI/CD Pipeline",
+  "Claude Code Agent",
+  "AI Orchestration (Parallel)",
+  "Harness Skill",
+  "Linux",
+  "Apache",
+  "Nginx"
 ];

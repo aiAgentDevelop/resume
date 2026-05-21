@@ -1,0 +1,40 @@
+window.ResumeAPI = window.ResumeAPI || {};
+window.ResumeAPI.projects = {
+  "title": "개인 프로젝트 · 오픈소스",
+  "subtitle": "회사 업무와 별개로 개인적으로 개발·공개·유지보수하고 있는 오픈소스입니다.",
+  "items": [
+    {
+      "name": "harness-marketplace-plugin",
+      "url": "https://github.com/aiAgentDevelop/harness-marketplace-plugin",
+      "role": "Author / Maintainer",
+      "period": "2025 ~ 현재",
+      "summary": "Claude Code 마켓플레이스 플러그인 (v0.8.0, Apache-2.0) — 15분 만에 Plan / Implement / Verify 하네스 + CI/CD + 관측성 게이트를 자동 스캐폴딩",
+      "description": [
+        "스킬 6종: Wizard(3모드 자동 구성 — 인터뷰·수동·자동감지) · Upgrade(Custom Rules 보존) · CI/CD(독립 설정) · Learn(팀 지식 git-tracked 저장) · GH(Issue→Branch→PR 자동화) · Launch-Check(출시 전 게이트)",
+        "파이프라인: Plan → Debug(bugfix) → Implement → Verify 자동 오케스트레이션, 병렬 Fan-out / Fan-in 워커 + Phase 2.5 코드베이스 사전 분석",
+        "실시간 코드 강제(Claude Code Hook): 보호 파일 · DB 안전 · 시크릿 감지 · 패턴 강제 · 자동 린트/타입체크/포맷 (Strict·Standard·Minimal·None)",
+        "CI/CD 자동 생성: GitHub Actions · GitLab CI — CI · AI 코드리뷰 · 프리뷰/프로덕션 배포 · 보안 스캔",
+        "관측성(v0.8.0): Sentry · PostHog 등 11개 플랫폼 카탈로그, 에러 추적 필수 게이트 + 헬스체크 / 롤백 / 릴리스 식별자 블로킹 검사",
+        "자체 학습: verify 실수 감지 → 근본 원인 분류 → hook 규칙 · 가이드 노트 제안 → 승인 후 자동 반영",
+        "에이전트 34종 + 가이드 18종 카탈로그 내장, project-config.yaml 기반 설정 병합 · 검증 스크립트 포함"
+      ],
+      "techStack": ["Claude Code", "JavaScript", "Shell", "YAML", "GitHub Actions", "AI Orchestration"]
+    },
+    {
+      "name": "nestjs-vibe-engine",
+      "url": "https://github.com/aiAgentDevelop/nestjs-vibe-engine",
+      "role": "Author / Maintainer",
+      "period": "2025 ~ 현재",
+      "summary": "NestJS 10 + TypeScript 5 기반 풀스택 백엔드 통합 Core 스타터. 게임 서버/실시간 서비스에 즉시 적용 가능한 구조",
+      "description": [
+        "인증: Google OAuth 2.0 + JWT(Access/Refresh) + 동시접속 제한 + Helmet",
+        "실시간: Socket.io + Redis Adapter + Room 기반 채팅/이벤트",
+        "DB: MySQL 8 + Prisma ORM + Soft Delete + 삭제 데이터 이관 설계",
+        "캐싱/성능: Redis Direct/Cluster + 데코레이터 자동 캐싱 + Rate Limiting",
+        "로깅: Winston (API / Socket / Error 분리 + Daily Rotate + 자동 백업)",
+        "Swagger + AsyncAPI 자동 문서화, Jest + Supertest 테스트 259건, 브라우저 Setup Wizard로 .env · DB 자동 생성"
+      ],
+      "techStack": ["NestJS", "TypeScript", "Prisma", "MySQL", "Redis", "Socket.io", "Winston", "Jest"]
+    }
+  ]
+};

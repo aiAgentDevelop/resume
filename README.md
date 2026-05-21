@@ -8,29 +8,45 @@
 - `file://` 프로토콜 지원 — 압축 해제 후 `index.html`을 열면 바로 동작 (Mac/Windows)
 - 8개 API 엔드포인트로 이력서 데이터 세분화
 - Swagger 스타일 API 문서 페이지 포함
+- **다크 테마 포트폴리오 페이지 + Build Pipeline 미니게임** (`portfolio.html`)
 - 반응형 디자인 + 인쇄 스타일시트
+
+## 3-Layer 사이트 구조
+
+| 페이지 | 정체 | 용도 |
+|---|---|---|
+| `index.html` | 한국식 정식 이력서 (A4 인쇄용) | 채용 담당자 표준 제출 |
+| `portfolio.html` | Build Pipeline 미니게임 + 다크 포트폴리오 | 인터랙티브 자기 어필 |
+| `api-docs.html` | Swagger 스타일 엔드포인트 문서 | RESTful API Mock 컨셉 보완 |
+
+`portfolio.html` 진입 시 6단계 CI/CD 파이프라인(Setup → Lint → Test → Build → Containerize → Deploy)이 약 9초간 시각화되며, `Skip` 버튼·`ESC` 키·`?skip=1` 쿼리·재방문(localStorage) 시 즉시 우회됩니다.
 
 ## 파일 구조
 
 ```
-├── index.html          # 이력서 메인 페이지
-├── api-docs.html       # Swagger 스타일 API 문서
+├── index.html              # 정식 이력서 (A4 인쇄)
+├── portfolio.html          # 다크 포트폴리오 + Build Pipeline 게임
+├── api-docs.html           # Swagger 스타일 API 문서
 ├── css/
-│   ├── style.css       # 이력서 스타일
-│   └── swagger.css     # API 문서 스타일
+│   ├── style.css           # 정식 이력서 스타일
+│   ├── portfolio.css       # 다크 테마 + 터미널 + 파이프라인 스타일
+│   └── swagger.css         # API 문서 스타일
 ├── js/
-│   ├── app.js          # 이력서 렌더링 로직
-│   └── swagger.js      # API 문서 렌더링 로직
-├── api/                # Mock API 데이터
-│   ├── profile.js/json     # 기본 인적사항
-│   ├── summary.js/json     # 요약 정보
-│   ├── skills.js/json      # 기술 스택
-│   ├── education.js/json   # 학력
+│   ├── app.js              # 정식 이력서 렌더링
+│   ├── portfolio.js        # 다크 포트폴리오 렌더링 + scroll reveal
+│   ├── build-pipeline.js   # 미니게임 엔진 (CI/CD stage runner)
+│   └── swagger.js          # API 문서 렌더링
+├── api/                    # Mock API 데이터 (window.ResumeAPI)
+│   ├── profile.js/json
+│   ├── summary.js/json
+│   ├── skills.js/json
+│   ├── education.js/json
 │   ├── career.js/json      # 경력 (10개 회사)
-│   ├── about.js/json       # 자기소개서
-│   └── military.js/json    # 병역/취업우대사항
-├── images/             # 이미지 리소스
-└── docs/이력서/        # 원본 PDF
+│   ├── projects.js/json    # 오픈소스 프로젝트
+│   ├── about.js/json
+│   └── military.js/json
+├── images/
+└── docs/
 ```
 
 ## 사용법
@@ -74,13 +90,14 @@ window.ResumeAPI.profile = { name: "이동완", ... };
 
 ## PDF 생성
 
-Playwright를 사용하여 HTML에서 PDF를 생성할 수 있습니다.
+Playwright를 사용하여 HTML에서 PDF를 생성합니다.
 
-```javascript
-await page.pdf({
-  path: '이력서_이동완.pdf',
-  format: 'A4',
-  printBackground: true,
-  margin: { top: '15mm', bottom: '15mm', left: '15mm', right: '15mm' }
-});
+```bash
+# 1) 최초 1회
+npm install playwright
+npx playwright install chromium
+
+# 2) PDF 생성
+node scripts/generate-pdf.js
+# → 이력서_이동완.pdf (A4, 여백 12mm, printBackground)
 ```

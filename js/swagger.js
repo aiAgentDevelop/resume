@@ -20,7 +20,7 @@ var API_DOCS = [
           "email": { type: "string", description: "이메일 주소", example: "hanwoolchunsa@gmail.com" },
           "address": { type: "string", description: "주소", example: "경기도 용인시 처인구 고림로 162번길 15 ..." },
           "photo": { type: "string", description: "프로필 사진 경로", example: "images/profile.jpg" },
-          "title": { type: "string", description: "이력서 제목", example: "토스뱅크 Node.js Developer 지원" }
+          "title": { type: "string", description: "이력서 제목", example: "백엔드 개발자 이력서" }
         }
       }
     }

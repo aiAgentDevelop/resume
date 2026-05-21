@@ -5,42 +5,23 @@ window.ResumeAPI.career = [
     "duration": "재직중",
     "company": "트리노드",
     "department": "Live실 포코팡 서버팀",
-
     "role": "게임개발자",
     "projects": [
       {
-        "title": "백엔드 아키텍처 직접 설계",
+        "title": "[그룹웨어 전체 개발 R&D] NoCode 플랫폼 + AI 에이전트 병렬 오케스트레이션 적용",
         "description": [
-          "서버 인프라 설계 (AWS EC2, ALB, Route53, ACM, Traefik)",
-          "DB 스키마 설계",
-          "RESTful API 구조 설계"
+          "출퇴근 기록, ERP 등 커스터마이징 가능한 사내 툴을 Claude Code 에이전트 병렬 오케스트레이션으로 개발",
+          "Plan / Implement / Verify 3단계 에이전트를 병렬 실행하는 하네스(개인 R&D 방법론) 적용해 개발 속도·품질을 동시에 확보",
+          "CI/CD · 코드 검증 훅 · 배포 파이프라인까지 자동 생성·운영",
+          "PR별 자동 URL 생성 환경 구성 (NextJS, Supabase Self-host, Coolify)",
+          "K8s + Docker 기반 배포 환경 준비"
         ],
         "techStack": []
       },
       {
-        "title": "Rule The Coin 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
+        "title": "[그룹웨어 직원 업무리뷰] Claude Code AI Agent + MD 지침서로 100% 바이브 코딩 개발",
         "description": [],
-        "techStack": ["PHP7", "MariaDB", "Redis", "Nginx", "Thrift"]
-      },
-      {
-        "title": "버블다이어리 서버 개발",
-        "description": [],
-        "techStack": ["NodeJS", "Redis", "MariaDB", "Protobuf"]
-      },
-      {
-        "title": "포코팡 서버 유지보수 및 신규 콘텐츠 개발",
-        "description": [],
-        "techStack": ["Golang", "Python", "Svelte", "MySQL"]
-      },
-      {
-        "title": "키자니아 부산 직업체험 프로그램 서버 개발",
-        "description": [],
-        "techStack": ["NestJS", "Socket.io", "RestfulAPI", "TypeORM", "MySQL", "Redis"]
-      },
-      {
-        "title": "[프로젝트 우당탄] Unity 클라이언트 개발자와 협업, 2주 1개 게임 출시 사이클 운영",
-        "description": [],
-        "techStack": ["NestJS", "MySQL", "Redis"]
+        "techStack": ["MySQL", "NestJS", "Vue", "Redis"]
       },
       {
         "title": "[프로젝트 G] Claude Code로 서버리스 100% 바이브 코딩으로 서비스 오픈",
@@ -48,17 +29,38 @@ window.ResumeAPI.career = [
         "techStack": ["Supabase", "Vue"]
       },
       {
-        "title": "[그룹웨어 직원 업무리뷰] Claude Code AI Agent + MD 지침서 활용, 100% 바이브 코딩 개발",
+        "title": "[프로젝트 우당탄] Unity 클라이언트 개발자와 협업, 2주 1개 게임 출시 사이클 운영",
         "description": [],
-        "techStack": ["MySQL", "NestJS", "Vue", "Redis"]
+        "techStack": ["NestJS", "MySQL", "Redis"]
       },
       {
-        "title": "[그룹웨어 전체 개발 R&D] NoCode 플랫폼 구축",
+        "title": "키자니아 부산 직업체험 프로그램 서버 개발",
+        "description": [],
+        "techStack": ["NestJS", "Socket.io", "RESTful API", "TypeORM", "MySQL", "Redis"]
+      },
+      {
+        "title": "포코팡 서버 유지보수 및 신규 콘텐츠 개발",
+        "description": [],
+        "techStack": ["Golang", "Python", "Svelte", "MySQL"]
+      },
+      {
+        "title": "버블다이어리 서버 개발",
+        "description": [],
+        "techStack": ["NodeJS", "Redis", "MariaDB", "Protobuf"]
+      },
+      {
+        "title": "Rule The Coin 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
         "description": [
-          "출퇴근 기록, ERP 등 커스터마이징 가능한 사내 툴 개발",
-          "Harness Skill 직접 제작 적용",
-          "PR별 자동 URL 생성 환경 구성 (NextJS, Supabase Self-host, Coolify)",
-          "K8s + Docker 배포 예정"
+          "입사 시점 기준 소프트런칭 일정이 약 1개월 반 남은 상황",
+          "게임 서버 + Admin을 1개월 반 만에 신속 설계·개발하여 소프트런칭 일정에 맞춰 오픈"
+        ],
+        "techStack": ["PHP7", "MariaDB", "Redis", "Nginx", "Thrift"]
+      },
+      {
+        "title": "백엔드 아키텍처 직접 설계",
+        "description": [
+          "서버 인프라 설계 (AWS EC2, ALB, Route53, ACM, Traefik)",
+          "DB 스키마 설계 / RESTful API 구조 설계"
         ],
         "techStack": []
       }
@@ -69,18 +71,8 @@ window.ResumeAPI.career = [
     "duration": "3년 11개월",
     "company": "네오위즈",
     "department": "기타소녀팀 팀원",
-
     "role": "게임개발자",
     "projects": [
-      {
-        "title": "백엔드 아키텍처 직접 설계",
-        "description": [
-          "서버 인프라 설계 (Database Sharding, Redis Replication, Load Balancing)",
-          "DB 스키마 설계",
-          "RESTful API 구조 설계"
-        ],
-        "techStack": []
-      },
       {
         "title": "기타소녀 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
         "description": [],
@@ -92,14 +84,27 @@ window.ResumeAPI.career = [
         "techStack": ["PHP7", "MariaDB10", "Redis", "Nginx", "Thrift"]
       },
       {
-        "title": "탭소닉 탭 유지보수 및 신규 콘텐츠 개발",
+        "title": "탭소닉 탭 / 테크니카Q 유지보수 및 신규 콘텐츠 개발",
         "description": [],
         "techStack": ["PHP5", "MySQL5.6", "Redis", "Nginx"]
       },
       {
-        "title": "테크니카Q 유지보수 및 신규 콘텐츠 개발",
-        "description": [],
-        "techStack": ["PHP5", "MySQL5.6", "Redis", "Nginx"]
+        "title": "백엔드 아키텍처 직접 설계",
+        "description": [
+          "서버 인프라 설계 (Database Sharding, Redis Replication, Load Balancing)",
+          "DB 스키마 설계 / RESTful API 구조 설계"
+        ],
+        "techStack": []
+      },
+      {
+        "title": "오픈 시 SQLRelay connection 병목 장애 진단 및 해결",
+        "description": [
+          "오픈 당시 트래픽 부하로 응답 지연 발생 — DBA 팀 진단 결과 DB 부하는 정상 범위",
+          "시스템 팀 진단에서 서버 단 thread waiting 누적 확인",
+          "MySQL SQLRelay의 default connection 값이 5로 설정된 것이 병목임을 발견",
+          "SQLRelay connection pool 설정을 트래픽 규모에 맞게 조정하여 병목 해소"
+        ],
+        "techStack": ["MySQL", "SQLRelay"]
       }
     ]
   },
@@ -126,13 +131,19 @@ window.ResumeAPI.career = [
     "projects": [
       {
         "title": "밀리언아서 글로벌 서버 구축 및 6개국 언어 서비스 오픈",
-        "description": [],
-        "techStack": ["NodeJS", "AWS", "Google Cloud"]
+        "description": [
+          "Backend: 일본산 PHP 프레임워크 mcweb 기반. 테이블 스키마와 request / response 타입을 파일로 선언하면 코드를 생성하는 NestJS / Golang 스타일의 구조화된 타입 시스템",
+          "액토즈 시절 인지했던 mcweb 서버 부하 (CPU 70%+) 이슈를 게임빌 이직 후 Apache mod_php → Nginx + PHP-FPM + OPcache 구성으로 전환하여 해결",
+          "매 요청 PHP 부트스트랩 비용을 OPcache로 제거하여 물리 서버 대수 대폭 축소 (운영비 절감)"
+        ],
+        "techStack": ["PHP", "mcweb (PHP framework)", "Nginx", "PHP-FPM", "OPcache", "AWS", "Google Cloud"]
       },
       {
         "title": "Hive 회원 연동 및 채팅 서버 구축",
-        "description": [],
-        "techStack": []
+        "description": [
+          "채팅 서버는 Node.js + Socket.io로 분리 구현 (메인 게임 서버는 PHP / mcweb)"
+        ],
+        "techStack": ["NodeJS", "Socket.io"]
       }
     ]
   },
@@ -143,6 +154,14 @@ window.ResumeAPI.career = [
     "department": "개발3실 팀원",
     "role": "서버관리, 서버구축, Apache, MySQL",
     "projects": [
+      {
+        "title": "입사 계기 — 밀리언아서 클라이언트 크래시 이슈 해결",
+        "description": [
+          "당시 밀리언아서에서 반복적인 크래시 이슈가 발생하던 상황에서, 문제 해결 인력으로 헤드헌터를 통해 입사",
+          "서버/인프라 관점에서 원인을 분석·조치하여 크래시 이슈 해결"
+        ],
+        "techStack": []
+      },
       {
         "title": "밀리언아서 한국/중국/싱가포르 멀티리전 서비스 운영",
         "description": [],
@@ -173,6 +192,14 @@ window.ResumeAPI.career = [
     "role": "웹개발자",
     "projects": [
       {
+        "title": "입사 계기 — Oracle DB Connection 초과 이슈 해결",
+        "description": [
+          "당시 게임빌 내부에서 Oracle Database의 connection 초과 이슈가 반복되던 상황",
+          "지인 추천으로 해당 이슈 해결 인력으로 입사하여 커넥션 구조·쿼리·연결 관리 이슈를 진단·조치하고 문제 해결 (재직중인 개발자가 PHP의 pconnect() 함수를 사용한 것이 원인)"
+        ],
+        "techStack": []
+      },
+      {
         "title": "Gamevil Live 관리자 개발",
         "description": [],
         "techStack": ["PHP", "MySQL", "Memcache", "Apache"]
@@ -188,7 +215,7 @@ window.ResumeAPI.career = [
         "techStack": []
       },
       {
-        "title": "게임빌 라이브 iOS / Android 앱 개발",
+        "title": "게임빌 라이브 Backend 개발",
         "description": [],
         "techStack": []
       },
@@ -228,10 +255,10 @@ window.ResumeAPI.career = [
     "duration": "11개월",
     "company": "그리곤엔터테인먼트",
     "department": "퍼블리싱 사업부",
-    "role": "웹개발자, 웹 DB 설계 및 웹 개발, 관리툴개발",
+    "role": "웹개발자, 웹 DB 설계 및 웹 개발, 관리툴 개발",
     "projects": [
       {
-        "title": "칸헬 게임 서비스 CBT / 오픈베타 사이트 전체 개발 및 유지보수 / 장비 인첸크 backend 개발",
+        "title": "칸헬 게임 서비스 CBT / 오픈베타 사이트 전체 개발 및 유지보수 / 장비 인첸트 backend 개발",
         "description": [],
         "techStack": ["PHP", "JavaScript", "MySQL"]
       },

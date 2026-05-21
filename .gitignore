@@ -1,6 +1,25 @@
 # Tool-generated directories
 .omc/
 .playwright-mcp/
+.claude/
 
 # Screenshots
 api-docs-page.png
+preview-*.png
+
+# Node (PDF 생성 의존성)
+node_modules/
+package-lock.json
+
+# 개인정보 — 실명/연락처/회사별 지원서 포함, 공개 리포 업로드 금지
+이동완-이력서.pdf
+이력서_이동완.pdf
+이력서_이동완.txt
+이력서_이동완_스토리타코.pdf
+커버레터-이동완.pdf
+슈퍼센트-입사지원.txt
+컴투스-입사지원.txt
+크래프톤-입사지원.txt
+docs/슈퍼센트-대규모채용.txt
+docs/크래프톤-지원.txt
+docs/크래프톤-채용.txt

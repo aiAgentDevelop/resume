@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<!-- 포트폴리오 진입 링크 (인쇄 시 숨김) -->
+<div class="portfolio-link-bar">
+  <a href="portfolio.html" class="portfolio-link" aria-label="다크 테마 포트폴리오 페이지로 이동">
+    <span class="portfolio-link-dot" aria-hidden="true"></span>
+    <span>포트폴리오 · 미니게임 보기</span>
+    <span aria-hidden="true">→</span>
+  </a>
+</div>
+
 <div class="resume-container">
   <!-- Header -->
   <div class="resume-header" id="resume-header"></div>
@@ -20,6 +29,10 @@
 
   <!-- Skills -->
   <div class="skills-section" id="skills-section"></div>
+
+  <!-- Personal Projects / Open Source -->
+  <h2 class="section-title" id="projects-title"></h2>
+  <div class="projects-section" id="projects-content"></div>
 
   <!-- Education -->
   <h2 class="section-title">학력</h2>
@@ -47,6 +60,7 @@
 <script src="api/skills.js"></script>
 <script src="api/education.js"></script>
 <script src="api/career.js"></script>
+<script src="api/projects.js"></script>
 <script src="api/about.js"></script>
 <script src="api/military.js"></script>
 

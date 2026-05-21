@@ -4,9 +4,22 @@ window.ResumeAPI.profile = {
   "gender": "남",
   "birthYear": 1980,
   "age": 45,
-  "phone": "010-4001-****",
+  "phone": "010-4001-4444",
   "email": "hanwoolchunsa@gmail.com",
   "address": "경기도 용인시 고림동",
   "photo": "images/profile.jpg",
-  "title": "토스뱅크 Node.js Developer 지원"
+  "title": "백엔드 개발자 이력서",
+  "github": "github.com/aiAgentDevelop",
+  "repositories": [
+    {
+      "name": "harness-marketplace-plugin",
+      "url": "https://github.com/aiAgentDevelop/harness-marketplace-plugin",
+      "note": "Claude Code 마켓플레이스 플러그인 (v0.7.0) — CI/CD 파이프라인·하네스 스킬 자동 생성"
+    },
+    {
+      "name": "nestjs-vibe-engine",
+      "url": "https://github.com/aiAgentDevelop/nestjs-vibe-engine",
+      "note": "NestJS 통합 Core 스타터 — OAuth/JWT, Socket.io+Redis, Prisma, Winston, 테스트 259건 내장"
+    }
+  ]
 };

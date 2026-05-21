@@ -1,0 +1,20 @@
+{
+  "name": "resume-restfulapi",
+  "version": "1.0.0",
+  "description": "이동완 이력서를 RESTful API 구조의 Mock 데이터로 구성한 정적 웹사이트입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DONGWAN-LEE/resume-restfulAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DONGWAN-LEE/resume-restfulAPI/issues"
+  },
+  "homepage": "https://github.com/DONGWAN-LEE/resume-restfulAPI#readme"
+}

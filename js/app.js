@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   renderProfile(API.profile);
   renderSummary(API.summary);
   renderSkills(API.skills);
+  renderProjects(API.projects);
   renderEducation(API.education);
   renderCareer(API.career);
   renderAbout(API.about);
@@ -21,6 +22,21 @@ function renderHeader(profile) {
 function renderProfile(profile) {
   var el = document.getElementById('profile-section');
 
+  var githubBlock = '';
+  if (profile.github) {
+    githubBlock += '<dt>GitHub</dt><dd><a href="https://' + escapeHtml(profile.github) + '" target="_blank" rel="noopener">' + escapeHtml(profile.github) + '</a></dd>';
+  }
+
+  if (profile.repositories && profile.repositories.length > 0) {
+    profile.repositories.forEach(function (repo) {
+      githubBlock += '<dd class="github-line">' +
+        '<strong>' + escapeHtml(repo.name) + '</strong> — ' +
+        '<a href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener">' + escapeHtml(repo.url) + '</a>' +
+        (repo.note ? '<br>' + escapeHtml(repo.note) : '') +
+      '</dd>';
+    });
+  }
+
   var html = '<div class="profile-info">' +
       '<div class="profile-name">' +
         escapeHtml(profile.name) +
@@ -30,6 +46,7 @@ function renderProfile(profile) {
         '<dt>Email</dt><dd><a href="mailto:' + escapeHtml(profile.email) + '">' + escapeHtml(profile.email) + '</a></dd>' +
         '<dt>휴대폰</dt><dd>' + escapeHtml(profile.phone) + '</dd>' +
         '<dt>주소</dt><dd>' + escapeHtml(profile.address) + '</dd>' +
+        githubBlock +
       '</dl>' +
     '</div>';
 
@@ -71,6 +88,50 @@ function renderSkills(skills) {
   el.innerHTML = html;
 }
 
+function renderProjects(projects) {
+  if (!projects || !projects.items || projects.items.length === 0) return;
+
+  var titleEl = document.getElementById('projects-title');
+  titleEl.textContent = projects.title;
+
+  var el = document.getElementById('projects-content');
+  var html = '';
+
+  if (projects.subtitle) {
+    html += '<div class="projects-subtitle">' + escapeHtml(projects.subtitle) + '</div>';
+  }
+
+  projects.items.forEach(function (p) {
+    html += '<div class="project-item">' +
+      '<div class="project-item-header">' +
+        '<span class="project-name">' + escapeHtml(p.name) + '</span>' +
+        (p.role ? '<span class="project-role">' + escapeHtml(p.role) + '</span>' : '') +
+        (p.period ? '<span class="project-period">' + escapeHtml(p.period) + '</span>' : '') +
+      '</div>' +
+      '<div class="project-link"><a href="' + escapeHtml(p.url) + '" target="_blank" rel="noopener">' + escapeHtml(p.url) + '</a></div>';
+
+    if (p.summary) {
+      html += '<div class="project-summary">' + escapeHtml(p.summary) + '</div>';
+    }
+
+    if (p.description && p.description.length > 0) {
+      html += '<ul class="project-bullets">';
+      p.description.forEach(function (d) {
+        html += '<li>' + escapeHtml(d) + '</li>';
+      });
+      html += '</ul>';
+    }
+
+    if (p.techStack && p.techStack.length > 0) {
+      html += '<div class="project-tech">' + p.techStack.map(escapeHtml).join(', ') + '</div>';
+    }
+
+    html += '</div>';
+  });
+
+  el.innerHTML = html;
+}
+
 function renderEducation(education) {
   var el = document.getElementById('education-content');
   var html = '';
@@ -109,8 +170,13 @@ function renderCareer(career) {
         '<div class="career-projects">';
 
     item.projects.forEach(function (project) {
-      html += '<div class="career-project">' +
+      var cls = 'career-project' + (project.highlight ? ' is-highlight' : '');
+      html += '<div class="' + cls + '">' +
         '<div class="project-title">- ' + escapeHtml(project.title) + '</div>';
+
+      if (project.url) {
+        html += '<div class="project-url"><a href="' + escapeHtml(project.url) + '" target="_blank" rel="noopener">' + escapeHtml(project.url) + '</a></div>';
+      }
 
       if (project.description && project.description.length > 0) {
         project.description.forEach(function (desc) {
@@ -170,7 +236,7 @@ function renderFooter() {
     '<div class="footer-confirm">위의 모든 기재사항은 사실과 다름없음을 확인합니다.</div>' +
     '<div class="footer-author">작성자 : 이동완</div>' +
     '<div class="footer-info">' +
-      '이 이력서는 2026년 03월 28일 (토)에 생성된 이력서 입니다.' +
+      '이 이력서는 2026년 04월 17일에 갱신된 이력서 입니다.' +
     '</div>';
 }
 
