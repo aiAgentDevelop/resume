@@ -790,12 +790,12 @@ body {
   }
 
   .shipped-games {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
     page-break-inside: avoid;
   }
   .shipped-game img {
-    height: 70px;
+    height: 62px;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -803,8 +803,8 @@ body {
     box-shadow: none !important;
     transform: none !important;
   }
-  .sg-title { font-size: 11px; }
-  .sg-meta  { font-size: 9.5px; }
+  .sg-title { font-size: 10.5px; }
+  .sg-meta  { font-size: 9px; }
 
   .career-project.is-highlight {
     background: #f5f8ff !important;
