@@ -368,28 +368,13 @@
     setupNavActiveState();
     setupAnchorScroll();
 
-    // Hero 타이포는 portfolio가 visible 된 후 시작
     var portfolio = el('portfolio-app');
     if (portfolio) {
-      var run = function () {
-        animateHeroName();
-        // Hero 섹션 안의 reveal 요소는 즉시 visible 처리 (viewport에 이미 있음, IntersectionObserver 타이밍 보호)
-        var heroEl = el('hero');
-        if (heroEl) {
-          heroEl.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('is-visible'); });
-        }
-      };
-      if (portfolio.classList.contains('is-visible')) {
-        run();
-      } else {
-        // build-pipeline.js가 is-visible을 추가할 때까지 대기
-        var mo = new MutationObserver(function () {
-          if (portfolio.classList.contains('is-visible')) {
-            mo.disconnect();
-            run();
-          }
-        });
-        mo.observe(portfolio, { attributes: true, attributeFilter: ['class'] });
+      animateHeroName();
+      // Hero 섹션 안의 reveal 요소는 즉시 visible 처리 (viewport에 이미 있음, IntersectionObserver 타이밍 보호)
+      var heroEl = el('hero');
+      if (heroEl) {
+        heroEl.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('is-visible'); });
       }
     }
   }

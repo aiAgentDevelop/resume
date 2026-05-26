@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  var TRANSITION_TARGET = 'portfolio.html?skip=1';
+  var TRANSITION_TARGET = 'portfolio.html';
   var AUTO_DELAY_MS     = 3000;  // 자동 전환까지 대기
   var GLITCH_DURATION   = 900;   // 본 글리치 지속 시간 (ms)
   var FLASH_FADE_IN     = 90;    // 흰 플래시 fade-in

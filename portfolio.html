@@ -18,111 +18,9 @@
 <body>
 
 <!-- ================================================================
-     Layer 0: Build Pipeline 미니게임 (진입 화면 100vh)
+     풀 포트폴리오
 ================================================================ -->
-<div id="pipeline-stage" class="pipeline-stage" aria-label="Build Pipeline Loading">
-  <header class="pipeline-header">
-    <div class="brand">
-      <span class="brand-mark">LD</span>
-      <span class="brand-cmd">./deploy.sh</span>
-    </div>
-    <button type="button" id="skip-btn" class="skip-btn" aria-label="포트폴리오로 바로 이동 (Skip)">
-      <span aria-hidden="true">⏭</span> Skip to Portfolio
-    </button>
-  </header>
-
-  <main class="pipeline-main">
-    <!-- 좌측: 터미널 -->
-    <section class="terminal" aria-label="Build terminal output">
-      <div class="terminal-bar">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
-        <span class="terminal-title">~/portfolio &mdash; zsh</span>
-      </div>
-      <div id="terminal-body" class="terminal-body" role="log" aria-live="polite" aria-atomic="false"></div>
-    </section>
-
-    <!-- 우측: Pipeline 카드들 -->
-    <section class="pipeline-grid" aria-label="Build pipeline stages">
-      <div class="pipeline-card" data-stage="setup">
-        <div class="card-head">
-          <span class="card-dot"></span>
-          <span class="card-num">①</span>
-          <span class="card-title">Setup</span>
-          <span class="card-status">pending</span>
-        </div>
-        <div class="card-cmd">npm install</div>
-        <div class="progress"><div class="progress-fill"></div></div>
-      </div>
-
-      <div class="pipeline-card" data-stage="lint">
-        <div class="card-head">
-          <span class="card-dot"></span>
-          <span class="card-num">②</span>
-          <span class="card-title">Lint</span>
-          <span class="card-status">pending</span>
-        </div>
-        <div class="card-cmd">eslint .</div>
-        <div class="progress"><div class="progress-fill"></div></div>
-      </div>
-
-      <div class="pipeline-card" data-stage="test">
-        <div class="card-head">
-          <span class="card-dot"></span>
-          <span class="card-num">③</span>
-          <span class="card-title">Test</span>
-          <span class="card-status">pending</span>
-        </div>
-        <div class="card-cmd">jest run</div>
-        <div class="progress"><div class="progress-fill"></div></div>
-      </div>
-
-      <div class="pipeline-card" data-stage="build">
-        <div class="card-head">
-          <span class="card-dot"></span>
-          <span class="card-num">④</span>
-          <span class="card-title">Build</span>
-          <span class="card-status">pending</span>
-        </div>
-        <div class="card-cmd">tsc + bundle</div>
-        <div class="progress"><div class="progress-fill"></div></div>
-      </div>
-
-      <div class="pipeline-card" data-stage="container">
-        <div class="card-head">
-          <span class="card-dot"></span>
-          <span class="card-num">⑤</span>
-          <span class="card-title">Containerize</span>
-          <span class="card-status">pending</span>
-        </div>
-        <div class="card-cmd">docker build</div>
-        <div class="progress"><div class="progress-fill"></div></div>
-      </div>
-
-      <div class="pipeline-card" data-stage="deploy">
-        <div class="card-head">
-          <span class="card-dot"></span>
-          <span class="card-num">⑥</span>
-          <span class="card-title">Deploy</span>
-          <span class="card-status">pending</span>
-        </div>
-        <div class="card-cmd">kubectl apply</div>
-        <div class="progress"><div class="progress-fill"></div></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="pipeline-footer">
-    <span class="hint">// <span id="pipeline-progress">0/6</span> sections loaded</span>
-    <span class="hint">press <kbd>ESC</kbd> to skip</span>
-  </footer>
-</div>
-
-<!-- ================================================================
-     Layer 1: 풀 포트폴리오
-================================================================ -->
-<div id="portfolio-app" class="portfolio-app" hidden>
+<div id="portfolio-app" class="portfolio-app">
 
   <!-- Sticky Nav -->
   <nav class="nav" aria-label="Portfolio navigation">
@@ -507,7 +405,6 @@
 <script src="api/military.js"></script>
 
 <!-- Apps -->
-<script src="js/build-pipeline.js"></script>
 <script src="js/portfolio.js"></script>
 
 </body>
