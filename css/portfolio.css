@@ -657,6 +657,15 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
 }
 
+.timeline-summary {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+}
+
 .timeline-projects {
   display: flex;
   flex-direction: column;

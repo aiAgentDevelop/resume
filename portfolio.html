@@ -30,12 +30,12 @@
         <span class="nav-name">DONG WAN</span>
       </a>
       <ul class="nav-list" role="list">
+        <li><a href="#games" class="nav-link" data-nav="games">Games</a></li>
+        <li><a href="#skills" class="nav-link" data-nav="skills">Skills</a></li>
         <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
         <li><a href="#what-i-do" class="nav-link" data-nav="what-i-do">What I Do</a></li>
         <li><a href="#career" class="nav-link" data-nav="career">Career</a></li>
-        <li><a href="#games" class="nav-link" data-nav="games">Games</a></li>
         <li><a href="#oss" class="nav-link" data-nav="oss">OSS</a></li>
-        <li><a href="#skills" class="nav-link" data-nav="skills">Skills</a></li>
         <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
       </ul>
       <a href="index.html?stay=1" class="nav-resume" aria-label="정식 이력서 페이지로 이동">
@@ -78,104 +78,6 @@
       </div>
 
       <div class="scroll-cue reveal" aria-hidden="true">↓ Scroll</div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section section-about">
-    <div class="section-inner">
-      <div class="section-label reveal">[ ABOUT ]</div>
-      <div class="about-grid">
-        <div class="about-text">
-          <h2 class="section-heading reveal">기술 위에 한 사람 몫을 온전히.</h2>
-          <p class="about-p reveal" id="about-p1"></p>
-          <p class="about-p reveal" id="about-p2"></p>
-        </div>
-        <aside class="about-stats" aria-label="핵심 지표">
-          <div class="stat-card reveal">
-            <div class="stat-value">18<span class="stat-unit">+ years</span></div>
-            <div class="stat-label">Game Server Backend</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-value">2<span class="stat-unit"> OSS</span></div>
-            <div class="stat-label">Author / Maintainer</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-value">100<span class="stat-unit">%</span></div>
-            <div class="stat-label">오픈 일정 준수</div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- What I Do -->
-  <section id="what-i-do" class="section section-do">
-    <div class="section-inner">
-      <div class="section-label reveal">[ WHAT I DO ]</div>
-      <h2 class="section-heading reveal">팀에 가져갈 수 있는 것</h2>
-      <p class="section-lead reveal">한 사람이 다루기 어려운 범위의 작업도, 품질을 유지한 채 끝까지 끌고 갑니다.</p>
-
-      <div class="do-grid">
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">🎮</div>
-          <h3 class="do-title">Game Server Backend</h3>
-          <p class="do-desc">밀리언아서 글로벌 6개국, 기타소녀, 탭소닉, 포코팡, 키자니아까지 — 시스템 설계 · DB · 인프라 · 운영을 한 사람 몫으로.</p>
-          <div class="chip-row">
-            <span class="chip">NestJS</span>
-            <span class="chip">Golang</span>
-            <span class="chip">PHP</span>
-            <span class="chip">Socket.io</span>
-          </div>
-        </article>
-
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">🤖</div>
-          <h3 class="do-title">AI Agent Orchestration</h3>
-          <p class="do-desc">Plan · Implement · Verify 3단계 에이전트를 병렬로 오케스트레이션하는 Harness Skill을 만들어 씁니다.</p>
-          <div class="chip-row">
-            <span class="chip">Claude Code</span>
-            <span class="chip">Harness Skill</span>
-            <span class="chip">MCP</span>
-          </div>
-        </article>
-
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">⚡</div>
-          <h3 class="do-title">Infra &amp; CI/CD</h3>
-          <p class="do-desc">AWS · K8s · Docker · Coolify · Supabase Self-host로 PR별 자동 URL 생성 환경까지 직접 구성.</p>
-          <div class="chip-row">
-            <span class="chip">AWS</span>
-            <span class="chip">Kubernetes</span>
-            <span class="chip">Docker</span>
-            <span class="chip">Coolify</span>
-          </div>
-        </article>
-
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">📦</div>
-          <h3 class="do-title">Open Source</h3>
-          <p class="do-desc">개인 운영 OSS 2종 — Claude Code 마켓플레이스 플러그인, NestJS 통합 Core 스타터를 직접 유지보수.</p>
-          <div class="chip-row">
-            <span class="chip">harness-marketplace-plugin</span>
-            <span class="chip">nestjs-vibe-engine</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Career -->
-  <section id="career" class="section section-career">
-    <div class="section-inner">
-      <div class="section-label reveal">[ CAREER ]</div>
-      <h2 class="section-heading reveal">경력 타임라인 <span class="heading-meta">총 18년 1개월</span></h2>
-      <div id="career-timeline" class="timeline"></div>
-      <div class="timeline-toggle-wrap reveal">
-        <button type="button" id="career-toggle" class="btn btn-ghost btn-sm" aria-expanded="false">
-          전체 펼치기 (10개 회사)
-        </button>
-      </div>
     </div>
   </section>
 
@@ -327,6 +229,113 @@
     </div>
   </section>
 
+  <!-- Tech Stack (기술 스택) — 두 번째 -->
+  <section id="skills" class="section section-skills">
+    <div class="section-inner">
+      <div class="section-label reveal">[ TECH STACK ]</div>
+      <h2 class="section-heading reveal">기술 스택</h2>
+      <div id="skills-grid" class="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section section-about">
+    <div class="section-inner">
+      <div class="section-label reveal">[ ABOUT ]</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-heading reveal">기술 위에 한 사람 몫을 온전히.</h2>
+          <p class="about-p reveal" id="about-p1"></p>
+          <p class="about-p reveal" id="about-p2"></p>
+        </div>
+        <aside class="about-stats" aria-label="핵심 지표">
+          <div class="stat-card reveal">
+            <div class="stat-value">18<span class="stat-unit">+ years</span></div>
+            <div class="stat-label">Game Server Backend</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-value">2<span class="stat-unit"> OSS</span></div>
+            <div class="stat-label">Author / Maintainer</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-value">100<span class="stat-unit">%</span></div>
+            <div class="stat-label">오픈 일정 준수</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Do -->
+  <section id="what-i-do" class="section section-do">
+    <div class="section-inner">
+      <div class="section-label reveal">[ WHAT I DO ]</div>
+      <h2 class="section-heading reveal">팀에 가져갈 수 있는 것</h2>
+      <p class="section-lead reveal">한 사람이 다루기 어려운 범위의 작업도, 품질을 유지한 채 끝까지 끌고 갑니다.</p>
+
+      <div class="do-grid">
+        <article class="do-card reveal" data-tilt>
+          <div class="do-icon" aria-hidden="true">🎮</div>
+          <h3 class="do-title">Game Server Backend</h3>
+          <p class="do-desc">밀리언아서 글로벌 6개국, 기타소녀, 탭소닉, 포코팡, 키자니아까지 — 시스템 설계 · DB · 인프라 · 운영을 한 사람 몫으로.</p>
+          <div class="chip-row">
+            <span class="chip">NestJS</span>
+            <span class="chip">Golang</span>
+            <span class="chip">PHP</span>
+            <span class="chip">Socket.io</span>
+          </div>
+        </article>
+
+        <article class="do-card reveal" data-tilt>
+          <div class="do-icon" aria-hidden="true">🤖</div>
+          <h3 class="do-title">AI Agent Orchestration</h3>
+          <p class="do-desc">Plan · Implement · Verify 3단계 에이전트를 병렬로 오케스트레이션하는 Harness Skill을 만들어 씁니다.</p>
+          <div class="chip-row">
+            <span class="chip">Claude Code</span>
+            <span class="chip">Harness Skill</span>
+            <span class="chip">MCP</span>
+          </div>
+        </article>
+
+        <article class="do-card reveal" data-tilt>
+          <div class="do-icon" aria-hidden="true">⚡</div>
+          <h3 class="do-title">Infra &amp; CI/CD</h3>
+          <p class="do-desc">AWS · K8s · Docker · Coolify · Supabase Self-host로 PR별 자동 URL 생성 환경까지 직접 구성.</p>
+          <div class="chip-row">
+            <span class="chip">AWS</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Coolify</span>
+          </div>
+        </article>
+
+        <article class="do-card reveal" data-tilt>
+          <div class="do-icon" aria-hidden="true">📦</div>
+          <h3 class="do-title">Open Source</h3>
+          <p class="do-desc">개인 운영 OSS 2종 — Claude Code 마켓플레이스 플러그인, NestJS 통합 Core 스타터를 직접 유지보수.</p>
+          <div class="chip-row">
+            <span class="chip">harness-marketplace-plugin</span>
+            <span class="chip">nestjs-vibe-engine</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career -->
+  <section id="career" class="section section-career">
+    <div class="section-inner">
+      <div class="section-label reveal">[ CAREER ]</div>
+      <h2 class="section-heading reveal">경력 타임라인 <span class="heading-meta">총 18년 1개월</span></h2>
+      <div id="career-timeline" class="timeline"></div>
+      <div class="timeline-toggle-wrap reveal">
+        <button type="button" id="career-toggle" class="btn btn-ghost btn-sm" aria-expanded="false">
+          전체 펼치기 (10개 회사)
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- Open Source -->
   <section id="oss" class="section section-oss">
     <div class="section-inner">
@@ -334,15 +343,6 @@
       <h2 class="section-heading reveal">직접 만들고 운영하는 오픈소스</h2>
       <p class="section-lead reveal">회사 업무와 별개로 개인적으로 개발 · 공개 · 유지보수합니다.</p>
       <div id="oss-grid" class="oss-grid"></div>
-    </div>
-  </section>
-
-  <!-- Tech Stack -->
-  <section id="skills" class="section section-skills">
-    <div class="section-inner">
-      <div class="section-label reveal">[ TECH STACK ]</div>
-      <h2 class="section-heading reveal">기술 스택</h2>
-      <div id="skills-grid" class="skills-grid"></div>
     </div>
   </section>
 

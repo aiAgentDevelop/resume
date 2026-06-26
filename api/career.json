@@ -5,6 +5,7 @@
     "company": "트리노드",
     "department": "Live실 포코팡 서버팀",
     "role": "게임개발자",
+    "summary": "포코팡 라이브 운영과 신규 게임 백엔드를 함께 담당. Claude Code AI 에이전트 병렬 오케스트레이션으로 사내 툴·신규 서비스를 직접 설계·출시.",
     "projects": [
       {
         "title": "[그룹웨어 전체 개발 R&D] NoCode 플랫폼 + AI 에이전트 병렬 오케스트레이션 적용",
@@ -71,6 +72,7 @@
     "company": "네오위즈",
     "department": "기타소녀팀 팀원",
     "role": "게임개발자",
+    "summary": "음악게임 3종(기타소녀·탭소닉 월드챔피언·테크니카Q) 백엔드 전담 — 설계·DB·인프라부터 운영·오픈 장애 대응까지.",
     "projects": [
       {
         "title": "기타소녀 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
@@ -113,6 +115,7 @@
     "company": "네오위즈온스튜디오",
     "department": "645팀 팀원",
     "role": "게임개발자",
+    "summary": "탭소닉 월드챔피언 서버·관리자·DB 설계 및 신규 콘텐츠 개발 (개발 비중 100%).",
     "projects": [
       {
         "title": "탭소닉 월드챔피언 서버, 관리자, DB 설계, 신규 컨텐츠",
@@ -127,6 +130,7 @@
     "company": "게임빌",
     "department": "Q9 Studio 팀원",
     "role": "서버관리, 시스템운영, MySQL",
+    "summary": "확산성 밀리언아서 글로벌 6개국 서버 구축. mod_php → Nginx + PHP-FPM + OPcache 전환으로 서버 부하·물리 대수 대폭 절감.",
     "projects": [
       {
         "title": "밀리언아서 글로벌 서버 구축 및 6개국 언어 서비스 오픈",
@@ -152,6 +156,7 @@
     "company": "액토즈소프트",
     "department": "개발3실 팀원",
     "role": "서버관리, 서버구축, Apache, MySQL",
+    "summary": "밀리언아서 멀티리전(한·중·싱가포르) 운영. 반복 크래시 이슈를 서버·인프라 관점에서 원인 분석·해결하는 인력으로 합류.",
     "projects": [
       {
         "title": "입사 계기 — 밀리언아서 클라이언트 크래시 이슈 해결",
@@ -189,6 +194,7 @@
     "company": "게임빌",
     "department": "시스템개발팀 팀원",
     "role": "웹개발자",
+    "summary": "Gamevil Live 백엔드·관리자 개발. Oracle 커넥션 초과 이슈(PHP pconnect 원인) 해결, Push 발송 플랫폼·공통 관리자 자동화 구축.",
     "projects": [
       {
         "title": "입사 계기 — Oracle DB Connection 초과 이슈 해결",
@@ -236,6 +242,7 @@
     "company": "RFKOREA",
     "department": "웹팀 팀장",
     "role": "웹개발자",
+    "summary": "소셜커머스·이벤트 플랫폼 웹 서비스 개발·운영 (웹팀 팀장, 지도 API 연동 등).",
     "projects": [
       {
         "title": "소셜 커머스 및 이벤트 플랫폼 웹 서비스 개발 및 유지보수",
@@ -255,6 +262,7 @@
     "company": "그리곤엔터테인먼트",
     "department": "퍼블리싱 사업부",
     "role": "웹개발자, 웹 DB 설계 및 웹 개발, 관리툴 개발",
+    "summary": "칸헬 CBT/오픈베타 사이트 전체 개발 및 장비 인첸트 백엔드 개발.",
     "projects": [
       {
         "title": "칸헬 게임 서비스 CBT / 오픈베타 사이트 전체 개발 및 유지보수 / 장비 인첸트 backend 개발",
@@ -274,6 +282,7 @@
     "company": "실미디어",
     "department": "인터넷사업부",
     "role": "웹개발자, 신규서비스 개발 및 유지보수, 제휴 개발",
+    "summary": "엑스톡 클럽 리뉴얼·퀵공유 등 신규 웹 서비스 개발·제휴 개발.",
     "projects": [
       {
         "title": "엑스톡 클럽 리뉴얼 개발",
@@ -293,6 +302,7 @@
     "company": "웃긴대학재단",
     "department": "개발팀",
     "role": "웹개발자, 서버 관리, 제휴 업무 개발, 커뮤니티 개발",
+    "summary": "웃긴대학 서브 서비스 다수 개발. 대규모 트래픽 시 캐시 최적화·iptables DDoS 대응으로 무중단 운영.",
     "projects": [
       {
         "title": "웃긴대학 서브 서비스 다수 개발",

@@ -91,6 +91,7 @@
               '<span class="role">' + escapeHtml(item.role || '') + '</span> · ' +
               escapeHtml(item.department || '') +
             '</div>' +
+            (item.summary ? '<div class="timeline-summary">' + escapeHtml(item.summary) + '</div>' : '') +
             (projectsHtml ? '<div class="timeline-projects">' + projectsHtml + '</div>' : '') +
             techHtml +
           '</div>' +
