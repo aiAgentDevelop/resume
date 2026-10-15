@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/portfolio.css">
-  <link rel="stylesheet" href="css/refinements.css">
+  <link rel="stylesheet" href="css/portfolio-modern.css">
+
 </head>
 <body>
 
@@ -46,46 +46,27 @@
 
   <!-- Hero -->
   <section id="hero" class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <svg class="dot-grid" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.06)"></circle>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#dots)"></rect>
-      </svg>
-    </div>
-
     <div class="hero-inner">
-      <div class="hero-label reveal">[ GAME SERVER · BACKEND ENGINEER ]</div>
-
-      <h1 class="hero-name" id="hero-name">
-        <span class="line1" data-text="LEE">LEE</span>
-        <span class="line2" data-text="DONG WAN">DONG WAN</span>
-        <span class="line3">이동완</span>
-      </h1>
-
-      <p class="hero-sub reveal">신규 서버 구축 · 라이브 운영 · 운영 도구 개발</p>
-      <p class="hero-tagline reveal">게임 서버의 설계부터 출시와 라이브 운영까지.</p>
-
-      <div class="hero-cta reveal">
-        <a href="#highlights" class="btn btn-primary">핵심 경력 보기</a>
-        <a href="https://github.com/aiAgentDevelop" target="_blank" rel="noopener" class="btn btn-ghost">GitHub →</a>
-        <a href="index.html?stay=1" class="btn btn-outline">정식 이력서</a>
+      <div class="hero-main">
+        <p class="eyebrow">GAME SERVER / BACKEND ENGINEER</p>
+        <h1 id="hero-name">이동완<span>게임 서버를 만들고,<br>서비스를 이어갑니다.</span></h1>
+        <p class="hero-description">신규 게임의 서버·DB 설계부터 콘텐츠 개발, 라이브 장애 대응과 운영 도구까지. 직접 담당한 프로젝트와 역할을 소개합니다.</p>
+        <div class="hero-cta"><a href="#highlights" class="btn btn-primary">핵심 경험 살펴보기 <span aria-hidden="true">↗</span></a><a href="index.html?stay=1" class="btn btn-outline">정식 이력서</a></div>
+        <a class="hero-email" href="mailto:hanwoolchunsa@gmail.com">hanwoolchunsa@gmail.com ↗</a>
       </div>
-
-      <div class="scroll-cue reveal" aria-hidden="true">↓ Scroll</div>
+      <aside class="scope-panel" aria-label="프로젝트별 담당 범위">
+        <p class="eyebrow">CURRENT &amp; EXPERIENCE</p><h2>업무별 담당 범위</h2>
+        <dl><div><dt>포코팡</dt><dd>서버 유지보수 · 신규 콘텐츠 개발</dd></div><div><dt>별도 셀 프로젝트</dt><dd>AWS 환경 직접 관리 · 배포 자동화</dd></div><div><dt>현재 개발 중</dt><dd>재무·인사 그룹웨어 및 ERP</dd></div></dl>
+        <p class="scope-footer"><span class="status-dot"></span>트리노드 PP셀 / PP셀원</p>
+      </aside>
     </div>
   </section>
 
 <section id="highlights" class="section section-evidence">
     <div class="section-inner">
       <div class="section-label">[ EXPERIENCE &amp; EVIDENCE ]</div>
-      <h2 class="section-heading">프로젝트로 보여주는 핵심 경험</h2>
-      <p class="section-lead">서버 구축부터 운영·배포까지, 직접 담당한 업무와 문제 해결 사례입니다.</p>
+      <h2 class="section-heading">필요한 역량, 실제 수행한 경험</h2>
+      <p class="section-lead">서버 설계 · 라이브 운영 · 플랫폼 연동 · 배포 자동화 · 업무 도구</p>
       <div id="highlights-grid" class="evidence-grid"></div>
     </div>
   </section>
@@ -107,7 +88,7 @@
     <div class="section-inner">
       <div class="section-label reveal">[ SHIPPED GAMES ]</div>
       <h2 class="section-heading reveal">참여 게임 작품</h2>
-      <p class="section-lead reveal">백엔드·인프라·운영으로 함께한 라이브 게임들.</p>
+      <p class="section-lead reveal">각 프로젝트에서 직접 담당한 업무를 구분했습니다.</p>
 
       <div class="games-grid">
         <article class="game-card reveal">
@@ -170,7 +151,7 @@
           </div>
           <div class="game-meta">
             <div class="game-title">기타소녀</div>
-            <div class="game-sub">네오위즈 · 2017–2020</div>
+            <div class="game-sub">네오위즈 · 방치형 게임 · 2017–2020</div>
             <div class="game-role">시스템 설계 · DB · Back-End 전체 개발</div>
             <div class="chip-row">
               <span class="chip">PHP7</span>
@@ -298,7 +279,7 @@
       <div class="section-label reveal">[ CONTACT ]</div>
       <div class="contact-grid">
         <div class="contact-left">
-          <h2 class="section-heading reveal">함께 일하실래요?</h2>
+          <h2 class="section-heading reveal">경험을 나누고, 함께 만들겠습니다.</h2>
           <p class="section-lead reveal">팀의 코드 컨벤션 · 개발 플로우와 충돌 없이 녹아드는 것이 핵심이라고 생각합니다.</p>
           <ul class="contact-list reveal" role="list">
             <li>
@@ -319,7 +300,7 @@
           <a href="index.html?stay=1" class="big-link reveal">
             <span class="big-link-label">정식 이력서</span>
             <span class="big-link-arrow" aria-hidden="true">→</span>
-            <span class="big-link-sub">A4 인쇄용 · RESTful API Mock</span>
+            <span class="big-link-sub">경력기술서 · 자기소개서 · A4 인쇄</span>
           </a>
           <a href="api-docs.html" class="big-link reveal">
             <span class="big-link-label">API Docs</span>
@@ -332,32 +313,11 @@
       <div class="footer">
         <div class="footer-row">
           <span>© <span id="copy-year"></span> 이동완 · Lee Dong Wan</span>
-          <span class="footer-meta">Built with HTML · CSS · Vanilla JS · Pretendard</span>
+          <span class="footer-meta">Game Server · Backend Engineering</span>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Shipped Games -->
-
-
-  <!-- Tech Stack (기술 스택) — 두 번째 -->
-
-
-  <!-- Career -->
-
-
-  <!-- About -->
-
-
-  <!-- What I Do -->
-
-
-  <!-- Open Source -->
-
-
-  <!-- Contact / Footer -->
-
 
 </div>
 

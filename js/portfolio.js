@@ -1,6 +1,6 @@
 /* ================================================================
    Portfolio Renderer
-   - api/*.js의 window.ResumeAPI 데이터를 다크 테마 섹션으로 렌더링
+   - api/*.js의 window.ResumeAPI 데이터를 경력 카드와 상세 목록으로 렌더링
    - IntersectionObserver 기반 scroll reveal
    - Sticky nav active state
    - Career timeline 토글 (최근 4개 ↔ 전체)
@@ -102,7 +102,7 @@
               escapeHtml(window.ResumeView.position(item)) +
             '</div>' +
             (item.summary ? '<div class="timeline-summary">' + escapeHtml(item.summary) + '</div>' : '') +
-            (projectsHtml ? '<div class="timeline-projects">' + projectsHtml + '</div>' : '') +
+            (projectsHtml ? '<details class="career-details"' + (isCurrent ? ' open' : '') + '><summary>담당 프로젝트 · 상세 경력 (' + projects.length + ')</summary><div class="timeline-projects">' + projectsHtml + '</div></details>' : '') +
             techHtml +
           '</div>' +
         '</div>';
@@ -134,18 +134,33 @@
         event.stopImmediatePropagation();
         if (!careerExpanded) btn.click();
         var target = document.querySelector(link.getAttribute('href'));
-        if (target) { target.scrollIntoView({ behavior: 'auto', block: 'start' }); target.focus({ preventScroll: true }); }
+        if (target) {
+          var details = target.querySelector('details');
+          if (details) details.open = true;
+          target.scrollIntoView({ behavior: 'auto', block: 'start' }); target.focus({ preventScroll: true });
+        }
       });
     });
     var expandedBeforePrint;
+    var detailsBeforePrint;
     window.addEventListener('beforeprint', function () {
       expandedBeforePrint = careerExpanded;
+      detailsBeforePrint = {};
+      document.querySelectorAll('.timeline-item').forEach(function (item) {
+        var details = item.querySelector('details');
+        if (details) detailsBeforePrint[item.id] = details.open;
+      });
       careerExpanded = true;
       renderCareer(career);
+      document.querySelectorAll('.career-details').forEach(function (details) { details.open = true; });
     });
     window.addEventListener('afterprint', function () {
       careerExpanded = expandedBeforePrint;
       renderCareer(career);
+      document.querySelectorAll('.timeline-item').forEach(function (item) {
+        var details = item.querySelector('details');
+        if (details && Object.prototype.hasOwnProperty.call(detailsBeforePrint, item.id)) details.open = detailsBeforePrint[item.id];
+      });
     });
   }
 
@@ -291,22 +306,27 @@
   // Sticky Nav — Active state
   // ─────────────────────────────────────────────────────────────
   function setupNavActiveState() {
-    if (!('IntersectionObserver' in window)) return;
-    var sections = document.querySelectorAll('section[id]');
     var links = document.querySelectorAll('.nav-link[data-nav]');
-
-    var sectionObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = entry.target.id;
-        links.forEach(function (l) {
-          if (l.getAttribute('data-nav') === id) l.classList.add('is-active');
-          else l.classList.remove('is-active');
-        });
+    var pending = false;
+    function update() {
+      pending = false;
+      var active = '';
+      var marker = document.querySelector('.nav').getBoundingClientRect().height + 100;
+      links.forEach(function (link) {
+        var section = el(link.getAttribute('data-nav'));
+        if (section && section.getBoundingClientRect().top <= marker) active = section.id;
       });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    sections.forEach(function (s) { sectionObserver.observe(s); });
+      links.forEach(function (link) {
+        var selected = link.getAttribute('data-nav') === active;
+        link.classList.toggle('is-active', selected);
+        if (selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    function schedule() { if (!pending) { pending = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    update();
   }
 
   // ─────────────────────────────────────────────────────────────

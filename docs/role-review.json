@@ -1,0 +1,20 @@
+{
+  "source": "https://job-boards.greenhouse.io/loonshotgames/jobs/8379840002",
+  "reviewedOn": "2026-10-15",
+  "position": "Server Programmer - Project AA",
+  "mapping": [
+    {"requirement": "HTTP 게임 서버 및 초기 설계", "evidence": "Rule The Coin 서버·관리자, 기타소녀 및 탭소닉 시스템·DB 설계, RESTful API 설계"},
+    {"requirement": "게임 서버 개발 및 라이브 운영", "evidence": "기타소녀·탭소닉·밀리언아서·포코팡 경력", "scope": "포코팡은 서버 유지보수와 신규 콘텐츠 개발. 인프라 설계 경력으로 연결하지 않음"},
+    {"requirement": "RDB 및 NoSQL 운영", "evidence": "MySQL·MariaDB·Redis, 샤딩·복제 구성 경력"},
+    {"requirement": "AWS·컨테이너·Kubernetes", "evidence": "사용자가 확인한 별도 셀 프로젝트 AWS 직접 관리 및 Kubernetes 사용", "scope": "클러스터 구축·플랫폼 고도화 수준은 확인되지 않음"},
+    {"requirement": "CI/CD 및 IaC", "evidence": "Jenkins 배포, GitHub Actions push 기반 개발 서버 자동 배포", "scope": "Terraform 및 IaC 경험은 확인되지 않아 기재하지 않음"},
+    {"requirement": "계정·결제·외부 플랫폼", "evidence": "Hive 회원, 싱가포르 결제 모듈, 중국 Push 연동"},
+    {"requirement": "운영 도구·백오피스", "evidence": "게임 관리자, 공통 관리자 생성, 현재 그룹웨어·ERP"},
+    {"requirement": "성능 분석·디버깅·기술 협업", "evidence": "DBA·시스템팀과 SQLRelay 병목 진단, Oracle 연결 초과 조치, PHP 실행 환경 개선"},
+    {"requirement": "Golang", "evidence": "포코팡 서버 유지보수·콘텐츠 개발 기술"},
+    {"requirement": "해외 출장 가능", "scope": "확인되지 않아 추가하지 않음"}
+  ],
+  "corrections": ["기타소녀는 방치형 게임", "포코팡 인프라 설계 경력 없음", "Coolify는 개인 환경 사용", "현재 소속·직책은 PP셀 / PP셀원"],
+  "designReference": "https://www.nngroup.com/articles/cards-component/",
+  "designDecision": "상단 핵심 경험은 카드로, 회사별 경력은 정렬된 목록과 상세 펼치기로 제공. 밝은 배경과 네이비 헤더, 모바일에서도 접근 가능한 내비게이션 적용"
+}

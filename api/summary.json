@@ -17,7 +17,7 @@
     {
       "title": "신규 게임 서버 구축",
       "evidence": "Rule The Coin · 기타소녀 · 탭소닉 월드챔피언",
-      "detail": "서버·DB·인프라 설계와 백엔드 구현. Rule The Coin은 약 1개월 반 안에 서버·관리자를 개발해 소프트런칭.",
+      "detail": "방치형 기타소녀와 탭소닉 월드챔피언의 시스템·DB 설계 및 백엔드 개발. Rule The Coin 서버·관리자를 약 1개월 반 안에 개발해 소프트런칭.",
       "careerId": "career-0"
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "title": "AWS 관리·배포 자동화",
-      "evidence": "AWS · Kubernetes · IDP · Jenkins · GitHub Actions",
-      "detail": "셀 프로젝트 AWS 직접 관리 및 Kubernetes 사용. IDP·Jenkins 배포와 push 기반 개발 서버 자동 반영 구성.",
+      "evidence": "포코팡과 별도인 셀 프로젝트 · AWS · CI/CD",
+      "detail": "별도 셀 프로젝트의 AWS 환경 직접 관리. Kubernetes 사용, IDP·Jenkins 배포, GitHub Actions 기반 개발 서버 자동 반영 경험.",
       "careerId": "career-0"
     },
     {

@@ -31,6 +31,10 @@ const server = http.createServer((req, res) => {
       assert((await page.locator('#career-content').innerText()).includes('PP셀 / PP셀원'));
       assert(!(await page.locator('#career-content').innerText()).includes('입사 계기'));
       assert((await page.locator('#career-title').innerText()).includes(api('summary').career.totalExperience));
+      assert((await page.locator('#career-content').innerText()).includes('방치형 게임 기타소녀'));
+      assert(!(await page.locator('#career-content').innerText()).includes('음악게임 3종'));
+      const pokopang = api('career')[0].projects.find(p => p.title.startsWith('포코팡'));
+      assert(!JSON.stringify(pokopang).includes('인프라'));
       await page.goto(base + 'portfolio.html');
       assert.equal(await page.locator('.evidence-card').count(), 5);
       assert.equal(await page.locator('.about-chapter').count(), api('about').sections.length);
@@ -38,6 +42,8 @@ const server = http.createServer((req, res) => {
       await page.locator('.evidence-link[href="#career-4"]').click();
       assert.equal(await page.locator('.timeline-item').count(), api('career').length);
       assert.equal(await page.evaluate(() => document.activeElement.id), 'career-4');
+      assert(await page.locator('#career-4 details').getAttribute('open') !== null);
+      await page.locator('.career-details:not([open]) summary').evaluateAll(items => items.forEach(item => item.click()));
       const text = await page.locator('#career-timeline').innerText();
       for (const term of ['SQLRelay', 'pconnect()', 'GitHub Actions', 'PP셀 / PP셀원', '결제']) assert(text.includes(term), term);
       await page.locator('#career-toggle').click();
@@ -53,10 +59,15 @@ const server = http.createServer((req, res) => {
           await page.locator('#' + section).scrollIntoViewIfNeeded();
           await page.screenshot({ path: path.join(output, section + '-mobile.png') });
         }
+        await page.setViewportSize({width:1440, height:1000});
+        await page.evaluate(() => scrollTo(0, 0));
+        await page.waitForFunction(() => document.querySelectorAll('.nav-link.is-active').length === 0);
+        await page.screenshot({path: path.join(output, 'hero-desktop.png')});
       }
       await page.emulateMedia({ media: 'print' });
       await page.evaluate(() => dispatchEvent(new Event('beforeprint')));
       assert.equal(await page.locator('.timeline-item').count(), api('career').length);
+      assert.equal(await page.locator('.career-details:not([open])').count(), 0);
       await page.evaluate(() => dispatchEvent(new Event('afterprint')));
       await page.emulateMedia({ media: 'screen' });
     }
