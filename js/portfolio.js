@@ -25,15 +25,21 @@
   // ─────────────────────────────────────────────────────────────
   function renderAbout(about) {
     if (!about || !about.sections) return;
-    var sections = about.sections;
-    var p1 = el('about-p1');
-    var p2 = el('about-p2');
-    if (p1 && sections[0]) {
-      // 첫 섹션의 첫 두 문단만 발췌
-      var paragraphs = sections[0].content.split('\n\n');
-      p1.innerHTML = highlightAccent(paragraphs[0] || '');
-      if (p2) p2.innerHTML = highlightAccent(paragraphs[1] || paragraphs[0] || '');
-    }
+    el('about-full').innerHTML = about.sections.map(function (s) {
+      return '<article class="about-chapter"><h3>' + escapeHtml(s.heading) + '</h3>' +
+        s.content.split('\n\n').map(function (p) { return '<p class="about-p">' + escapeHtml(p) + '</p>'; }).join('') + '</article>';
+    }).join('');
+  }
+
+  function renderHighlights(summary) {
+    el('highlights-grid').innerHTML = summary.highlights.map(function (h) {
+      return '<article class="evidence-card"><p class="evidence-label">' + escapeHtml(h.evidence) +
+        '</p><h3>' + escapeHtml(h.title) + '</h3><p>' + escapeHtml(h.detail) +
+        '</p><a href="#' + escapeHtml(h.careerId) + '" class="evidence-link">경력 근거 보기 →</a></article>';
+    }).join('');
+    el('career-total').textContent = window.ResumeView.experience();
+    el('career-note').textContent = summary.career.calculationNote;
+    el('experience-stat').textContent = window.ResumeView.experience().replace('총 ', '');
   }
 
   function highlightAccent(text) {
@@ -66,7 +72,11 @@
 
       var projectsHtml = projects.map(function (p) {
         var cls = 'timeline-project' + (p.highlight ? ' is-highlight' : '');
-        return '<div class="' + cls + '">' + escapeHtml(p.title) + '</div>';
+        return '<div class="' + cls + '"><strong>' + escapeHtml(p.title) + '</strong>' +
+          ((p.description || []).length ? '<ul>' + p.description.map(function (d) {
+            return '<li>' + escapeHtml(d) + '</li>';
+          }).join('') + '</ul>' : '') +
+          ((p.techStack || []).length ? '<p class="project-stack">' + p.techStack.map(escapeHtml).join(' · ') + '</p>' : '') + '</div>';
       }).join('');
 
       var techSet = {};
@@ -80,7 +90,7 @@
           '</div>'
         : '';
 
-      return '<div class="timeline-item' + (isCurrent ? ' is-current' : '') + ' reveal">' +
+      return '<div id="' + escapeHtml(item.id) + '" tabindex="-1" class="timeline-item' + (isCurrent ? ' is-current' : '') + ' reveal">' +
           '<div class="timeline-period">' +
             escapeHtml(item.period) +
             '<span class="duration">' + escapeHtml(item.duration) + '</span>' +
@@ -89,7 +99,7 @@
             '<div class="timeline-company">' + escapeHtml(item.company) + '</div>' +
             '<div class="timeline-meta">' +
               '<span class="role">' + escapeHtml(item.role || '') + '</span> · ' +
-              escapeHtml(item.department || '') +
+              escapeHtml(window.ResumeView.position(item)) +
             '</div>' +
             (item.summary ? '<div class="timeline-summary">' + escapeHtml(item.summary) + '</div>' : '') +
             (projectsHtml ? '<div class="timeline-projects">' + projectsHtml + '</div>' : '') +
@@ -116,6 +126,25 @@
       btn.textContent = careerExpanded
         ? '접기 (최근 ' + DEFAULT_CAREER_COUNT + '개만)'
         : '전체 펼치기 (' + career.length + '개 회사)';
+      renderCareer(career);
+    });
+    document.querySelectorAll('.evidence-link').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (!careerExpanded) btn.click();
+        var target = document.querySelector(link.getAttribute('href'));
+        if (target) { target.scrollIntoView({ behavior: 'auto', block: 'start' }); target.focus({ preventScroll: true }); }
+      });
+    });
+    var expandedBeforePrint;
+    window.addEventListener('beforeprint', function () {
+      expandedBeforePrint = careerExpanded;
+      careerExpanded = true;
+      renderCareer(career);
+    });
+    window.addEventListener('afterprint', function () {
+      careerExpanded = expandedBeforePrint;
       renderCareer(career);
     });
   }
@@ -176,7 +205,7 @@
     },
     {
       label: 'Infra & DevOps',
-      match: ['AWS', 'Docker', 'Kubernetes', 'Coolify', 'CI/CD Pipeline', 'Linux', 'Apache', 'Nginx']
+      match: ['AWS', 'Docker', 'Kubernetes', 'Coolify', 'IDP', 'Jenkins', 'GitHub Actions', 'CI/CD Pipeline', 'Linux', 'Apache', 'Nginx']
     },
     {
       label: 'AI Tooling',
@@ -359,6 +388,7 @@
     if (!API) return;
 
     setFooterYear();
+    renderHighlights(API.summary);
     renderAbout(API.about);
     renderCareer(API.career || []);
     setupCareerToggle(API.career || []);

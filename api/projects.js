@@ -18,7 +18,14 @@ window.ResumeAPI.projects = {
         "자체 학습: verify 실수 감지 → 근본 원인 분류 → hook 규칙 · 가이드 노트 제안 → 승인 후 자동 반영",
         "에이전트 34종 + 가이드 18종 카탈로그 내장, project-config.yaml 기반 설정 병합 · 검증 스크립트 포함"
       ],
-      "techStack": ["Claude Code", "JavaScript", "Shell", "YAML", "GitHub Actions", "AI Orchestration"]
+      "techStack": [
+        "Claude Code",
+        "JavaScript",
+        "Shell",
+        "YAML",
+        "GitHub Actions",
+        "AI Orchestration"
+      ]
     },
     {
       "name": "nestjs-vibe-engine",
@@ -34,7 +41,16 @@ window.ResumeAPI.projects = {
         "로깅: Winston (API / Socket / Error 분리 + Daily Rotate + 자동 백업)",
         "Swagger + AsyncAPI 자동 문서화, Jest + Supertest 테스트 259건, 브라우저 Setup Wizard로 .env · DB 자동 생성"
       ],
-      "techStack": ["NestJS", "TypeScript", "Prisma", "MySQL", "Redis", "Socket.io", "Winston", "Jest"]
+      "techStack": [
+        "NestJS",
+        "TypeScript",
+        "Prisma",
+        "MySQL",
+        "Redis",
+        "Socket.io",
+        "Winston",
+        "Jest"
+      ]
     }
   ]
 };

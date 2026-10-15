@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>이동완 | Backend Engineer × AI Agent Orchestrator</title>
-  <meta name="description" content="18년 게임 서버 백엔드 + AI Agent 오케스트레이션. NestJS, AWS, Claude Code, 오픈소스 2종 운영.">
+  <title>이동완 | 게임 서버 · 백엔드 개발자</title>
+  <meta name="description" content="신규 게임 서버 설계·출시·라이브 운영, AWS 환경 관리, 계정·결제 연동과 운영 도구 개발 경험.">
 
   <!-- Pretendard Variable -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/refinements.css">
 </head>
 <body>
 
@@ -30,13 +31,12 @@
         <span class="nav-name">DONG WAN</span>
       </a>
       <ul class="nav-list" role="list">
-        <li><a href="#games" class="nav-link" data-nav="games">Games</a></li>
-        <li><a href="#skills" class="nav-link" data-nav="skills">Skills</a></li>
-        <li><a href="#career" class="nav-link" data-nav="career">Career</a></li>
-        <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
-        <li><a href="#what-i-do" class="nav-link" data-nav="what-i-do">What I Do</a></li>
-        <li><a href="#oss" class="nav-link" data-nav="oss">OSS</a></li>
-        <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+        <li><a href="#highlights" class="nav-link" data-nav="highlights">핵심 경험</a></li>
+        <li><a href="#career" class="nav-link" data-nav="career">경력</a></li>
+        <li><a href="#games" class="nav-link" data-nav="games">참여 게임</a></li>
+        <li><a href="#about" class="nav-link" data-nav="about">자기소개</a></li>
+        <li><a href="#skills" class="nav-link" data-nav="skills">기술</a></li>
+        <li><a href="#oss" class="nav-link" data-nav="oss">오픈소스</a></li>
       </ul>
       <a href="index.html?stay=1" class="nav-resume" aria-label="정식 이력서 페이지로 이동">
         <span aria-hidden="true">←</span> 정식 이력서
@@ -60,7 +60,7 @@
     </div>
 
     <div class="hero-inner">
-      <div class="hero-label reveal">[ AI-AUGMENTED FULL-STACK BACKEND ARCHITECT ]</div>
+      <div class="hero-label reveal">[ GAME SERVER · BACKEND ENGINEER ]</div>
 
       <h1 class="hero-name" id="hero-name">
         <span class="line1" data-text="LEE">LEE</span>
@@ -68,11 +68,11 @@
         <span class="line3">이동완</span>
       </h1>
 
-      <p class="hero-sub reveal">[ BACKEND ENGINEER &nbsp;×&nbsp; AI AGENT ORCHESTRATOR ]</p>
-      <p class="hero-tagline reveal">18년 게임 서버, 그 위에 AI Agent를 올립니다.</p>
+      <p class="hero-sub reveal">신규 서버 구축 · 라이브 운영 · 운영 도구 개발</p>
+      <p class="hero-tagline reveal">게임 서버의 설계부터 출시와 라이브 운영까지.</p>
 
       <div class="hero-cta reveal">
-        <a href="#about" class="btn btn-primary">둘러보기</a>
+        <a href="#highlights" class="btn btn-primary">핵심 경력 보기</a>
         <a href="https://github.com/aiAgentDevelop" target="_blank" rel="noopener" class="btn btn-ghost">GitHub →</a>
         <a href="index.html?stay=1" class="btn btn-outline">정식 이력서</a>
       </div>
@@ -81,7 +81,28 @@
     </div>
   </section>
 
-  <!-- Shipped Games -->
+<section id="highlights" class="section section-evidence">
+    <div class="section-inner">
+      <div class="section-label">[ EXPERIENCE &amp; EVIDENCE ]</div>
+      <h2 class="section-heading">프로젝트로 보여주는 핵심 경험</h2>
+      <p class="section-lead">서버 구축부터 운영·배포까지, 직접 담당한 업무와 문제 해결 사례입니다.</p>
+      <div id="highlights-grid" class="evidence-grid"></div>
+    </div>
+  </section>
+
+  <section id="career" class="section section-career">
+    <div class="section-inner">
+      <div class="section-label reveal">[ CAREER ]</div>
+      <h2 class="section-heading reveal">경력 타임라인 <span class="heading-meta" id="career-total"></span></h2>
+      <p id="career-note" class="section-lead"></p><div id="career-timeline" class="timeline"></div>
+      <div class="timeline-toggle-wrap reveal">
+        <button type="button" id="career-toggle" class="btn btn-ghost btn-sm" aria-expanded="false">
+          전체 펼치기 (10개 회사)
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section id="games" class="section section-games">
     <div class="section-inner">
       <div class="section-label reveal">[ SHIPPED GAMES ]</div>
@@ -229,7 +250,32 @@
     </div>
   </section>
 
-  <!-- Tech Stack (기술 스택) — 두 번째 -->
+  <section id="about" class="section section-about">
+    <div class="section-inner">
+      <div class="section-label reveal">[ ABOUT ]</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-heading reveal">프로젝트에 기여할 수 있는 경험</h2>
+          <div id="about-full"></div>
+        </div>
+        <aside class="about-stats" aria-label="핵심 지표">
+          <div class="stat-card reveal">
+            <div class="stat-value"><span id="experience-stat"></span></div>
+            <div class="stat-label">웹·게임 개발 전체 경력</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-value">2<span class="stat-unit"> OSS</span></div>
+            <div class="stat-label">Author / Maintainer</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-value">AWS</div>
+            <div class="stat-label">셀 프로젝트 환경 직접 관리</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <section id="skills" class="section section-skills">
     <div class="section-inner">
       <div class="section-label reveal">[ TECH STACK ]</div>
@@ -238,105 +284,6 @@
     </div>
   </section>
 
-  <!-- Career -->
-  <section id="career" class="section section-career">
-    <div class="section-inner">
-      <div class="section-label reveal">[ CAREER ]</div>
-      <h2 class="section-heading reveal">경력 타임라인 <span class="heading-meta">총 18년 1개월</span></h2>
-      <div id="career-timeline" class="timeline"></div>
-      <div class="timeline-toggle-wrap reveal">
-        <button type="button" id="career-toggle" class="btn btn-ghost btn-sm" aria-expanded="false">
-          전체 펼치기 (10개 회사)
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section section-about">
-    <div class="section-inner">
-      <div class="section-label reveal">[ ABOUT ]</div>
-      <div class="about-grid">
-        <div class="about-text">
-          <h2 class="section-heading reveal">기술 위에 한 사람 몫을 온전히.</h2>
-          <p class="about-p reveal" id="about-p1"></p>
-          <p class="about-p reveal" id="about-p2"></p>
-        </div>
-        <aside class="about-stats" aria-label="핵심 지표">
-          <div class="stat-card reveal">
-            <div class="stat-value">18<span class="stat-unit">+ years</span></div>
-            <div class="stat-label">Game Server Backend</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-value">2<span class="stat-unit"> OSS</span></div>
-            <div class="stat-label">Author / Maintainer</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-value">100<span class="stat-unit">%</span></div>
-            <div class="stat-label">오픈 일정 준수</div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- What I Do -->
-  <section id="what-i-do" class="section section-do">
-    <div class="section-inner">
-      <div class="section-label reveal">[ WHAT I DO ]</div>
-      <h2 class="section-heading reveal">팀에 가져갈 수 있는 것</h2>
-      <p class="section-lead reveal">한 사람이 다루기 어려운 범위의 작업도, 품질을 유지한 채 끝까지 끌고 갑니다.</p>
-
-      <div class="do-grid">
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">🎮</div>
-          <h3 class="do-title">Game Server Backend</h3>
-          <p class="do-desc">밀리언아서 글로벌 6개국, 기타소녀, 탭소닉, 포코팡, 키자니아까지 — 시스템 설계 · DB · 인프라 · 운영을 한 사람 몫으로.</p>
-          <div class="chip-row">
-            <span class="chip">NestJS</span>
-            <span class="chip">Golang</span>
-            <span class="chip">PHP</span>
-            <span class="chip">Socket.io</span>
-          </div>
-        </article>
-
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">🤖</div>
-          <h3 class="do-title">AI Agent Orchestration</h3>
-          <p class="do-desc">Plan · Implement · Verify 3단계 에이전트를 병렬로 오케스트레이션하는 Harness Skill을 만들어 씁니다.</p>
-          <div class="chip-row">
-            <span class="chip">Claude Code</span>
-            <span class="chip">Harness Skill</span>
-            <span class="chip">MCP</span>
-          </div>
-        </article>
-
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">⚡</div>
-          <h3 class="do-title">Infra &amp; CI/CD</h3>
-          <p class="do-desc">AWS · K8s · Docker · Coolify · Supabase Self-host로 PR별 자동 URL 생성 환경까지 직접 구성.</p>
-          <div class="chip-row">
-            <span class="chip">AWS</span>
-            <span class="chip">Kubernetes</span>
-            <span class="chip">Docker</span>
-            <span class="chip">Coolify</span>
-          </div>
-        </article>
-
-        <article class="do-card reveal" data-tilt>
-          <div class="do-icon" aria-hidden="true">📦</div>
-          <h3 class="do-title">Open Source</h3>
-          <p class="do-desc">개인 운영 OSS 2종 — Claude Code 마켓플레이스 플러그인, NestJS 통합 Core 스타터를 직접 유지보수.</p>
-          <div class="chip-row">
-            <span class="chip">harness-marketplace-plugin</span>
-            <span class="chip">nestjs-vibe-engine</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Open Source -->
   <section id="oss" class="section section-oss">
     <div class="section-inner">
       <div class="section-label reveal">[ OPEN SOURCE ]</div>
@@ -346,7 +293,6 @@
     </div>
   </section>
 
-  <!-- Contact / Footer -->
   <section id="contact" class="section section-contact">
     <div class="section-inner">
       <div class="section-label reveal">[ CONTACT ]</div>
@@ -392,6 +338,27 @@
     </div>
   </section>
 
+  <!-- Shipped Games -->
+
+
+  <!-- Tech Stack (기술 스택) — 두 번째 -->
+
+
+  <!-- Career -->
+
+
+  <!-- About -->
+
+
+  <!-- What I Do -->
+
+
+  <!-- Open Source -->
+
+
+  <!-- Contact / Footer -->
+
+
 </div>
 
 <!-- API Mock Data (file:// 호환) -->
@@ -405,6 +372,7 @@
 <script src="api/military.js"></script>
 
 <!-- Apps -->
+<script src="js/resume-common.js"></script>
 <script src="js/portfolio.js"></script>
 
 </body>

@@ -8,13 +8,13 @@ window.ResumeAPI.profile = {
   "email": "hanwoolchunsa@gmail.com",
   "address": "경기도 용인시 고림동",
   "photo": "images/profile.jpg",
-  "title": "백엔드 개발자 이력서",
+  "title": "게임 서버 · 백엔드 개발자 이력서",
   "github": "github.com/aiAgentDevelop",
   "repositories": [
     {
       "name": "harness-marketplace-plugin",
       "url": "https://github.com/aiAgentDevelop/harness-marketplace-plugin",
-      "note": "Claude Code 마켓플레이스 플러그인 (v0.7.0) — CI/CD 파이프라인·하네스 스킬 자동 생성"
+      "note": "AI 개발 지침·검증 및 CI/CD 구성을 지원하는 오픈소스"
     },
     {
       "name": "nestjs-vibe-engine",

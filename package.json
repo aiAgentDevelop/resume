@@ -4,7 +4,10 @@
   "description": "이동완 이력서를 RESTful API 구조의 Mock 데이터로 구성한 정적 웹사이트입니다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sync-data": "node scripts/sync-data.js",
+    "check:data": "node scripts/sync-data.js --check",
+    "test": "npm run check:data && node scripts/check-resume.js",
+    "pdf": "node scripts/generate-pdf.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/DONGWAN-LEE/resume-restfulAPI/issues"
   },
-  "homepage": "https://github.com/DONGWAN-LEE/resume-restfulAPI#readme"
+  "homepage": "https://github.com/DONGWAN-LEE/resume-restfulAPI#readme",
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
 }

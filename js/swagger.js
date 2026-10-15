@@ -121,7 +121,9 @@ var API_DOCS = [
             "period": { type: "string", description: "재직 기간", example: "2021. 03 ~ 재직중" },
             "duration": { type: "string", description: "근무 기간", example: "재직중" },
             "company": { type: "string", description: "회사명", example: "트리노드" },
-            "department": { type: "string", description: "부서/팀", example: "Live실 포코팡 서버팀" },
+            "department": { type: "string", description: "소속 조직", example: "PP셀" },
+            "grade": { type: "string", nullable: true, description: "직급 (확인되지 않은 경우 null)", example: null },
+            "position": { type: "string", nullable: true, description: "직책 (확인되지 않은 경우 null)", example: "PP셀원" },
             "role": { type: "string", description: "주요직무", example: "게임개발자" },
             "projects": {
               type: "array",
