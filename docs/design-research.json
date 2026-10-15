@@ -1,0 +1,18 @@
+{
+  "reviewedOn": "2026-10-15",
+  "method": "공개 사이트의 본문·정보 구조를 읽고 Chromium 1440px 화면을 직접 캡처하여 비교. 유행 전체를 대표하는 통계가 아닌 실제 운영 사례를 바탕으로 디자인 방향을 선택.",
+  "references": [
+    {"url": "https://design.google/", "observed": "큰 제목과 여백, 이미지 중심의 편집 구조", "adaptation": "이름·직무를 명확하게 보여주는 표제와 실제 참여 작품 이미지를 우선 배치"},
+    {"url": "https://design.google/library/choosing-web-fonts-beginners-guide", "observed": "텍스트의 길이·크기·역할에 따른 서체 선택과 시각적 위계", "adaptation": "한글 본문은 Pretendard 유지. 영문 이름에만 시스템 serif를 적용하고 역할별 크기와 행간 구분"},
+    {"url": "https://brittanychiang.com/", "observed": "고정된 소개·탐색 영역과 세로로 읽는 경력 목록", "adaptation": "데스크톱 왼쪽 고정 목차, 정렬된 회사명·재직 기간, 상세 펼치기"},
+    {"url": "https://paco.me/", "observed": "담백한 자기소개, 소수의 텍스트 링크와 제한된 시각적 장식", "adaptation": "홍보 문구와 반복 박스를 덜고 실제 경력과 연락처 중심으로 구성"},
+    {"url": "https://rauno.me/", "observed": "독자적인 타이포그래피와 표현 중심의 인터랙션", "adaptation": "개인 포트폴리오의 개성은 참고하되 가로 탐색 등은 경력 검토 목적에 맞지 않아 채택하지 않음"}
+  ],
+  "design": {
+    "palette": "따뜻한 흰색, 짙은 회색, 제한적인 적갈색 링크",
+    "layout": "왼쪽 목차 + 본문 열. 대표 작업 3개, 핵심 경험 목록, 경력 순서",
+    "mobile": "목차를 상단 가로 탐색으로 전환. 프로젝트는 썸네일과 본문을 나란히 배치",
+    "interaction": "본문 바로가기, 키보드 가능한 native details, 관련 경력 링크, 현재 위치 표시, 동작 줄이기 지원",
+    "scope": "경력 원본과 구형 이력서 유지. 카드형 HTML/CSS/JS와 검증 코드만 재설계"
+  }
+}

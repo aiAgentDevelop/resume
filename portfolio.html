@@ -8,15 +8,11 @@
 
   <!-- Pretendard Variable -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <!-- JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/portfolio-modern.css">
+  <link rel="stylesheet" href="css/portfolio-editorial.css">
 
 </head>
 <body>
+<a href="#hero" class="skip-link">본문으로 이동</a>
 
 <!-- ================================================================
      풀 포트폴리오
@@ -24,74 +20,68 @@
 <div id="portfolio-app" class="portfolio-app">
 
   <!-- Sticky Nav -->
-  <nav class="nav" aria-label="Portfolio navigation">
+  <nav class="nav" aria-label="이력서 목차">
     <div class="nav-inner">
-      <a href="#hero" class="nav-brand" aria-label="홈으로">
-        <span class="nav-mark">LD</span>
-        <span class="nav-name">DONG WAN</span>
-      </a>
-      <ul class="nav-list" role="list">
-        <li><a href="#highlights" class="nav-link" data-nav="highlights">핵심 경험</a></li>
-        <li><a href="#career" class="nav-link" data-nav="career">경력</a></li>
-        <li><a href="#games" class="nav-link" data-nav="games">참여 게임</a></li>
-        <li><a href="#about" class="nav-link" data-nav="about">자기소개</a></li>
-        <li><a href="#skills" class="nav-link" data-nav="skills">기술</a></li>
-        <li><a href="#oss" class="nav-link" data-nav="oss">오픈소스</a></li>
+      <a href="#hero" class="nav-brand">이동완<span>Lee Dongwan</span></a>
+      <p class="nav-caption">게임 서버 · 백엔드 개발자</p>
+      <ul class="nav-list">
+        <li><a href="#games" class="nav-link" data-nav="games"><span>01</span> 참여 프로젝트</a></li>
+        <li><a href="#highlights" class="nav-link" data-nav="highlights"><span>02</span> 핵심 경험</a></li>
+        <li><a href="#career" class="nav-link" data-nav="career"><span>03</span> 경력</a></li>
+        <li><a href="#about" class="nav-link" data-nav="about"><span>04</span> 자기소개</a></li>
+        <li><a href="#skills" class="nav-link" data-nav="skills"><span>05</span> 기술</a></li>
+        <li><a href="#oss" class="nav-link" data-nav="oss"><span>06</span> 오픈소스</a></li>
       </ul>
-      <a href="index.html?stay=1" class="nav-resume" aria-label="정식 이력서 페이지로 이동">
-        <span aria-hidden="true">←</span> 정식 이력서
-      </a>
+      <div class="nav-bottom"><a href="index.html?stay=1" class="nav-resume">정식 이력서 <span aria-hidden="true">↗</span></a><a href="https://github.com/aiAgentDevelop" target="_blank" rel="noopener">GitHub ↗</a><p>경력 · 작업 기록</p></div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section id="hero" class="hero">
+  <section id="hero" class="hero" tabindex="-1">
     <div class="hero-inner">
-      <div class="hero-main">
-        <p class="eyebrow">GAME SERVER / BACKEND ENGINEER</p>
-        <h1 id="hero-name">이동완<span>게임 서버를 만들고,<br>서비스를 이어갑니다.</span></h1>
-        <p class="hero-description">신규 게임의 서버·DB 설계부터 콘텐츠 개발, 라이브 장애 대응과 운영 도구까지. 직접 담당한 프로젝트와 역할을 소개합니다.</p>
-        <div class="hero-cta"><a href="#highlights" class="btn btn-primary">핵심 경험 살펴보기 <span aria-hidden="true">↗</span></a><a href="index.html?stay=1" class="btn btn-outline">정식 이력서</a></div>
-        <a class="hero-email" href="mailto:hanwoolchunsa@gmail.com">hanwoolchunsa@gmail.com ↗</a>
-      </div>
-      <aside class="scope-panel" aria-label="프로젝트별 담당 범위">
-        <p class="eyebrow">CURRENT &amp; EXPERIENCE</p><h2>업무별 담당 범위</h2>
-        <dl><div><dt>포코팡</dt><dd>서버 유지보수 · 신규 콘텐츠 개발</dd></div><div><dt>별도 셀 프로젝트</dt><dd>AWS 환경 직접 관리 · 배포 자동화</dd></div><div><dt>현재 개발 중</dt><dd>재무·인사 그룹웨어 및 ERP</dd></div></dl>
-        <p class="scope-footer"><span class="status-dot"></span>트리노드 PP셀 / PP셀원</p>
-      </aside>
+      <div class="folio-line"><span>이력서 &amp; 포트폴리오</span><span>2026</span></div>
+      <h1 id="hero-name">이동완<span>Lee Dongwan</span></h1>
+      <p class="hero-role">게임 서버 · 백엔드 개발자</p>
+      <p class="hero-description">기타소녀, 탭소닉, Rule The Coin의 서버를 만들었습니다.<br class="desktop-break">포코팡의 서버 유지보수와 콘텐츠 개발을 맡았고,<br class="desktop-break">지금은 사내 재무·인사 업무를 위한 그룹웨어와 ERP를 개발하고 있습니다.</p>
+      <div class="hero-meta"><p>현재 <strong>트리노드 PP셀 / PP셀원</strong></p><a href="mailto:hanwoolchunsa@gmail.com">hanwoolchunsa@gmail.com <span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
 
-<section id="highlights" class="section section-evidence">
-    <div class="section-inner">
-      <div class="section-label">[ EXPERIENCE &amp; EVIDENCE ]</div>
-      <h2 class="section-heading">필요한 역량, 실제 수행한 경험</h2>
-      <p class="section-lead">서버 설계 · 라이브 운영 · 플랫폼 연동 · 배포 자동화 · 업무 도구</p>
-      <div id="highlights-grid" class="evidence-grid"></div>
-    </div>
-  </section>
-
-  <section id="career" class="section section-career">
-    <div class="section-inner">
-      <div class="section-label reveal">[ CAREER ]</div>
-      <h2 class="section-heading reveal">경력 타임라인 <span class="heading-meta" id="career-total"></span></h2>
-      <p id="career-note" class="section-lead"></p><div id="career-timeline" class="timeline"></div>
-      <div class="timeline-toggle-wrap reveal">
-        <button type="button" id="career-toggle" class="btn btn-ghost btn-sm" aria-expanded="false">
-          전체 펼치기 (10개 회사)
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section id="games" class="section section-games">
-    <div class="section-inner">
-      <div class="section-label reveal">[ SHIPPED GAMES ]</div>
-      <h2 class="section-heading reveal">참여 게임 작품</h2>
-      <p class="section-lead reveal">각 프로젝트에서 직접 담당한 업무를 구분했습니다.</p>
-
-      <div class="games-grid">
-        <article class="game-card reveal">
+  <section id="games" class="section section-games"><div class="section-inner">
+    <div class="section-heading-row"><span class="section-number">01</span><h2 class="section-heading">참여 프로젝트</h2><span class="section-note">Selected work</span></div>
+    <div class="games-grid selected-games"><article class="game-card reveal">
+          <div class="game-cover">
+            <img src="images/기타소녀.jpg" alt="기타소녀 키 비주얼" loading="lazy">
+          </div>
+          <div class="game-meta">
+            <div class="game-title">기타소녀</div>
+            <div class="game-sub">네오위즈 · 방치형 게임 · 2017–2020</div>
+            <div class="game-role">시스템 설계 · DB · Back-End 전체 개발</div>
+            <div class="chip-row">
+              <span class="chip">PHP7</span>
+              <span class="chip">MySQL8</span>
+              <span class="chip">Redis</span>
+              <span class="chip">Thrift</span>
+            </div>
+          </div>
+        </article>
+<article class="game-card reveal">
+          <div class="game-cover">
+            <img src="images/포코팡.jpeg" alt="포코팡 for LINE 키 비주얼" loading="lazy">
+          </div>
+          <div class="game-meta">
+            <div class="game-title">포코팡 for LINE</div>
+            <div class="game-sub">트리노드 · 2021– · 장기 라이브 서비스</div>
+            <div class="game-role">서버 유지보수 · 신규 콘텐츠 개발</div>
+            <div class="chip-row">
+              <span class="chip">Golang</span>
+              <span class="chip">Python</span>
+              <span class="chip">Svelte</span>
+              <span class="chip">MySQL</span>
+            </div>
+          </div>
+        </article>
+<article class="game-card reveal">
           <div class="game-cover">
             <img src="images/룰더코인.jpg" alt="Rule The Coin 키 비주얼" loading="lazy">
           </div>
@@ -108,9 +98,39 @@
               <span class="chip">AWS</span>
             </div>
           </div>
+        </article></div>
+    <details class="more-games"><summary>다른 참여 프로젝트 5개 보기 <span aria-hidden="true">＋</span></summary><div class="games-grid archive-games"><article class="game-card reveal">
+          <div class="game-cover">
+            <img src="images/탭소닉월드챔피언.jpg" alt="탭소닉 월드챔피언 키 비주얼" loading="lazy">
+          </div>
+          <div class="game-meta">
+            <div class="game-title">탭소닉 월드챔피언</div>
+            <div class="game-sub">네오위즈 · 2016–2017 (런칭) · 2017– (운영)</div>
+            <div class="game-role">시스템 설계 · DB · Back-End 전체 개발</div>
+            <div class="chip-row">
+              <span class="chip">PHP7</span>
+              <span class="chip">MariaDB10</span>
+              <span class="chip">Redis</span>
+              <span class="chip">Nginx</span>
+            </div>
+          </div>
         </article>
-
-        <article class="game-card reveal">
+<article class="game-card reveal">
+          <div class="game-cover">
+            <img src="images/테크니카Q.jpg" alt="테크니카Q 키 비주얼" loading="lazy">
+          </div>
+          <div class="game-meta">
+            <div class="game-title">테크니카Q</div>
+            <div class="game-sub">네오위즈 · 2017–2020</div>
+            <div class="game-role">유지보수 및 신규 콘텐츠 개발</div>
+            <div class="chip-row">
+              <span class="chip">PHP5</span>
+              <span class="chip">MySQL5.6</span>
+              <span class="chip">Redis</span>
+            </div>
+          </div>
+        </article>
+<article class="game-card reveal">
           <div class="game-cover">
             <img src="images/키자니아게임개발센터.jpg" alt="키자니아 부산 게임 개발존" loading="lazy">
           </div>
@@ -127,59 +147,7 @@
             </div>
           </div>
         </article>
-
-        <article class="game-card reveal">
-          <div class="game-cover">
-            <img src="images/포코팡.jpeg" alt="포코팡 for LINE 키 비주얼" loading="lazy">
-          </div>
-          <div class="game-meta">
-            <div class="game-title">포코팡 for LINE</div>
-            <div class="game-sub">트리노드 · 2021– · 장기 라이브 서비스</div>
-            <div class="game-role">서버 유지보수 · 신규 콘텐츠 개발</div>
-            <div class="chip-row">
-              <span class="chip">Golang</span>
-              <span class="chip">Python</span>
-              <span class="chip">Svelte</span>
-              <span class="chip">MySQL</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="game-card reveal">
-          <div class="game-cover">
-            <img src="images/기타소녀.jpg" alt="기타소녀 키 비주얼" loading="lazy">
-          </div>
-          <div class="game-meta">
-            <div class="game-title">기타소녀</div>
-            <div class="game-sub">네오위즈 · 방치형 게임 · 2017–2020</div>
-            <div class="game-role">시스템 설계 · DB · Back-End 전체 개발</div>
-            <div class="chip-row">
-              <span class="chip">PHP7</span>
-              <span class="chip">MySQL8</span>
-              <span class="chip">Redis</span>
-              <span class="chip">Thrift</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="game-card reveal">
-          <div class="game-cover">
-            <img src="images/탭소닉월드챔피언.jpg" alt="탭소닉 월드챔피언 키 비주얼" loading="lazy">
-          </div>
-          <div class="game-meta">
-            <div class="game-title">탭소닉 월드챔피언</div>
-            <div class="game-sub">네오위즈 · 2016–2017 (런칭) · 2017– (운영)</div>
-            <div class="game-role">시스템 설계 · DB · Back-End 전체 개발</div>
-            <div class="chip-row">
-              <span class="chip">PHP7</span>
-              <span class="chip">MariaDB10</span>
-              <span class="chip">Redis</span>
-              <span class="chip">Nginx</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="game-card reveal">
+<article class="game-card reveal">
           <div class="game-cover">
             <img src="images/탬소닉탑.jpg" alt="TAPSONIC TOP 키 비주얼" loading="lazy">
           </div>
@@ -194,24 +162,7 @@
             </div>
           </div>
         </article>
-
-        <article class="game-card reveal">
-          <div class="game-cover">
-            <img src="images/테크니카Q.jpg" alt="테크니카Q 키 비주얼" loading="lazy">
-          </div>
-          <div class="game-meta">
-            <div class="game-title">테크니카Q</div>
-            <div class="game-sub">네오위즈 · 2017–2020</div>
-            <div class="game-role">유지보수 및 신규 콘텐츠 개발</div>
-            <div class="chip-row">
-              <span class="chip">PHP5</span>
-              <span class="chip">MySQL5.6</span>
-              <span class="chip">Redis</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="game-card reveal">
+<article class="game-card reveal">
           <div class="game-cover">
             <img src="images/확산성밀리언아서.png" alt="확산성 밀리언아서 키 비주얼" loading="lazy">
           </div>
@@ -226,40 +177,48 @@
               <span class="chip">OPcache</span>
             </div>
           </div>
-        </article>
+        </article></div></details>
+  </div></section>
+
+<section id="highlights" class="section section-evidence">
+    <div class="section-inner">
+      <div class="section-heading-row"><span class="section-number">02</span><h2 class="section-heading">핵심 경험</h2><span class="section-note">Capabilities</span></div>
+
+      <div id="highlights-grid" class="evidence-grid"></div>
+    </div>
+  </section>
+
+  <section id="career" class="section section-career">
+    <div class="section-inner">
+      <span class="section-number">03</span>
+      <h2 class="section-heading reveal">경력 <span class="heading-meta" id="career-total"></span></h2>
+      <p id="career-note" class="section-lead"></p><div id="career-timeline" class="timeline"></div>
+      <div class="timeline-toggle-wrap reveal">
+        <button type="button" id="career-toggle" class="btn btn-ghost btn-sm" aria-expanded="false">
+          전체 펼치기 (10개 회사)
+        </button>
       </div>
     </div>
   </section>
 
+
+
   <section id="about" class="section section-about">
     <div class="section-inner">
-      <div class="section-label reveal">[ ABOUT ]</div>
+      <span class="section-number">04</span>
       <div class="about-grid">
         <div class="about-text">
-          <h2 class="section-heading reveal">프로젝트에 기여할 수 있는 경험</h2>
+          <h2 class="section-heading reveal">자기소개</h2>
           <div id="about-full"></div>
         </div>
-        <aside class="about-stats" aria-label="핵심 지표">
-          <div class="stat-card reveal">
-            <div class="stat-value"><span id="experience-stat"></span></div>
-            <div class="stat-label">웹·게임 개발 전체 경력</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-value">2<span class="stat-unit"> OSS</span></div>
-            <div class="stat-label">Author / Maintainer</div>
-          </div>
-          <div class="stat-card reveal">
-            <div class="stat-value">AWS</div>
-            <div class="stat-label">셀 프로젝트 환경 직접 관리</div>
-          </div>
-        </aside>
+        <p class="experience-note">웹·게임 개발 전체 경력 <span id="experience-stat"></span></p>
       </div>
     </div>
   </section>
 
   <section id="skills" class="section section-skills">
     <div class="section-inner">
-      <div class="section-label reveal">[ TECH STACK ]</div>
+      <span class="section-number">05</span>
       <h2 class="section-heading reveal">기술 스택</h2>
       <div id="skills-grid" class="skills-grid"></div>
     </div>
@@ -267,8 +226,8 @@
 
   <section id="oss" class="section section-oss">
     <div class="section-inner">
-      <div class="section-label reveal">[ OPEN SOURCE ]</div>
-      <h2 class="section-heading reveal">직접 만들고 운영하는 오픈소스</h2>
+      <span class="section-number">06</span>
+      <h2 class="section-heading reveal">개인 프로젝트 · 오픈소스</h2>
       <p class="section-lead reveal">회사 업무와 별개로 개인적으로 개발 · 공개 · 유지보수합니다.</p>
       <div id="oss-grid" class="oss-grid"></div>
     </div>
@@ -276,11 +235,11 @@
 
   <section id="contact" class="section section-contact">
     <div class="section-inner">
-      <div class="section-label reveal">[ CONTACT ]</div>
+      <span class="section-number">CONTACT</span>
       <div class="contact-grid">
         <div class="contact-left">
-          <h2 class="section-heading reveal">경험을 나누고, 함께 만들겠습니다.</h2>
-          <p class="section-lead reveal">팀의 코드 컨벤션 · 개발 플로우와 충돌 없이 녹아드는 것이 핵심이라고 생각합니다.</p>
+          <h2 class="section-heading reveal">연락처</h2>
+
           <ul class="contact-list reveal" role="list">
             <li>
               <span class="contact-key">Email</span>

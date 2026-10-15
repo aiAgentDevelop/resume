@@ -36,6 +36,15 @@ const server = http.createServer((req, res) => {
       const pokopang = api('career')[0].projects.find(p => p.title.startsWith('포코팡'));
       assert(!JSON.stringify(pokopang).includes('인프라'));
       await page.goto(base + 'portfolio.html');
+      await page.keyboard.press('Tab');
+      assert.equal(await page.evaluate(() => document.activeElement.className), 'skip-link');
+      await page.keyboard.press('Enter');
+      assert.equal(await page.evaluate(() => document.activeElement.id), 'hero');
+      assert.equal(await page.locator('.selected-games .game-card').count(), 3);
+      assert.equal(await page.locator('.more-games .game-card').count(), 5);
+      await page.locator('.more-games summary').click();
+      assert.equal(await page.locator('.game-card:visible').count(), 8);
+      await page.locator('.more-games summary').click();
       assert.equal(await page.locator('.evidence-card').count(), 5);
       assert.equal(await page.locator('.about-chapter').count(), api('about').sections.length);
       assert.equal(await page.locator('.timeline-item').count(), 4);
@@ -48,7 +57,7 @@ const server = http.createServer((req, res) => {
       for (const term of ['SQLRelay', 'pconnect()', 'GitHub Actions', 'PP셀 / PP셀원', '결제']) assert(text.includes(term), term);
       await page.locator('#career-toggle').click();
       assert.equal(await page.locator('.timeline-item').count(), 4);
-      for (const width of [1440, 390]) {
+      for (const width of [320, 768, 1440, 390]) {
         await page.setViewportSize({ width, height: 960 });
         await page.locator('#highlights').scrollIntoViewIfNeeded();
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'horizontal overflow');
@@ -68,7 +77,9 @@ const server = http.createServer((req, res) => {
       await page.evaluate(() => dispatchEvent(new Event('beforeprint')));
       assert.equal(await page.locator('.timeline-item').count(), api('career').length);
       assert.equal(await page.locator('.career-details:not([open])').count(), 0);
+      assert.equal(await page.locator('.game-card:visible').count(), 8);
       await page.evaluate(() => dispatchEvent(new Event('afterprint')));
+      assert.equal(await page.locator('.more-games').getAttribute('open'), null);
       await page.emulateMedia({ media: 'screen' });
     }
     await page.setViewportSize({ width: 1000, height: 960 });

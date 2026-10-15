@@ -32,10 +32,10 @@
   }
 
   function renderHighlights(summary) {
-    el('highlights-grid').innerHTML = summary.highlights.map(function (h) {
-      return '<article class="evidence-card"><p class="evidence-label">' + escapeHtml(h.evidence) +
-        '</p><h3>' + escapeHtml(h.title) + '</h3><p>' + escapeHtml(h.detail) +
-        '</p><a href="#' + escapeHtml(h.careerId) + '" class="evidence-link">경력 근거 보기 →</a></article>';
+    el('highlights-grid').innerHTML = summary.highlights.map(function (h, i) {
+      return '<article class="evidence-card"><span class="evidence-index" aria-hidden="true">' + String(i + 1).padStart(2, '0') + '</span><p class="evidence-label">' + escapeHtml(h.evidence) +
+        '</p><h3>' + escapeHtml(h.title) + '</h3><p class="evidence-detail">' + escapeHtml(h.detail) +
+        '</p><a href="#' + escapeHtml(h.careerId) + '" class="evidence-link">관련 경력 읽기 ↗</a></article>';
     }).join('');
     el('career-total').textContent = window.ResumeView.experience();
     el('career-note').textContent = summary.career.calculationNote;
@@ -102,7 +102,7 @@
               escapeHtml(window.ResumeView.position(item)) +
             '</div>' +
             (item.summary ? '<div class="timeline-summary">' + escapeHtml(item.summary) + '</div>' : '') +
-            (projectsHtml ? '<details class="career-details"' + (isCurrent ? ' open' : '') + '><summary>담당 프로젝트 · 상세 경력 (' + projects.length + ')</summary><div class="timeline-projects">' + projectsHtml + '</div></details>' : '') +
+            (projectsHtml ? '<details class="career-details"><summary>담당 프로젝트 · 상세 경력 (' + projects.length + ')</summary><div class="timeline-projects">' + projectsHtml + '</div></details>' : '') +
             techHtml +
           '</div>' +
         '</div>';
@@ -143,9 +143,12 @@
     });
     var expandedBeforePrint;
     var detailsBeforePrint;
+    var gamesBeforePrint;
     window.addEventListener('beforeprint', function () {
       expandedBeforePrint = careerExpanded;
       detailsBeforePrint = {};
+      var games = document.querySelector('.more-games');
+      if (games) { gamesBeforePrint = games.open; games.open = true; }
       document.querySelectorAll('.timeline-item').forEach(function (item) {
         var details = item.querySelector('details');
         if (details) detailsBeforePrint[item.id] = details.open;
@@ -156,6 +159,8 @@
     });
     window.addEventListener('afterprint', function () {
       careerExpanded = expandedBeforePrint;
+      var games = document.querySelector('.more-games');
+      if (games) games.open = gamesBeforePrint;
       renderCareer(career);
       document.querySelectorAll('.timeline-item').forEach(function (item) {
         var details = item.querySelector('details');
@@ -311,7 +316,7 @@
     function update() {
       pending = false;
       var active = '';
-      var marker = document.querySelector('.nav').getBoundingClientRect().height + 100;
+      var marker = window.innerWidth > 850 ? 120 : document.querySelector('.nav').getBoundingClientRect().bottom + 44;
       links.forEach(function (link) {
         var section = el(link.getAttribute('data-nav'));
         if (section && section.getBoundingClientRect().top <= marker) active = section.id;
@@ -395,7 +400,10 @@
         var target = document.querySelector(hash);
         if (!target) return;
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       });
     });
   }
