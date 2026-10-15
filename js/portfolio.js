@@ -1,6 +1,6 @@
 /* ================================================================
    Portfolio Renderer
-   - api/*.js의 window.ResumeAPI 데이터를 다크 테마 섹션으로 렌더링
+   - api/*.js의 window.ResumeAPI 데이터를 경력 카드와 상세 목록으로 렌더링
    - IntersectionObserver 기반 scroll reveal
    - Sticky nav active state
    - Career timeline 토글 (최근 4개 ↔ 전체)
@@ -25,15 +25,21 @@
   // ─────────────────────────────────────────────────────────────
   function renderAbout(about) {
     if (!about || !about.sections) return;
-    var sections = about.sections;
-    var p1 = el('about-p1');
-    var p2 = el('about-p2');
-    if (p1 && sections[0]) {
-      // 첫 섹션의 첫 두 문단만 발췌
-      var paragraphs = sections[0].content.split('\n\n');
-      p1.innerHTML = highlightAccent(paragraphs[0] || '');
-      if (p2) p2.innerHTML = highlightAccent(paragraphs[1] || paragraphs[0] || '');
-    }
+    el('about-full').innerHTML = about.sections.map(function (s) {
+      return '<article class="about-chapter"><h3>' + escapeHtml(s.heading) + '</h3>' +
+        s.content.split('\n\n').map(function (p) { return '<p class="about-p">' + escapeHtml(p) + '</p>'; }).join('') + '</article>';
+    }).join('');
+  }
+
+  function renderHighlights(summary) {
+    el('highlights-grid').innerHTML = summary.highlights.map(function (h, i) {
+      return '<article class="evidence-card"><span class="evidence-index" aria-hidden="true">' + String(i + 1).padStart(2, '0') + '</span><p class="evidence-label">' + escapeHtml(h.evidence) +
+        '</p><h3>' + escapeHtml(h.title) + '</h3><p class="evidence-detail">' + escapeHtml(h.detail) +
+        '</p><a href="#' + escapeHtml(h.careerId) + '" class="evidence-link">관련 경력 읽기 ↗</a></article>';
+    }).join('');
+    el('career-total').textContent = window.ResumeView.experience();
+    el('career-note').textContent = summary.career.calculationNote;
+    el('experience-stat').textContent = window.ResumeView.experience().replace('총 ', '');
   }
 
   function highlightAccent(text) {
@@ -66,7 +72,11 @@
 
       var projectsHtml = projects.map(function (p) {
         var cls = 'timeline-project' + (p.highlight ? ' is-highlight' : '');
-        return '<div class="' + cls + '">' + escapeHtml(p.title) + '</div>';
+        return '<div class="' + cls + '"><strong>' + escapeHtml(p.title) + '</strong>' +
+          ((p.description || []).length ? '<ul>' + p.description.map(function (d) {
+            return '<li>' + escapeHtml(d) + '</li>';
+          }).join('') + '</ul>' : '') +
+          ((p.techStack || []).length ? '<p class="project-stack">' + p.techStack.map(escapeHtml).join(' · ') + '</p>' : '') + '</div>';
       }).join('');
 
       var techSet = {};
@@ -80,7 +90,7 @@
           '</div>'
         : '';
 
-      return '<div class="timeline-item' + (isCurrent ? ' is-current' : '') + ' reveal">' +
+      return '<div id="' + escapeHtml(item.id) + '" tabindex="-1" class="timeline-item' + (isCurrent ? ' is-current' : '') + ' reveal">' +
           '<div class="timeline-period">' +
             escapeHtml(item.period) +
             '<span class="duration">' + escapeHtml(item.duration) + '</span>' +
@@ -89,10 +99,10 @@
             '<div class="timeline-company">' + escapeHtml(item.company) + '</div>' +
             '<div class="timeline-meta">' +
               '<span class="role">' + escapeHtml(item.role || '') + '</span> · ' +
-              escapeHtml(item.department || '') +
+              escapeHtml(window.ResumeView.position(item)) +
             '</div>' +
             (item.summary ? '<div class="timeline-summary">' + escapeHtml(item.summary) + '</div>' : '') +
-            (projectsHtml ? '<div class="timeline-projects">' + projectsHtml + '</div>' : '') +
+            (projectsHtml ? '<details class="career-details"><summary>담당 프로젝트 · 상세 경력 (' + projects.length + ')</summary><div class="timeline-projects">' + projectsHtml + '</div></details>' : '') +
             techHtml +
           '</div>' +
         '</div>';
@@ -117,6 +127,45 @@
         ? '접기 (최근 ' + DEFAULT_CAREER_COUNT + '개만)'
         : '전체 펼치기 (' + career.length + '개 회사)';
       renderCareer(career);
+    });
+    document.querySelectorAll('.evidence-link').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (!careerExpanded) btn.click();
+        var target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          var details = target.querySelector('details');
+          if (details) details.open = true;
+          target.scrollIntoView({ behavior: 'auto', block: 'start' }); target.focus({ preventScroll: true });
+        }
+      });
+    });
+    var expandedBeforePrint;
+    var detailsBeforePrint;
+    var gamesBeforePrint;
+    window.addEventListener('beforeprint', function () {
+      expandedBeforePrint = careerExpanded;
+      detailsBeforePrint = {};
+      var games = document.querySelector('.more-games');
+      if (games) { gamesBeforePrint = games.open; games.open = true; }
+      document.querySelectorAll('.timeline-item').forEach(function (item) {
+        var details = item.querySelector('details');
+        if (details) detailsBeforePrint[item.id] = details.open;
+      });
+      careerExpanded = true;
+      renderCareer(career);
+      document.querySelectorAll('.career-details').forEach(function (details) { details.open = true; });
+    });
+    window.addEventListener('afterprint', function () {
+      careerExpanded = expandedBeforePrint;
+      var games = document.querySelector('.more-games');
+      if (games) games.open = gamesBeforePrint;
+      renderCareer(career);
+      document.querySelectorAll('.timeline-item').forEach(function (item) {
+        var details = item.querySelector('details');
+        if (details && Object.prototype.hasOwnProperty.call(detailsBeforePrint, item.id)) details.open = detailsBeforePrint[item.id];
+      });
     });
   }
 
@@ -176,7 +225,7 @@
     },
     {
       label: 'Infra & DevOps',
-      match: ['AWS', 'Docker', 'Kubernetes', 'Coolify', 'CI/CD Pipeline', 'Linux', 'Apache', 'Nginx']
+      match: ['AWS', 'Docker', 'Kubernetes', 'Coolify', 'IDP', 'Jenkins', 'GitHub Actions', 'CI/CD Pipeline', 'Linux', 'Apache', 'Nginx']
     },
     {
       label: 'AI Tooling',
@@ -262,22 +311,27 @@
   // Sticky Nav — Active state
   // ─────────────────────────────────────────────────────────────
   function setupNavActiveState() {
-    if (!('IntersectionObserver' in window)) return;
-    var sections = document.querySelectorAll('section[id]');
     var links = document.querySelectorAll('.nav-link[data-nav]');
-
-    var sectionObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = entry.target.id;
-        links.forEach(function (l) {
-          if (l.getAttribute('data-nav') === id) l.classList.add('is-active');
-          else l.classList.remove('is-active');
-        });
+    var pending = false;
+    function update() {
+      pending = false;
+      var active = '';
+      var marker = window.innerWidth > 850 ? 120 : document.querySelector('.nav').getBoundingClientRect().bottom + 44;
+      links.forEach(function (link) {
+        var section = el(link.getAttribute('data-nav'));
+        if (section && section.getBoundingClientRect().top <= marker) active = section.id;
       });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    sections.forEach(function (s) { sectionObserver.observe(s); });
+      links.forEach(function (link) {
+        var selected = link.getAttribute('data-nav') === active;
+        link.classList.toggle('is-active', selected);
+        if (selected) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    function schedule() { if (!pending) { pending = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    update();
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -346,7 +400,10 @@
         var target = document.querySelector(hash);
         if (!target) return;
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       });
     });
   }
@@ -359,6 +416,7 @@
     if (!API) return;
 
     setFooterYear();
+    renderHighlights(API.summary);
     renderAbout(API.about);
     renderCareer(API.career || []);
     setupCareerToggle(API.career || []);

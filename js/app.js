@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   renderHeader(API.profile);
   renderProfile(API.profile);
   renderSummary(API.summary);
+  renderHighlights(API.summary);
   renderSkills(API.skills);
   renderProjects(API.projects);
   renderEducation(API.education);
@@ -27,25 +28,13 @@ function renderProfile(profile) {
     githubBlock += '<dt>GitHub</dt><dd><a href="https://' + escapeHtml(profile.github) + '" target="_blank" rel="noopener">' + escapeHtml(profile.github) + '</a></dd>';
   }
 
-  if (profile.repositories && profile.repositories.length > 0) {
-    profile.repositories.forEach(function (repo) {
-      githubBlock += '<dd class="github-line">' +
-        '<strong>' + escapeHtml(repo.name) + '</strong> — ' +
-        '<a href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener">' + escapeHtml(repo.url) + '</a>' +
-        (repo.note ? '<br>' + escapeHtml(repo.note) : '') +
-      '</dd>';
-    });
-  }
-
   var html = '<div class="profile-info">' +
       '<div class="profile-name">' +
         escapeHtml(profile.name) +
-        '<span class="gender-age">' + escapeHtml(profile.gender) + ' ' + profile.birthYear + '년 (만 ' + profile.age + '세)</span>' +
       '</div>' +
       '<dl class="profile-details">' +
         '<dt>Email</dt><dd><a href="mailto:' + escapeHtml(profile.email) + '">' + escapeHtml(profile.email) + '</a></dd>' +
         '<dt>휴대폰</dt><dd>' + escapeHtml(profile.phone) + '</dd>' +
-        '<dt>주소</dt><dd>' + escapeHtml(profile.address) + '</dd>' +
         githubBlock +
       '</dl>' +
     '</div>';
@@ -152,7 +141,7 @@ function renderEducation(education) {
 
 function renderCareer(career) {
   var titleEl = document.getElementById('career-title');
-  titleEl.innerHTML = '경력 <span class="total-experience">총 18년 1개월</span>';
+  titleEl.innerHTML = '경력 <span class="total-experience">' + escapeHtml(window.ResumeView.experience()) + '</span>';
 
   var el = document.getElementById('career-content');
   var html = '';
@@ -165,8 +154,9 @@ function renderCareer(career) {
       '<div class="career-detail">' +
         '<div class="career-company">' +
           escapeHtml(item.company) +
-          ' <span class="department">' + escapeHtml(item.department) + '</span>' +
+          ' <span class="department">' + escapeHtml(window.ResumeView.position(item)) + '</span>' +
         '</div>' +
+        '<p class="career-summary">' + escapeHtml(item.summary) + '</p>' +
         '<div class="career-projects">';
 
     item.projects.forEach(function (project) {
@@ -236,8 +226,14 @@ function renderFooter() {
     '<div class="footer-confirm">위의 모든 기재사항은 사실과 다름없음을 확인합니다.</div>' +
     '<div class="footer-author">작성자 : 이동완</div>' +
     '<div class="footer-info">' +
-      '이 이력서는 2026년 04월 17일에 갱신된 이력서 입니다.' +
+      '갱신일: ' + escapeHtml(window.ResumeAPI.summary.updatedAt) + ' · ' + escapeHtml(window.ResumeAPI.summary.career.calculationNote) +
     '</div>';
+}
+
+function renderHighlights(summary) {
+  document.getElementById('highlights-content').innerHTML = summary.highlights.map(function (h) {
+    return '<div class="resume-highlight"><strong>' + escapeHtml(h.title) + '</strong><p>' + escapeHtml(h.detail) + '</p></div>';
+  }).join('');
 }
 
 function escapeHtml(text) {

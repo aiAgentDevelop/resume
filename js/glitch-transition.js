@@ -29,6 +29,7 @@
   }
 
   function shouldAutoTransition() {
+    if (window.matchMedia && window.matchMedia('print').matches) return false;
     if (prefersReducedMotion()) return false;
     if (hasStayParam()) return false;
     return true;
@@ -146,6 +147,7 @@
   // Init
   // ─────────────────────────────────────────────────────────────
   function init() {
+    window.addEventListener('beforeprint', cancelAutoTransition);
     var link = document.querySelector('.portfolio-link');
     if (link) {
       link.addEventListener('click', function (e) {

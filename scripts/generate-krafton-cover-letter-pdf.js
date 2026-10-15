@@ -6,8 +6,8 @@ const { chromium } = require('playwright');
 
 (async () => {
   const projectRoot = path.resolve(__dirname, '..');
-  const htmlPath = path.join(projectRoot, '커버레터-이동완-크래프톤.html');
-  const fileUrl = 'file:///' + htmlPath.replace(/\\/g, '/');
+  const htmlPath = path.join(projectRoot, 'index.html');
+  const fileUrl = require('url').pathToFileURL(htmlPath).href + '?stay=1';
   const outputPath = path.join(projectRoot, '커버레터-이동완-크래프톤.pdf');
 
   console.log('[pdf] loading:', fileUrl);
@@ -16,7 +16,10 @@ const { chromium } = require('playwright');
   const context = await browser.newContext();
   const page = await context.newPage();
 
+  await page.emulateMedia({ media: 'print' });
   await page.goto(fileUrl, { waitUntil: 'networkidle' });
+  await page.addStyleTag({ content: '.resume-container > * { display: none !important; } .resume-header, .about-section { display: block !important; }' });
+  await page.locator('#resume-header h1').evaluate(el => { el.textContent = '자기소개서 · 이동완'; });
   await page.waitForTimeout(300);
 
   await page.pdf({

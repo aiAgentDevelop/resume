@@ -7,8 +7,8 @@ const { chromium } = require('playwright');
 
 (async () => {
   const projectRoot = path.resolve(__dirname, '..');
-  const htmlPath = path.join(projectRoot, '이력서-이동완-크래프톤.html');
-  const fileUrl = 'file:///' + htmlPath.replace(/\\/g, '/');
+  const htmlPath = path.join(projectRoot, 'index.html');
+  const fileUrl = require('url').pathToFileURL(htmlPath).href + '?stay=1';
   const outputPath = path.join(projectRoot, '이력서-이동완-크래프톤.pdf');
 
   console.log('[pdf] loading:', fileUrl);
@@ -17,6 +17,7 @@ const { chromium } = require('playwright');
   const context = await browser.newContext();
   const page = await context.newPage();
 
+  await page.emulateMedia({ media: 'print' });
   await page.goto(fileUrl, { waitUntil: 'networkidle' });
   await page.waitForTimeout(300);
 

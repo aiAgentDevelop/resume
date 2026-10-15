@@ -8,7 +8,7 @@ const { chromium } = require('playwright');
 (async () => {
   const projectRoot = path.resolve(__dirname, '..');
   const htmlPath = path.join(projectRoot, 'index.html');
-  const fileUrl = 'file:///' + htmlPath.replace(/\\/g, '/');
+  const fileUrl = require('url').pathToFileURL(htmlPath).href + '?stay=1';
   const outputPath = path.join(projectRoot, '이력서_이동완.pdf');
 
   console.log('[pdf] loading:', fileUrl);
@@ -17,6 +17,7 @@ const { chromium } = require('playwright');
   const context = await browser.newContext();
   const page = await context.newPage();
 
+  await page.emulateMedia({ media: 'print' });
   await page.goto(fileUrl, { waitUntil: 'networkidle' });
   // 데이터 렌더링 대기 (정적 스크립트는 즉시 완료되지만 방어적 대기)
   await page.waitForTimeout(300);

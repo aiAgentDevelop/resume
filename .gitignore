@@ -9,7 +9,8 @@ preview-*.png
 
 # Node (PDF 생성 의존성)
 node_modules/
-package-lock.json
+tmp/
+output/
 
 # 개인정보 — 실명/연락처/회사별 지원서 포함, 공개 리포 업로드 금지
 이동완-이력서.pdf

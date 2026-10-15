@@ -4,50 +4,17 @@ window.ResumeAPI.career = [
     "period": "2021. 03 ~ 재직중",
     "duration": "재직중",
     "company": "트리노드",
-    "department": "Live실 포코팡 서버팀",
+    "department": "PP셀",
     "role": "게임개발자",
-    "summary": "포코팡 라이브 운영과 신규 게임 백엔드를 함께 담당. Claude Code AI 에이전트 병렬 오케스트레이션으로 사내 툴·신규 서비스를 직접 설계·출시.",
+    "summary": "포코팡에서는 서버 유지보수와 신규 콘텐츠 개발을 담당. 별도 셀 프로젝트에서는 AWS 환경 관리와 배포 자동화를 수행. 현재 재무·인사 업무를 위한 맞춤형 노코드 그룹웨어·ERP 개발 중.",
     "projects": [
       {
-        "title": "[그룹웨어 전체 개발 R&D] NoCode 플랫폼 + AI 에이전트 병렬 오케스트레이션 적용",
+        "title": "트리노드 맞춤형 노코드 그룹웨어·ERP 개발 (진행 중)",
         "description": [
-          "출퇴근 기록, ERP 등 커스터마이징 가능한 사내 툴을 Claude Code 에이전트 병렬 오케스트레이션으로 개발",
-          "Plan / Implement / Verify 3단계 에이전트를 병렬 실행하는 하네스(개인 R&D 방법론) 적용해 개발 속도·품질을 동시에 확보",
-          "CI/CD · 코드 검증 훅 · 배포 파이프라인까지 자동 생성·운영",
-          "PR별 자동 URL 생성 환경 구성 (NextJS, Supabase Self-host, Coolify)",
-          "K8s + Docker 기반 배포 환경 준비"
+          "재무·인사 등 사내 업무를 지원하는 트리노드 맞춤형 그룹웨어·ERP 개발",
+          "Claude Code 에이전트를 활용한 설계·구현·검증 및 개발 자동화"
         ],
         "techStack": []
-      },
-      {
-        "title": "[그룹웨어 직원 업무리뷰] Claude Code AI Agent + MD 지침서로 100% 바이브 코딩 개발",
-        "description": [],
-        "techStack": ["MySQL", "NestJS", "Vue", "Redis"]
-      },
-      {
-        "title": "[프로젝트 G] Claude Code로 서버리스 100% 바이브 코딩으로 서비스 오픈",
-        "description": [],
-        "techStack": ["Supabase", "Vue"]
-      },
-      {
-        "title": "[프로젝트 우당탄] Unity 클라이언트 개발자와 협업, 2주 1개 게임 출시 사이클 운영",
-        "description": [],
-        "techStack": ["NestJS", "MySQL", "Redis"]
-      },
-      {
-        "title": "키자니아 부산 직업체험 프로그램 서버 개발",
-        "description": [],
-        "techStack": ["NestJS", "Socket.io", "RESTful API", "TypeORM", "MySQL", "Redis"]
-      },
-      {
-        "title": "포코팡 서버 유지보수 및 신규 콘텐츠 개발",
-        "description": [],
-        "techStack": ["Golang", "Python", "Svelte", "MySQL"]
-      },
-      {
-        "title": "버블다이어리 서버 개발",
-        "description": [],
-        "techStack": ["NodeJS", "Redis", "MariaDB", "Protobuf"]
       },
       {
         "title": "Rule The Coin 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
@@ -55,40 +22,144 @@ window.ResumeAPI.career = [
           "입사 시점 기준 소프트런칭 일정이 약 1개월 반 남은 상황",
           "게임 서버 + Admin을 1개월 반 만에 신속 설계·개발하여 소프트런칭 일정에 맞춰 오픈"
         ],
-        "techStack": ["PHP7", "MariaDB", "Redis", "Nginx", "Thrift"]
+        "techStack": [
+          "PHP7",
+          "MariaDB",
+          "Redis",
+          "Nginx",
+          "Thrift"
+        ]
       },
       {
-        "title": "백엔드 아키텍처 직접 설계",
+        "title": "포코팡 서버 유지보수 및 신규 콘텐츠 개발",
         "description": [
-          "서버 인프라 설계 (AWS EC2, ALB, Route53, ACM, Traefik)",
-          "DB 스키마 설계 / RESTful API 구조 설계"
+          "기존 서비스의 서버 유지보수 및 신규 콘텐츠 로직 개발"
+        ],
+        "techStack": [
+          "Golang",
+          "Python",
+          "Svelte",
+          "MySQL"
+        ]
+      },
+      {
+        "title": "별도 셀 프로젝트의 AWS 환경 관리·배포 자동화",
+        "description": [
+          "셀에서 진행한 프로젝트의 AWS 환경 직접 관리 (포코팡 담당 업무와 별도)",
+          "Kubernetes 사용 경험 및 사내 자체 제작 배포 플랫폼(IDP)을 통한 서비스 배포",
+          "Jenkins를 주로 활용한 서비스 배포",
+          "GitHub Actions를 구성하여 코드 push 시 개발 서버에 변경 사항 자동 반영"
+        ],
+        "techStack": [
+          "AWS",
+          "Kubernetes",
+          "IDP",
+          "Jenkins",
+          "GitHub Actions"
+        ]
+      },
+      {
+        "title": "신규 백엔드의 DB·API 설계",
+        "description": [
+          "신규 백엔드 개발에서 DB 스키마 및 RESTful API 구조 설계"
         ],
         "techStack": []
+      },
+      {
+        "title": "키자니아 부산 직업체험 프로그램 서버 개발",
+        "description": [],
+        "techStack": [
+          "NestJS",
+          "Socket.io",
+          "RESTful API",
+          "TypeORM",
+          "MySQL",
+          "Redis"
+        ]
+      },
+      {
+        "title": "[프로젝트 우당탄] Unity 클라이언트 개발자와 협업, 2주 1개 게임 출시 사이클 운영",
+        "description": [],
+        "techStack": [
+          "NestJS",
+          "MySQL",
+          "Redis"
+        ]
+      },
+      {
+        "title": "버블다이어리 서버 개발",
+        "description": [],
+        "techStack": [
+          "NodeJS",
+          "Redis",
+          "MariaDB",
+          "Protobuf"
+        ]
+      },
+      {
+        "title": "사내 직원 업무리뷰 시스템 개발",
+        "description": [
+          "AI 에이전트와 프로젝트 지침서를 활용한 사내 업무 시스템 개발"
+        ],
+        "techStack": [
+          "MySQL",
+          "NestJS",
+          "Vue",
+          "Redis"
+        ]
+      },
+      {
+        "title": "프로젝트 G 서버리스 백엔드 개발·서비스 오픈",
+        "description": [],
+        "techStack": [
+          "Supabase",
+          "Vue"
+        ]
       }
-    ]
+    ],
+    "id": "career-0",
+    "grade": null,
+    "position": "PP셀원"
   },
   {
     "period": "2017. 01 ~ 2020. 11",
     "duration": "3년 11개월",
     "company": "네오위즈",
-    "department": "기타소녀팀 팀원",
+    "department": "기타소녀팀",
     "role": "게임개발자",
-    "summary": "음악게임 3종(기타소녀·탭소닉 월드챔피언·테크니카Q) 백엔드 전담 — 설계·DB·인프라부터 운영·오픈 장애 대응까지.",
+    "summary": "방치형 게임 기타소녀와 리듬 게임 탭소닉 월드챔피언의 백엔드 개발. 시스템·DB 설계, 서비스 운영 및 오픈 장애 대응 수행.",
     "projects": [
       {
-        "title": "기타소녀 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
+        "title": "기타소녀 — 방치형 게임 서버·DB 설계 및 백엔드 전체 개발",
         "description": [],
-        "techStack": ["PHP7", "MySQL8", "Redis", "Nginx", "Thrift"]
+        "techStack": [
+          "PHP7",
+          "MySQL8",
+          "Redis",
+          "Nginx",
+          "Thrift"
+        ]
       },
       {
         "title": "탭소닉 월드챔피언 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
         "description": [],
-        "techStack": ["PHP7", "MariaDB10", "Redis", "Nginx", "Thrift"]
+        "techStack": [
+          "PHP7",
+          "MariaDB10",
+          "Redis",
+          "Nginx",
+          "Thrift"
+        ]
       },
       {
         "title": "탭소닉 탭 / 테크니카Q 유지보수 및 신규 콘텐츠 개발",
         "description": [],
-        "techStack": ["PHP5", "MySQL5.6", "Redis", "Nginx"]
+        "techStack": [
+          "PHP5",
+          "MySQL5.6",
+          "Redis",
+          "Nginx"
+        ]
       },
       {
         "title": "백엔드 아키텍처 직접 설계",
@@ -106,75 +177,113 @@ window.ResumeAPI.career = [
           "MySQL SQLRelay의 default connection 값이 5로 설정된 것이 병목임을 발견",
           "SQLRelay connection pool 설정을 트래픽 규모에 맞게 조정하여 병목 해소"
         ],
-        "techStack": ["MySQL", "SQLRelay"]
+        "techStack": [
+          "MySQL",
+          "SQLRelay"
+        ]
       }
-    ]
+    ],
+    "id": "career-1",
+    "grade": null,
+    "position": "팀원"
   },
   {
     "period": "2016. 11 ~ 2017. 01",
     "duration": "3개월",
     "company": "네오위즈온스튜디오",
-    "department": "645팀 팀원",
+    "department": "645팀",
     "role": "게임개발자",
     "summary": "탭소닉 월드챔피언 서버·관리자·DB 설계 및 신규 콘텐츠 개발 (개발 비중 100%).",
     "projects": [
       {
         "title": "탭소닉 월드챔피언 서버, 관리자, DB 설계, 신규 컨텐츠",
-        "description": ["개발비중 100%"],
-        "techStack": ["PHP", "MySQL", "Redis", "MariaDB", "Thrift", "Smarty", "Nginx"]
+        "description": [
+          "개발비중 100%"
+        ],
+        "techStack": [
+          "PHP",
+          "MySQL",
+          "Redis",
+          "MariaDB",
+          "Thrift",
+          "Smarty",
+          "Nginx"
+        ]
       }
-    ]
+    ],
+    "id": "career-2",
+    "grade": null,
+    "position": "팀원"
   },
   {
     "period": "2014. 12 ~ 2015. 12",
     "duration": "1년 1개월",
     "company": "게임빌",
-    "department": "Q9 Studio 팀원",
-    "role": "서버관리, 시스템운영, MySQL",
+    "department": "Q9 Studio",
+    "role": "게임 서버 개발·운영",
     "summary": "확산성 밀리언아서 글로벌 6개국 서버 구축. mod_php → Nginx + PHP-FPM + OPcache 전환으로 서버 부하·물리 대수 대폭 절감.",
     "projects": [
       {
         "title": "밀리언아서 글로벌 서버 구축 및 6개국 언어 서비스 오픈",
         "description": [
-          "Backend: 일본산 PHP 프레임워크 mcweb 기반. 테이블 스키마와 request / response 타입을 파일로 선언하면 코드를 생성하는 NestJS / Golang 스타일의 구조화된 타입 시스템",
-          "액토즈 시절 인지했던 mcweb 서버 부하 (CPU 70%+) 이슈를 게임빌 이직 후 Apache mod_php → Nginx + PHP-FPM + OPcache 구성으로 전환하여 해결",
-          "매 요청 PHP 부트스트랩 비용을 OPcache로 제거하여 물리 서버 대수 대폭 축소 (운영비 절감)"
+          "PHP mcweb 기반 게임 서버로 밀리언아서 글로벌 6개국 서비스 구축·오픈",
+          "Apache mod_php에서 Nginx + PHP-FPM + OPcache 구성으로 전환하여 서버 부하 개선",
+          "PHP 코드 캐싱을 적용해 실행 비용을 줄이고 물리 서버 대수를 축소"
         ],
-        "techStack": ["PHP", "mcweb (PHP framework)", "Nginx", "PHP-FPM", "OPcache", "AWS", "Google Cloud"]
+        "techStack": [
+          "PHP",
+          "mcweb (PHP framework)",
+          "Nginx",
+          "PHP-FPM",
+          "OPcache",
+          "AWS",
+          "Google Cloud"
+        ]
       },
       {
         "title": "Hive 회원 연동 및 채팅 서버 구축",
         "description": [
           "채팅 서버는 Node.js + Socket.io로 분리 구현 (메인 게임 서버는 PHP / mcweb)"
         ],
-        "techStack": ["NodeJS", "Socket.io"]
+        "techStack": [
+          "NodeJS",
+          "Socket.io"
+        ]
       }
-    ]
+    ],
+    "id": "career-3",
+    "grade": null,
+    "position": "팀원"
   },
   {
     "period": "2013. 07 ~ 2014. 11",
     "duration": "1년 5개월",
     "company": "액토즈소프트",
-    "department": "개발3실 팀원",
-    "role": "서버관리, 서버구축, Apache, MySQL",
-    "summary": "밀리언아서 멀티리전(한·중·싱가포르) 운영. 반복 크래시 이슈를 서버·인프라 관점에서 원인 분석·해결하는 인력으로 합류.",
+    "department": "개발3실",
+    "role": "게임 서버·인프라 운영",
+    "summary": "밀리언아서 한국·중국·싱가포르 서비스 운영. 서버·인프라 장애 분석, 배포 환경 정비 및 해외 결제 모듈 연동.",
     "projects": [
       {
-        "title": "입사 계기 — 밀리언아서 클라이언트 크래시 이슈 해결",
+        "title": "밀리언아서 반복 크래시 이슈 분석·해결",
         "description": [
-          "당시 밀리언아서에서 반복적인 크래시 이슈가 발생하던 상황에서, 문제 해결 인력으로 헤드헌터를 통해 입사",
-          "서버/인프라 관점에서 원인을 분석·조치하여 크래시 이슈 해결"
+          "반복적인 크래시 이슈를 서버·인프라 관점에서 분석하고 원인을 조치"
         ],
         "techStack": []
       },
       {
         "title": "밀리언아서 한국/중국/싱가포르 멀티리전 서비스 운영",
         "description": [],
-        "techStack": ["KT Cloud", "AWS", "물리서버"]
+        "techStack": [
+          "KT Cloud",
+          "AWS",
+          "물리서버"
+        ]
       },
       {
         "title": "APM 최적화 및 SVN 기반 배포 환경 단일화",
-        "description": ["배포 서버, 개발 서버, 리뷰 서버 단일화"],
+        "description": [
+          "배포 서버, 개발 서버, 리뷰 서버 단일화"
+        ],
         "techStack": []
       },
       {
@@ -187,28 +296,36 @@ window.ResumeAPI.career = [
         "description": [],
         "techStack": []
       }
-    ]
+    ],
+    "id": "career-4",
+    "grade": null,
+    "position": "팀원"
   },
   {
     "period": "2011. 11 ~ 2013. 06",
     "duration": "1년 8개월",
     "company": "게임빌",
-    "department": "시스템개발팀 팀원",
+    "department": "시스템개발팀",
     "role": "웹개발자",
     "summary": "Gamevil Live 백엔드·관리자 개발. Oracle 커넥션 초과 이슈(PHP pconnect 원인) 해결, Push 발송 플랫폼·공통 관리자 자동화 구축.",
     "projects": [
       {
-        "title": "입사 계기 — Oracle DB Connection 초과 이슈 해결",
+        "title": "Oracle DB 연결 초과 장애 분석·해결",
         "description": [
-          "당시 게임빌 내부에서 Oracle Database의 connection 초과 이슈가 반복되던 상황",
-          "지인 추천으로 해당 이슈 해결 인력으로 입사하여 커넥션 구조·쿼리·연결 관리 이슈를 진단·조치하고 문제 해결 (재직중인 개발자가 PHP의 pconnect() 함수를 사용한 것이 원인)"
+          "반복되는 Oracle DB 연결 초과 현상을 분석",
+          "PHP pconnect() 사용에 따른 연결 관리 문제를 진단·조치하여 장애 해결"
         ],
         "techStack": []
       },
       {
         "title": "Gamevil Live 관리자 개발",
         "description": [],
-        "techStack": ["PHP", "MySQL", "Memcache", "Apache"]
+        "techStack": [
+          "PHP",
+          "MySQL",
+          "Memcache",
+          "Apache"
+        ]
       },
       {
         "title": "DDoS 대응 및 Back-End / Web 서버 분리 작업",
@@ -235,86 +352,119 @@ window.ResumeAPI.career = [
         "description": [],
         "techStack": []
       }
-    ]
+    ],
+    "id": "career-5",
+    "grade": null,
+    "position": "팀원"
   },
   {
     "period": "2010. 09 ~ 2011. 09",
     "duration": "1년 1개월",
     "company": "RFKOREA",
-    "department": "웹팀 팀장",
+    "department": "웹팀",
     "role": "웹개발자",
     "summary": "소셜커머스·이벤트 플랫폼 웹 서비스 개발·운영 (웹팀 팀장, 지도 API 연동 등).",
     "projects": [
       {
         "title": "소셜 커머스 및 이벤트 플랫폼 웹 서비스 개발 및 유지보수",
         "description": [],
-        "techStack": ["PHP", "MySQL", "Apache"]
+        "techStack": [
+          "PHP",
+          "MySQL",
+          "Apache"
+        ]
       },
       {
         "title": "지도 API 연동 업체 위치 자동 표시 기능 개발",
         "description": [],
         "techStack": []
       }
-    ]
+    ],
+    "id": "career-6",
+    "grade": null,
+    "position": "팀장"
   },
   {
     "period": "2008. 09 ~ 2009. 07",
     "duration": "11개월",
     "company": "그리곤엔터테인먼트",
     "department": "퍼블리싱 사업부",
-    "role": "웹개발자, 웹 DB 설계 및 웹 개발, 관리툴 개발",
+    "role": "웹 개발·DB 설계·관리 도구 개발",
     "summary": "칸헬 CBT/오픈베타 사이트 전체 개발 및 장비 인첸트 백엔드 개발.",
     "projects": [
       {
         "title": "칸헬 게임 서비스 CBT / 오픈베타 사이트 전체 개발 및 유지보수 / 장비 인첸트 backend 개발",
         "description": [],
-        "techStack": ["PHP", "JavaScript", "MySQL"]
+        "techStack": [
+          "PHP",
+          "JavaScript",
+          "MySQL"
+        ]
       },
       {
         "title": "퓨전폴 티저 사이트 개발",
         "description": [],
         "techStack": []
       }
-    ]
+    ],
+    "id": "career-7",
+    "grade": null,
+    "position": null
   },
   {
     "period": "2008. 03 ~ 2008. 07",
     "duration": "5개월",
     "company": "실미디어",
     "department": "인터넷사업부",
-    "role": "웹개발자, 신규서비스 개발 및 유지보수, 제휴 개발",
+    "role": "웹 서비스·제휴 기능 개발",
     "summary": "엑스톡 클럽 리뉴얼·퀵공유 등 신규 웹 서비스 개발·제휴 개발.",
     "projects": [
       {
         "title": "엑스톡 클럽 리뉴얼 개발",
         "description": [],
-        "techStack": ["PHP", "MySQL", "Apache"]
+        "techStack": [
+          "PHP",
+          "MySQL",
+          "Apache"
+        ]
       },
       {
         "title": "퀵공유 서비스 개발",
         "description": [],
         "techStack": []
       }
-    ]
+    ],
+    "id": "career-8",
+    "grade": null,
+    "position": null
   },
   {
     "period": "2005. 05 ~ 2007. 08",
     "duration": "2년 4개월",
     "company": "웃긴대학재단",
     "department": "개발팀",
-    "role": "웹개발자, 서버 관리, 제휴 업무 개발, 커뮤니티 개발",
+    "role": "웹 서비스 개발·서버 관리",
     "summary": "웃긴대학 서브 서비스 다수 개발. 대규모 트래픽 시 캐시 최적화·iptables DDoS 대응으로 무중단 운영.",
     "projects": [
       {
         "title": "웃긴대학 서브 서비스 다수 개발",
-        "description": ["학과, 병원, 메신저, 대자보 등"],
-        "techStack": ["PHP", "MySQL", "Apache"]
+        "description": [
+          "학과, 병원, 메신저, 대자보 등"
+        ],
+        "techStack": [
+          "PHP",
+          "MySQL",
+          "Apache"
+        ]
       },
       {
         "title": "대규모 트래픽 유입 시 캐시 최적화 및 iptables 기반 DDoS 대응으로 무중단 서비스 유지",
         "description": [],
         "techStack": []
       }
-    ]
+    ],
+    "id": "career-9",
+    "grade": null,
+    "position": null
   }
 ];
