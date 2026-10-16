@@ -6,6 +6,16 @@ const { pathToFileURL } = require('node:url');
 const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '..');
 const api = name => JSON.parse(fs.readFileSync(path.join(root, 'api', name + '.json'), 'utf8'));
+const highlights = api('summary').highlights;
+for (const highlight of highlights) {
+  for (const item of highlight.items) {
+    for (const ref of item.references) {
+      const company = api('career').find(c => c.id === ref.careerId);
+      assert(company && company.projects.some(p => p.id === ref.projectId), 'broken evidence reference');
+    }
+  }
+}
+assert(!/xx|45일|2~3|2-3|단축|\d+\s*%/.test(JSON.stringify(highlights)), 'unsupported comparison in highlights');
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png' };
 const server = http.createServer((req, res) => {
   const file = path.resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
@@ -31,6 +41,11 @@ const server = http.createServer((req, res) => {
       assert((await page.locator('#career-content').innerText()).includes('PP셀 / PP셀원'));
       assert(!(await page.locator('#career-content').innerText()).includes('입사 계기'));
       assert((await page.locator('#career-title').innerText()).includes(api('summary').career.totalExperience));
+      for (const h of highlights) for (const item of h.items) {
+        assert((await page.locator('#highlights-content').innerText()).includes(item.lead + ' ' + item.text));
+      }
+      await page.locator('#highlights-content a[href="#project-rule-the-coin"]').click();
+      assert.equal(new URL(page.url()).hash, '#project-rule-the-coin');
       assert((await page.locator('#career-content').innerText()).includes('방치형 게임 기타소녀'));
       assert(!(await page.locator('#career-content').innerText()).includes('음악게임 3종'));
       const pokopang = api('career')[0].projects.find(p => p.title.startsWith('포코팡'));
@@ -46,11 +61,15 @@ const server = http.createServer((req, res) => {
       assert.equal(await page.locator('.game-card:visible').count(), 8);
       await page.locator('.more-games summary').click();
       assert.equal(await page.locator('.evidence-card').count(), 5);
+      assert.deepEqual(await page.locator('#portfolio-app > section').evaluateAll(elements => elements.slice(0, 4).map(el => el.id)), ['hero', 'highlights', 'career', 'games']);
+      for (const h of highlights) for (const item of h.items) {
+        assert((await page.locator('#highlights-grid').innerText()).includes(item.lead + ' ' + item.text));
+      }
       assert.equal(await page.locator('.about-chapter').count(), api('about').sections.length);
       assert.equal(await page.locator('.timeline-item').count(), 4);
-      await page.locator('.evidence-link[href="#career-4"]').click();
+      await page.locator('.evidence-link[href="#project-payment-singapore"]').click();
       assert.equal(await page.locator('.timeline-item').count(), api('career').length);
-      assert.equal(await page.evaluate(() => document.activeElement.id), 'career-4');
+      assert.equal(await page.evaluate(() => document.activeElement.id), 'project-payment-singapore');
       assert(await page.locator('#career-4 details').getAttribute('open') !== null);
       await page.locator('.career-details:not([open]) summary').evaluateAll(items => items.forEach(item => item.click()));
       const text = await page.locator('#career-timeline').innerText();

@@ -33,9 +33,8 @@
 
   function renderHighlights(summary) {
     el('highlights-grid').innerHTML = summary.highlights.map(function (h, i) {
-      return '<article class="evidence-card"><span class="evidence-index" aria-hidden="true">' + String(i + 1).padStart(2, '0') + '</span><p class="evidence-label">' + escapeHtml(h.evidence) +
-        '</p><h3>' + escapeHtml(h.title) + '</h3><p class="evidence-detail">' + escapeHtml(h.detail) +
-        '</p><a href="#' + escapeHtml(h.careerId) + '" class="evidence-link">관련 경력 읽기 ↗</a></article>';
+      return '<article class="evidence-card"><span class="evidence-index" aria-hidden="true">' + String(i + 1).padStart(2, '0') + '</span><div class="evidence-label"><p>' + escapeHtml(h.evidence) +
+        '</p>' + window.ResumeView.highlightRequirements(h) + '</div><h3>' + escapeHtml(h.title) + '</h3><div class="evidence-detail">' + window.ResumeView.highlightBody(h) + '</div></article>';
     }).join('');
     el('career-total').textContent = window.ResumeView.experience();
     el('career-note').textContent = summary.career.calculationNote;
@@ -72,7 +71,7 @@
 
       var projectsHtml = projects.map(function (p) {
         var cls = 'timeline-project' + (p.highlight ? ' is-highlight' : '');
-        return '<div class="' + cls + '"><strong>' + escapeHtml(p.title) + '</strong>' +
+        return '<div class="' + cls + '"' + (p.id ? ' id="' + escapeHtml(p.id) + '" tabindex="-1"' : '') + '><strong>' + escapeHtml(p.title) + '</strong>' +
           ((p.description || []).length ? '<ul>' + p.description.map(function (d) {
             return '<li>' + escapeHtml(d) + '</li>';
           }).join('') + '</ul>' : '') +
@@ -133,6 +132,9 @@
         event.preventDefault();
         event.stopImmediatePropagation();
         if (!careerExpanded) btn.click();
+        var company = el(link.getAttribute('data-career-id'));
+        var companyDetails = company && company.querySelector('details');
+        if (companyDetails) companyDetails.open = true;
         var target = document.querySelector(link.getAttribute('href'));
         if (target) {
           var details = target.querySelector('details');
