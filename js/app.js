@@ -161,7 +161,7 @@ function renderCareer(career) {
 
     item.projects.forEach(function (project) {
       var cls = 'career-project' + (project.highlight ? ' is-highlight' : '');
-      html += '<div class="' + cls + '">' +
+      html += '<div class="' + cls + '"' + (project.id ? ' id="' + escapeHtml(project.id) + '" tabindex="-1"' : '') + '>' +
         '<div class="project-title">- ' + escapeHtml(project.title) + '</div>';
 
       if (project.url) {
@@ -232,7 +232,7 @@ function renderFooter() {
 
 function renderHighlights(summary) {
   document.getElementById('highlights-content').innerHTML = summary.highlights.map(function (h) {
-    return '<div class="resume-highlight"><strong>' + escapeHtml(h.title) + '</strong><p>' + escapeHtml(h.detail) + '</p></div>';
+    return '<div class="resume-highlight"><strong>' + escapeHtml(h.title) + '</strong>' + window.ResumeView.highlightRequirements(h) + window.ResumeView.highlightBody(h) + '</div>';
   }).join('');
 }
 

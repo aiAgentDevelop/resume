@@ -13,36 +13,195 @@ window.ResumeAPI.summary = {
   },
   "internship": "-",
   "certification": "-",
-  "updatedAt": "2026-10-15",
+  "updatedAt": "2026-10-16",
   "highlights": [
     {
       "title": "신규 게임 서버 구축",
       "evidence": "Rule The Coin · 기타소녀 · 탭소닉 월드챔피언",
-      "detail": "방치형 기타소녀와 탭소닉 월드챔피언의 시스템·DB 설계 및 백엔드 개발. Rule The Coin 서버·관리자를 약 1개월 반 안에 개발해 소프트런칭.",
+      "requirements": [
+        "서버 설계·구현",
+        "초기 프로젝트 구축",
+        "RDB·Redis 활용"
+      ],
+      "items": [
+        {
+          "lead": "약 1.5개월 내 예정된 소프트런칭에 맞춰 오픈.",
+          "text": "Rule The Coin의 시스템·DB 설계부터 게임 서버·관리자(Admin) 개발까지 담당.",
+          "references": [
+            {
+              "careerId": "career-0",
+              "projectId": "project-rule-the-coin",
+              "label": "트리노드 · Rule The Coin"
+            }
+          ]
+        },
+        {
+          "lead": "신규 게임의 백엔드 전체 개발.",
+          "text": "방치형 기타소녀와 리듬 게임 탭소닉 월드챔피언의 시스템·DB 설계 및 백엔드 개발. MySQL·MariaDB와 Redis 활용.",
+          "references": [
+            {
+              "careerId": "career-1",
+              "projectId": "project-guitar-girl",
+              "label": "기타소녀"
+            },
+            {
+              "careerId": "career-1",
+              "projectId": "project-tapsonic",
+              "label": "탭소닉 월드챔피언"
+            }
+          ]
+        }
+      ],
+      "detail": "약 1.5개월 내 예정된 소프트런칭에 맞춰 오픈. Rule The Coin의 시스템·DB 설계부터 게임 서버·관리자(Admin) 개발까지 담당. 신규 게임의 백엔드 전체 개발. 방치형 기타소녀와 리듬 게임 탭소닉 월드챔피언의 시스템·DB 설계 및 백엔드 개발. MySQL·MariaDB와 Redis 활용.",
       "careerId": "career-0"
     },
     {
       "title": "라이브 운영·성능 개선",
-      "evidence": "네오위즈 · 게임빌",
-      "detail": "DBA·시스템팀과 SQLRelay 연결 병목 분석·해결. PHP 실행 환경을 개선해 서버 부하와 물리 서버 대수 축소.",
+      "evidence": "네오위즈 · 게임빌 · 트리노드",
+      "requirements": [
+        "라이브 운영",
+        "성능 분석·디버깅",
+        "기술 협업",
+        "Golang"
+      ],
+      "items": [
+        {
+          "lead": "서비스 오픈 시 응답 지연의 병목을 분석·해결.",
+          "text": "DBA·시스템팀과 원인을 좁혀 SQLRelay 연결 풀 설정을 조정하고 연결 병목을 해소.",
+          "references": [
+            {
+              "careerId": "career-1",
+              "projectId": "project-sqlrelay",
+              "label": "네오위즈 · SQLRelay 장애 대응"
+            }
+          ]
+        },
+        {
+          "lead": "PHP 실행 환경 개선으로 서버 부하와 물리 서버 대수 축소.",
+          "text": "밀리언아서 글로벌 6개국 서비스에서 Apache mod_php를 Nginx + PHP-FPM + OPcache로 전환.",
+          "references": [
+            {
+              "careerId": "career-3",
+              "projectId": "project-million-arthur",
+              "label": "게임빌 · 밀리언아서"
+            }
+          ]
+        },
+        {
+          "lead": "포코팡 라이브 서버 유지보수·신규 콘텐츠 개발.",
+          "text": "Golang 등을 활용해 기존 서비스의 서버 유지보수와 콘텐츠 로직 개발을 담당.",
+          "references": [
+            {
+              "careerId": "career-0",
+              "projectId": "project-pokopang",
+              "label": "트리노드 · 포코팡"
+            }
+          ]
+        }
+      ],
+      "detail": "서비스 오픈 시 응답 지연의 병목을 분석·해결. DBA·시스템팀과 원인을 좁혀 SQLRelay 연결 풀 설정을 조정하고 연결 병목을 해소. PHP 실행 환경 개선으로 서버 부하와 물리 서버 대수 축소. 밀리언아서 글로벌 6개국 서비스에서 Apache mod_php를 Nginx + PHP-FPM + OPcache로 전환. 포코팡 라이브 서버 유지보수·신규 콘텐츠 개발. Golang 등을 활용해 기존 서비스의 서버 유지보수와 콘텐츠 로직 개발을 담당.",
       "careerId": "career-1"
     },
     {
       "title": "계정·결제·운영 도구",
-      "evidence": "Hive · 해외 결제 · 게임 관리자",
-      "detail": "Hive 회원 시스템 및 싱가포르 결제 모듈 연동. Gamevil Live 관리자와 공통 관리자 자동 생성 시스템 개발.",
-      "careerId": "career-4"
+      "evidence": "게임빌 · 액토즈소프트",
+      "requirements": [
+        "외부 플랫폼·계정·결제 연동",
+        "운영 도구·백오피스"
+      ],
+      "items": [
+        {
+          "lead": "외부 회원·결제 시스템 연동.",
+          "text": "Hive 회원 시스템과 싱가포르 서비스의 결제 모듈을 연동.",
+          "references": [
+            {
+              "careerId": "career-3",
+              "projectId": "project-hive",
+              "label": "게임빌 · Hive"
+            },
+            {
+              "careerId": "career-4",
+              "projectId": "project-payment-singapore",
+              "label": "액토즈소프트 · 결제 연동"
+            }
+          ]
+        },
+        {
+          "lead": "게임 운영을 위한 관리자 개발.",
+          "text": "Gamevil Live 관리자와 게임 공통 관리자 자동 생성 시스템 개발.",
+          "references": [
+            {
+              "careerId": "career-5",
+              "projectId": "project-gamevil-admin",
+              "label": "Gamevil Live 관리자"
+            },
+            {
+              "careerId": "career-5",
+              "projectId": "project-admin-generator",
+              "label": "공통 관리자 자동 생성"
+            }
+          ]
+        }
+      ],
+      "detail": "외부 회원·결제 시스템 연동. Hive 회원 시스템과 싱가포르 서비스의 결제 모듈을 연동. 게임 운영을 위한 관리자 개발. Gamevil Live 관리자와 게임 공통 관리자 자동 생성 시스템 개발.",
+      "careerId": "career-3"
     },
     {
       "title": "AWS 관리·배포 자동화",
-      "evidence": "포코팡과 별도인 셀 프로젝트 · AWS · CI/CD",
-      "detail": "별도 셀 프로젝트의 AWS 환경 직접 관리. Kubernetes 사용, IDP·Jenkins 배포, GitHub Actions 기반 개발 서버 자동 반영 경험.",
+      "evidence": "포코팡과 별도인 셀 프로젝트",
+      "requirements": [
+        "AWS 환경 관리",
+        "Kubernetes 사용",
+        "CI/CD"
+      ],
+      "items": [
+        {
+          "lead": "셀 프로젝트의 AWS 환경 직접 관리.",
+          "text": "Kubernetes 사용 경험 보유. 회사에서는 자체 배포 플랫폼(IDP)과 Jenkins를 활용해 배포.",
+          "references": [
+            {
+              "careerId": "career-0",
+              "projectId": "project-cloud-deployment",
+              "label": "트리노드 · 인프라·배포 업무"
+            }
+          ]
+        },
+        {
+          "lead": "코드 push 시 개발 서버 자동 반영.",
+          "text": "GitHub Actions를 구성해 개발 서버에 변경 사항이 자동으로 반영되도록 설정.",
+          "references": [
+            {
+              "careerId": "career-0",
+              "projectId": "project-cloud-deployment",
+              "label": "트리노드 · 개발 서버 자동 배포"
+            }
+          ]
+        }
+      ],
+      "detail": "셀 프로젝트의 AWS 환경 직접 관리. Kubernetes 사용 경험 보유. 회사에서는 자체 배포 플랫폼(IDP)과 Jenkins를 활용해 배포. 코드 push 시 개발 서버 자동 반영. GitHub Actions를 구성해 개발 서버에 변경 사항이 자동으로 반영되도록 설정.",
       "careerId": "career-0"
     },
     {
-      "title": "현재: 그룹웨어·ERP 개발",
-      "evidence": "트리노드 PP셀 / PP셀원",
-      "detail": "재무·인사 등 사내 업무를 지원하는 맞춤형 노코드 그룹웨어·ERP 개발 중.",
+      "title": "그룹웨어·ERP 개발",
+      "evidence": "트리노드 PP셀 / PP셀원 · 진행 중",
+      "requirements": [
+        "업무 시스템",
+        "백오피스 개발"
+      ],
+      "items": [
+        {
+          "lead": "재무·인사 업무를 지원하는 맞춤형 시스템 개발.",
+          "text": "트리노드의 업무에 맞춘 노코드 그룹웨어·ERP를 개발 중.",
+          "references": [
+            {
+              "careerId": "career-0",
+              "projectId": "project-groupware",
+              "label": "트리노드 · 그룹웨어·ERP"
+            }
+          ]
+        }
+      ],
+      "detail": "재무·인사 업무를 지원하는 맞춤형 시스템 개발. 트리노드의 업무에 맞춘 노코드 그룹웨어·ERP를 개발 중.",
       "careerId": "career-0"
     }
   ]

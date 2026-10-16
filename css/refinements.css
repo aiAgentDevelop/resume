@@ -18,6 +18,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px s
 .resume-navigation button { padding: 8px 12px; cursor: pointer; }
 .resume-highlight { border-left: 3px solid #284b63; padding: 8px 16px; margin: 12px 0; break-inside: avoid; }
 .resume-highlight p, .career-summary { margin: 6px 0 12px; font-size: 13px; line-height: 1.7; }
+.resume-highlight .highlight-requirements { font-size: 11px; color: #555; }
+.resume-highlight .highlight-items { padding-left: 18px; font-size: 13px; line-height: 1.8; }
+.resume-highlight .highlight-items li { margin: 10px 0; }
+.resume-highlight .highlight-references { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 11px; }
+.resume-highlight .evidence-link { color: #284b63; }
+[id^="project-"] { scroll-margin-top: 20px; }
 .hero { min-height: 620px; }
 .hero-name { font-size: clamp(44px, 7vw, 88px); }
 .stat-value #experience-stat { font-size: 26px; }

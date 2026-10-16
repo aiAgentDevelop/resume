@@ -14,13 +14,15 @@ window.ResumeAPI.career = [
           "재무·인사 등 사내 업무를 지원하는 트리노드 맞춤형 그룹웨어·ERP 개발",
           "Claude Code 에이전트를 활용한 설계·구현·검증 및 개발 자동화"
         ],
-        "techStack": []
+        "techStack": [],
+        "id": "project-groupware"
       },
       {
         "title": "Rule The Coin 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
         "description": [
-          "입사 시점 기준 소프트런칭 일정이 약 1개월 반 남은 상황",
-          "게임 서버 + Admin을 1개월 반 만에 신속 설계·개발하여 소프트런칭 일정에 맞춰 오픈"
+          "소프트런칭까지 약 1.5개월이 남은 시점에 개발 담당",
+          "시스템·DB 설계부터 게임 서버와 관리자(Admin) 개발까지 담당",
+          "약 1.5개월 안에 서버·관리자를 설계·개발하여 예정된 소프트런칭 일정에 맞춰 오픈"
         ],
         "techStack": [
           "PHP7",
@@ -28,7 +30,8 @@ window.ResumeAPI.career = [
           "Redis",
           "Nginx",
           "Thrift"
-        ]
+        ],
+        "id": "project-rule-the-coin"
       },
       {
         "title": "포코팡 서버 유지보수 및 신규 콘텐츠 개발",
@@ -40,7 +43,8 @@ window.ResumeAPI.career = [
           "Python",
           "Svelte",
           "MySQL"
-        ]
+        ],
+        "id": "project-pokopang"
       },
       {
         "title": "별도 셀 프로젝트의 AWS 환경 관리·배포 자동화",
@@ -56,7 +60,8 @@ window.ResumeAPI.career = [
           "IDP",
           "Jenkins",
           "GitHub Actions"
-        ]
+        ],
+        "id": "project-cloud-deployment"
       },
       {
         "title": "신규 백엔드의 DB·API 설계",
@@ -138,7 +143,8 @@ window.ResumeAPI.career = [
           "Redis",
           "Nginx",
           "Thrift"
-        ]
+        ],
+        "id": "project-guitar-girl"
       },
       {
         "title": "탭소닉 월드챔피언 서버 개발 (시스템설계, DB설계, Back-End 전체 개발)",
@@ -149,7 +155,8 @@ window.ResumeAPI.career = [
           "Redis",
           "Nginx",
           "Thrift"
-        ]
+        ],
+        "id": "project-tapsonic"
       },
       {
         "title": "탭소닉 탭 / 테크니카Q 유지보수 및 신규 콘텐츠 개발",
@@ -180,7 +187,8 @@ window.ResumeAPI.career = [
         "techStack": [
           "MySQL",
           "SQLRelay"
-        ]
+        ],
+        "id": "project-sqlrelay"
       }
     ],
     "id": "career-1",
@@ -221,7 +229,7 @@ window.ResumeAPI.career = [
     "company": "게임빌",
     "department": "Q9 Studio",
     "role": "게임 서버 개발·운영",
-    "summary": "확산성 밀리언아서 글로벌 6개국 서버 구축. mod_php → Nginx + PHP-FPM + OPcache 전환으로 서버 부하·물리 대수 대폭 절감.",
+    "summary": "확산성 밀리언아서 글로벌 6개국 서버 구축. PHP 실행 환경을 개선하여 서버 부하와 물리 서버 대수를 줄임.",
     "projects": [
       {
         "title": "밀리언아서 글로벌 서버 구축 및 6개국 언어 서비스 오픈",
@@ -238,7 +246,8 @@ window.ResumeAPI.career = [
           "OPcache",
           "AWS",
           "Google Cloud"
-        ]
+        ],
+        "id": "project-million-arthur"
       },
       {
         "title": "Hive 회원 연동 및 채팅 서버 구축",
@@ -248,7 +257,8 @@ window.ResumeAPI.career = [
         "techStack": [
           "NodeJS",
           "Socket.io"
-        ]
+        ],
+        "id": "project-hive"
       }
     ],
     "id": "career-3",
@@ -294,7 +304,8 @@ window.ResumeAPI.career = [
       {
         "title": "싱가포르 결제 모듈 연동 및 서비스 오픈",
         "description": [],
-        "techStack": []
+        "techStack": [],
+        "id": "project-payment-singapore"
       }
     ],
     "id": "career-4",
@@ -325,7 +336,8 @@ window.ResumeAPI.career = [
           "MySQL",
           "Memcache",
           "Apache"
-        ]
+        ],
+        "id": "project-gamevil-admin"
       },
       {
         "title": "DDoS 대응 및 Back-End / Web 서버 분리 작업",
@@ -345,7 +357,8 @@ window.ResumeAPI.career = [
       {
         "title": "게임 공통 관리자 자동 생성 시스템 개발",
         "description": [],
-        "techStack": []
+        "techStack": [],
+        "id": "project-admin-generator"
       },
       {
         "title": "Flurry 연동 DAU API 관리자 페이지 개발",
