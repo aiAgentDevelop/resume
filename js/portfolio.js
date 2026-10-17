@@ -231,7 +231,7 @@
     },
     {
       label: 'AI Tooling',
-      match: ['Claude Code Agent', 'AI Orchestration (Parallel)', 'Harness Skill', 'Claude Code', 'MCP']
+      match: ['Codex', 'Claude Code Agent', 'AI Orchestration (Parallel)', 'Harness Skill', 'Claude Code', 'MCP']
     }
   ];
 

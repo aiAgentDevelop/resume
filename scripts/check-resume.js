@@ -60,7 +60,7 @@ const server = http.createServer((req, res) => {
       await page.locator('.more-games summary').click();
       assert.equal(await page.locator('.game-card:visible').count(), 8);
       await page.locator('.more-games summary').click();
-      assert.equal(await page.locator('.evidence-card').count(), 5);
+      assert.equal(await page.locator('.evidence-card').count(), highlights.length);
       assert.deepEqual(await page.locator('#portfolio-app > section').evaluateAll(elements => elements.slice(0, 4).map(el => el.id)), ['hero', 'highlights', 'career', 'games']);
       for (const h of highlights) for (const item of h.items) {
         assert((await page.locator('#highlights-grid').innerText()).includes(item.lead + ' ' + item.text));

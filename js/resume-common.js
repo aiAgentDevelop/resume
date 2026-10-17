@@ -12,9 +12,9 @@
     highlightBody: function (item) {
       return '<ul class="highlight-items">' + item.items.map(function (bullet) {
         return '<li><strong>' + escapeHtml(bullet.lead) + '</strong> ' + escapeHtml(bullet.text) +
-          '<div class="highlight-references">' + bullet.references.map(function (reference) {
+          (bullet.references.length ? '<div class="highlight-references">' + bullet.references.map(function (reference) {
             return '<a class="evidence-link" data-career-id="' + escapeHtml(reference.careerId) + '" href="#' + escapeHtml(reference.projectId) + '">' + escapeHtml(reference.label) + ' ↗</a>';
-          }).join('') + '</div></li>';
+          }).join('') + '</div>' : '') + '</li>';
       }).join('') + '</ul>';
     },
     position: function (item) {
