@@ -318,15 +318,16 @@ window.ResumeAPI.career = [
     "company": "게임빌",
     "department": "시스템개발팀",
     "role": "웹개발자",
-    "summary": "Gamevil Live 백엔드·관리자 개발. Oracle 커넥션 초과 이슈(PHP pconnect 원인) 해결, Push 발송 플랫폼·공통 관리자 자동화 구축.",
+    "summary": "Gamevil Live 백엔드·관리자 개발. 게임빌 웹 서비스의 Oracle 연결 초과 장애를 입사 후 일주일 만에 해결. Push 발송 플랫폼·공통 관리자 자동화 구축.",
     "projects": [
       {
-        "title": "Oracle DB 연결 초과 장애 분석·해결",
+        "title": "게임빌 웹 서비스의 Oracle 연결 초과 장애 — 입사 후 일주일 만에 해결",
         "description": [
-          "반복되는 Oracle DB 연결 초과 현상을 분석",
-          "PHP pconnect() 사용에 따른 연결 관리 문제를 진단·조치하여 장애 해결"
+          "게임빌 웹 서비스에서 반복되는 Oracle DB 연결 초과 현상을 분석",
+          "PHP 영구 연결(pconnect()) 사용에 따른 연결 관리 문제를 진단·조치하여 입사 후 일주일 만에 장애 해결"
         ],
-        "techStack": []
+        "techStack": [],
+        "id": "project-gamevil-web-oracle"
       },
       {
         "title": "Gamevil Live 관리자 개발",
