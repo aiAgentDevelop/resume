@@ -177,7 +177,7 @@ window.ResumeAPI.career = [
         "techStack": []
       },
       {
-        "title": "오픈 시 SQLRelay connection 병목 장애 진단 및 해결",
+        "title": "탭소닉 월드챔피언 오픈 시 SQLRelay 연결 병목 진단 및 해결",
         "description": [
           "오픈 당시 트래픽 부하로 응답 지연 발생 — DBA 팀 진단 결과 DB 부하는 정상 범위",
           "시스템 팀 진단에서 서버 단 thread waiting 누적 확인",
