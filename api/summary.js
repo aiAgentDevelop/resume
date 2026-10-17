@@ -77,6 +77,17 @@ window.ResumeAPI.summary = {
           ]
         },
         {
+          "lead": "게임빌 웹 서비스의 DB 연결 장애를 입사 후 일주일 만에 해결.",
+          "text": "PHP 영구 연결(pconnect) 사용에 따른 Oracle DB 연결 초과 문제를 분석·조치.",
+          "references": [
+            {
+              "careerId": "career-5",
+              "projectId": "project-gamevil-web-oracle",
+              "label": "게임빌 시스템개발팀 · 웹 서비스 장애 대응"
+            }
+          ]
+        },
+        {
           "lead": "PHP 실행 환경 개선으로 서버 부하와 물리 서버 대수 축소.",
           "text": "캐릭터 카드 수집형 RPG인 확산성 밀리언아서의 글로벌 6개국 서비스에서 Apache mod_php를 Nginx + PHP-FPM + OPcache로 전환.",
           "references": [
@@ -99,7 +110,7 @@ window.ResumeAPI.summary = {
           ]
         }
       ],
-      "detail": "탭소닉 월드챔피언 오픈 시 응답 지연의 병목을 분석·해결. DBA·시스템팀과 원인을 좁혀 SQLRelay 연결 풀 설정을 조정하고 연결 병목을 해소. PHP 실행 환경 개선으로 서버 부하와 물리 서버 대수 축소. 캐릭터 카드 수집형 RPG인 확산성 밀리언아서의 글로벌 6개국 서비스에서 Apache mod_php를 Nginx + PHP-FPM + OPcache로 전환. 포코팡 라이브 서버 유지보수·신규 콘텐츠 개발. Golang 등을 활용해 기존 서비스의 서버 유지보수와 콘텐츠 로직 개발을 담당.",
+      "detail": "탭소닉 월드챔피언 오픈 시 응답 지연의 병목을 분석·해결. DBA·시스템팀과 원인을 좁혀 SQLRelay 연결 풀 설정을 조정하고 연결 병목을 해소. 게임빌 웹 서비스의 DB 연결 장애를 입사 후 일주일 만에 해결. PHP 영구 연결(pconnect) 사용에 따른 Oracle DB 연결 초과 문제를 분석·조치. PHP 실행 환경 개선으로 서버 부하와 물리 서버 대수 축소. 캐릭터 카드 수집형 RPG인 확산성 밀리언아서의 글로벌 6개국 서비스에서 Apache mod_php를 Nginx + PHP-FPM + OPcache로 전환. 포코팡 라이브 서버 유지보수·신규 콘텐츠 개발. Golang 등을 활용해 기존 서비스의 서버 유지보수와 콘텐츠 로직 개발을 담당.",
       "careerId": "career-1"
     },
     {
