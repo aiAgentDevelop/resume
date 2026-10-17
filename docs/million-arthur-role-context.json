@@ -1,0 +1,36 @@
+{
+  "reviewedOn": "2026-10-17",
+  "subject": "확산성 밀리언아서 경력과 Project AA의 장르적 접점",
+  "sources": [
+    {
+      "url": "https://job-boards.greenhouse.io/loonshotgames/jobs/8379840002",
+      "publisher": "Loonshot Games",
+      "finding": "Project AA는 아니메 스타일의 모바일 수집형 RPG. 서버 직무는 초기 서버 구축, 라이브 운영, 외부 연동, 성능 분석 등을 요구한다."
+    },
+    {
+      "url": "https://blog.square-enix.com/magazine/gfantasy/2013/01/",
+      "publisher": "SQUARE ENIX",
+      "finding": "확산성 밀리언아서를 스마트폰용 카드 배틀 RPG로 소개하며 일러스트로 표현된 기사 카드 수집을 설명한다."
+    },
+    {
+      "url": "https://www.jp.square-enix.com/company/ja/news/2021/html/d6abbb090cdeec3ad0763413340a80a7b6009dd4.html",
+      "publisher": "SQUARE ENIX",
+      "finding": "시리즈의 출발점인 확산성 밀리언아서의 캐릭터, 성우 및 다수 일러스트레이터의 참여를 설명한다. 후속작의 장르·시스템과 구분해 참고했다."
+    },
+    {
+      "url": "https://www.siliconera.com/square-enixs-card-based-rpg-million-arthur-now-available-on-smartphones/",
+      "publisher": "Siliconera",
+      "finding": "2015년 Gamevil의 해외 iOS·Android 서비스 출시를 보조 확인. 사용자의 역할·담당 국가 수에 대한 증거로 사용하지 않는다."
+    }
+  ],
+  "interpretation": "캐릭터 수집 중심 모바일 RPG라는 접점이 있다. 양 게임의 전투 방식·기술 구조가 같다는 의미는 아니다.",
+  "experienceSource": "기존 경력 데이터와 사용자의 밀리언아서 담당 경험 설명. 액토즈소프트 서비스 운영, 게임빌 글로벌 서버 구축 및 PHP 실행 환경 개선으로 범위를 한정한다.",
+  "editorialDecision": "기존 핵심 경험·회사 요약·게임 소개에 짧은 장르 맥락을 추가하고 자기소개서에서 지원 동기로 한 번 연결. 신규 성과나 별도 강조 섹션은 만들지 않는다.",
+  "excludedClaims": [
+    "가챠·카드 성장·경제·전투 시스템을 직접 설계했다는 주장",
+    "원작 전체 개발 또는 흥행 성과를 개인 성과로 귀속",
+    "Project AA의 미공개 시스템·트래픽·기술 구조에 대한 추정",
+    "서브컬처 전문성이나 팬덤 이해도를 장르 참여만으로 단정",
+    "후속작 괴리성 밀리언아서 등의 기능을 담당 경력에 혼합"
+  ]
+}
