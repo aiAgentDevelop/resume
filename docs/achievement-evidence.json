@@ -8,7 +8,11 @@
       "supported": "소프트런칭까지 약 1개월 반이 남은 시점에 게임 서버와 Admin을 설계·개발하여 예정 일정에 맞춰 오픈",
       "display": "약 1.5개월 내 예정된 소프트런칭에 맞춰 오픈",
       "baseline": null,
-      "excluded": ["정확히 45일 소요", "일반적으로 2~3개월 걸린다는 가정", "계획 대비 단축률"]
+      "excluded": [
+        "정확히 45일 소요",
+        "일반적으로 2~3개월 걸린다는 가정",
+        "계획 대비 단축률"
+      ]
     },
     {
       "projectId": "project-million-arthur",
@@ -16,19 +20,30 @@
       "supported": "Apache mod_php에서 Nginx + PHP-FPM + OPcache로 전환하고 서버 부하와 물리 서버 대수를 줄임",
       "serverCountBefore": null,
       "serverCountAfter": null,
-      "excluded": ["전후 서버 대수 추정", "감소율·비용 절감률 추정", "기존 CPU 수치를 개선 후 수치처럼 사용"]
+      "excluded": [
+        "전후 서버 대수 추정",
+        "감소율·비용 절감률 추정",
+        "기존 CPU 수치를 개선 후 수치처럼 사용"
+      ]
     },
     {
       "projectId": "project-sqlrelay",
-      "source": "기존 이력서의 DBA·시스템팀 협업과 연결 풀 설정 조정 사례",
-      "supported": "응답 지연을 분석하여 연결 풀 설정의 병목을 찾아 해소",
-      "excluded": ["연결 설정값 5를 성능 개선율로 환산", "미확인 응답시간·처리량 수치"]
+      "source": "기존 경력 기록 및 사용자의 추가 확인: 네오위즈 탭소닉 월드챔피언 서비스 오픈 당시 사례",
+      "supported": "탭소닉 월드챔피언의 응답 지연을 DBA·시스템팀과 분석하여 SQLRelay 연결 풀 설정의 병목을 찾아 해소",
+      "excluded": [
+        "연결 설정값 5를 성능 개선율로 환산",
+        "미확인 응답시간·처리량 수치"
+      ]
     },
     {
       "projectId": "project-cloud-deployment",
       "source": "사용자의 AWS·Kubernetes·IDP·Jenkins·GitHub Actions 경험 설명",
       "supported": "별도 셀 프로젝트의 AWS 관리와 push 기반 개발 서버 자동 반영",
-      "excluded": ["Terraform/IaC 경험 추정", "배포시간 절감률 추정", "포코팡 인프라 설계로 확대"]
+      "excluded": [
+        "Terraform/IaC 경험 추정",
+        "배포시간 절감률 추정",
+        "포코팡 인프라 설계로 확대"
+      ]
     }
   ]
 }
