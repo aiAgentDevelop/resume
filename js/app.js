@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
   renderSummary(API.summary);
   renderHighlights(API.summary);
   renderSkills(API.skills);
-  renderProjects(API.projects);
   renderEducation(API.education);
   renderCareer(API.career);
   renderAbout(API.about);
@@ -74,50 +73,6 @@ function renderSkills(skills) {
     html += '<span class="skill-tag">' + escapeHtml(skill) + '</span>';
   });
   html += '</div>';
-  el.innerHTML = html;
-}
-
-function renderProjects(projects) {
-  if (!projects || !projects.items || projects.items.length === 0) return;
-
-  var titleEl = document.getElementById('projects-title');
-  titleEl.textContent = projects.title;
-
-  var el = document.getElementById('projects-content');
-  var html = '';
-
-  if (projects.subtitle) {
-    html += '<div class="projects-subtitle">' + escapeHtml(projects.subtitle) + '</div>';
-  }
-
-  projects.items.forEach(function (p) {
-    html += '<div class="project-item">' +
-      '<div class="project-item-header">' +
-        '<span class="project-name">' + escapeHtml(p.name) + '</span>' +
-        (p.role ? '<span class="project-role">' + escapeHtml(p.role) + '</span>' : '') +
-        (p.period ? '<span class="project-period">' + escapeHtml(p.period) + '</span>' : '') +
-      '</div>' +
-      '<div class="project-link"><a href="' + escapeHtml(p.url) + '" target="_blank" rel="noopener">' + escapeHtml(p.url) + '</a></div>';
-
-    if (p.summary) {
-      html += '<div class="project-summary">' + escapeHtml(p.summary) + '</div>';
-    }
-
-    if (p.description && p.description.length > 0) {
-      html += '<ul class="project-bullets">';
-      p.description.forEach(function (d) {
-        html += '<li>' + escapeHtml(d) + '</li>';
-      });
-      html += '</ul>';
-    }
-
-    if (p.techStack && p.techStack.length > 0) {
-      html += '<div class="project-tech">' + p.techStack.map(escapeHtml).join(', ') + '</div>';
-    }
-
-    html += '</div>';
-  });
-
   el.innerHTML = html;
 }
 

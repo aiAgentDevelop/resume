@@ -172,44 +172,6 @@
   }
 
   // ─────────────────────────────────────────────────────────────
-  // Open Source
-  // ─────────────────────────────────────────────────────────────
-  function renderOSS(projects) {
-    var container = el('oss-grid');
-    if (!container || !projects || !projects.items) return;
-
-    var html = projects.items.map(function (p) {
-      var bullets = (p.description || []).slice(0, 5).map(function (d) {
-        return '<div class="oss-bullet">' + escapeHtml(d) + '</div>';
-      }).join('');
-
-      var techs = (p.techStack || []).map(function (t) {
-        return '<span class="chip">' + escapeHtml(t) + '</span>';
-      }).join('');
-
-      return '<article class="oss-card reveal">' +
-          '<div class="oss-head">' +
-            '<div class="oss-icon" aria-hidden="true">📦</div>' +
-            '<div class="oss-name-wrap">' +
-              '<div class="oss-name">' + escapeHtml(p.name) + '</div>' +
-              '<div class="oss-badge-row">' +
-                '<span class="oss-badge is-accent">' + escapeHtml(p.role || '') + '</span>' +
-                '<span class="oss-badge">' + escapeHtml(p.period || '') + '</span>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-          (p.summary ? '<div class="oss-summary">' + escapeHtml(p.summary) + '</div>' : '') +
-          (bullets ? '<div class="oss-bullets">' + bullets + '</div>' : '') +
-          (techs ? '<div class="chip-row">' + techs + '</div>' : '') +
-          '<a href="' + escapeHtml(p.url) + '" target="_blank" rel="noopener" class="oss-link">View on GitHub →</a>' +
-        '</article>';
-    }).join('');
-
-    container.innerHTML = html;
-    observeReveal(container.querySelectorAll('.reveal'));
-  }
-
-  // ─────────────────────────────────────────────────────────────
   // Tech Stack — 카테고리 그룹핑
   // ─────────────────────────────────────────────────────────────
   var SKILL_GROUPS = [
@@ -422,7 +384,6 @@
     renderAbout(API.about);
     renderCareer(API.career || []);
     setupCareerToggle(API.career || []);
-    renderOSS(API.projects);
     renderSkills(API.skills || []);
 
     setupRevealObserver();

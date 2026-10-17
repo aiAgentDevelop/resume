@@ -53,7 +53,6 @@
 │   ├── skills.{js,json}        # 기술 스택
 │   ├── education.{js,json}     # 학력
 │   ├── career.{js,json}        # 경력 (회사별 상세)
-│   ├── projects.{js,json}      # 개인 프로젝트 · 오픈소스
 │   ├── about.{js,json}         # 자기소개서
 │   └── military.{js,json}      # 병역 / 취업우대사항
 │
@@ -74,7 +73,7 @@
 - `api/summary.json`의 핵심 경험·경력 합계·기준일을 두 화면이 함께 사용합니다. 경력 합계는 시작·종료 월을 포함하고 겹치는 월을 제외한 웹·게임 개발 전체 경력입니다. 재직 기간 변경 시 합계와 기준일을 함께 갱신해야 합니다.
 - `npm install` → `npx playwright install chromium` → `npm test`로 JSON/JS 일치, 두 화면, 핵심 경험 링크, 모바일, 인쇄 내용, 자동 전환을 검증합니다.
 - 정식 이력서 고정 주소는 `index.html?stay=1`입니다. PDF 스크립트도 이 경로와 인쇄 모드를 사용합니다.
-- 포트폴리오는 핵심 경험 → 경력 → 참여 프로젝트 → 자기소개 → 기술 → 오픈소스 순서입니다. 핵심 경험은 관련 역량과 성과·담당 업무를 불릿으로 보여주며, 각 근거 링크는 해당 프로젝트까지 펼쳐 이동합니다. 대표 게임 3개와 나머지 5개도 확인할 수 있습니다.
+- 포트폴리오는 핵심 경험 → 경력 → 참여 프로젝트 → 자기소개 → 기술 순서입니다. 핵심 경험은 관련 역량과 성과·담당 업무를 불릿으로 보여주며, 각 근거 링크는 해당 프로젝트까지 펼쳐 이동합니다. 대표 게임 3개와 나머지 5개도 확인할 수 있습니다.
 - 핵심 경험은 `api/summary.json`의 `highlights[].items`를 두 화면이 함께 렌더링합니다. 참조하는 `careerId`와 `projectId`는 실제 경력 항목에 존재해야 합니다. 비교 기준이 확인되지 않은 절감률은 기재하지 않습니다. 수치 근거는 `docs/achievement-evidence.json`에 기록합니다.
 - 현재 스타일은 `css/portfolio-editorial.css`입니다. 고정 목차와 타이포그래피 중심으로 구성하며, 작은 화면에서는 상단 메뉴와 이미지·텍스트 목록으로 전환됩니다. 인쇄 시 경력과 게임 상세를 모두 표시합니다. 공고 대조 기록은 `docs/role-review.json`, 디자인 조사 기록은 `docs/design-research.json`에 있습니다.
 
@@ -101,7 +100,6 @@ python -m http.server 8765
 | GET | `/api/skills`    | 기술 스택 목록 |
 | GET | `/api/education` | 학력 상세 |
 | GET | `/api/career`    | 경력 상세 (회사별) |
-| GET | `/api/projects`  | 개인 프로젝트 · 오픈소스 |
 | GET | `/api/about`     | 자기소개서 |
 | GET | `/api/military`  | 병역 / 취업우대사항 |
 
