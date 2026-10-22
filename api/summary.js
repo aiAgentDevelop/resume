@@ -13,7 +13,7 @@ window.ResumeAPI.summary = {
   },
   "internship": "-",
   "certification": "-",
-  "updatedAt": "2026-10-17",
+  "updatedAt": "2026-10-22",
   "highlights": [
     {
       "title": "신규 게임 서버 구축",
